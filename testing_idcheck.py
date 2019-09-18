@@ -1,4 +1,4 @@
-from find_captcha import web_search
+from check_id import web_search 
 import pandas as pd  
 import numpy as np
 from bs4 import BeautifulSoup
