@@ -21,6 +21,10 @@ pip install --user mtcnn
 pip install --user python-Levenshtein
 pip install --user tqdm
 ```
+- Istall opencv tutorial:
+```
+https://www.pyimagesearch.com/2018/08/15/how-to-install-opencv-4-on-ubuntu/
 
+```
 
 
