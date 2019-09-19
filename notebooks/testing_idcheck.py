@@ -24,4 +24,6 @@ elif test_data['tipo_cred'] == 'e':
 
 id_check = web_search.consulta_id(test_data)
 
-id_check.ine_check(api_key = 'f93c8b9646c63020ef084ecac088583d')
+res = id_check.ine_check(api_key = 'f93c8b9646c63020ef084ecac088583d')
+
+print(res)
