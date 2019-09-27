@@ -11,7 +11,7 @@ level	page_num	block_num	par_num	line_num	word_num	left	top	width	height	conf	te
 5	1	2	1	1	2	575	285	15	92	97	DOCUMENTO
 5	1	2	1	1	3	575	385	14	17	93	ES
 5	1	2	1	1	4	572	410	17	125	92	INTRANSFERIBLE,
-5	1	2	1	1	5	577	1218	12	36	4	Es
+5	1	2	1	1	5	572	1218	17	62	4	Es
 4	1	2	1	2	0	528	242	42	972	-1	
 5	1	2	1	2	1	554	242	14	20	96	NO
 5	1	2	1	2	2	554	274	14	18	94	ES
@@ -65,9 +65,9 @@ level	page_num	block_num	par_num	line_num	word_num	left	top	width	height	conf	te
 5	1	4	1	4	9	448	1265	8	15	11	y
 4	1	4	1	5	0	416	239	40	1006	-1	
 5	1	4	1	5	1	441	239	15	62	21	pr.
-5	1	4	1	5	2	416	563	35	72	96	EDMUNDO
-5	1	4	1	5	3	416	637	35	68	96	JACOBO
-5	1	4	1	5	4	416	714	35	58	96	MOLINA
+5	1	4	1	5	2	427	563	16	79	96	EDMUNDO
+5	1	4	1	5	3	426	646	16	64	96	JACOBO
+5	1	4	1	5	4	426	714	15	59	96	MOLINA
 5	1	4	1	5	5	420	1175	20	4	0	'
 5	1	4	1	5	6	416	1240	8	5	0	d
 4	1	4	1	6	0	384	562	39	656	-1	
@@ -77,10 +77,10 @@ level	page_num	block_num	par_num	line_num	word_num	left	top	width	height	conf	te
 5	1	4	1	6	4	384	1175	34	9	37	>
 5	1	4	1	6	5	406	1207	6	11	0	S
 4	1	4	1	7	0	373	445	29	764	-1	
-5	1	4	1	7	1	373	477	15	25	43	Ly
+5	1	4	1	7	1	373	445	15	57	43	Ly
 5	1	4	1	7	2	378	534	7	7	19	»
-5	1	4	1	7	3	386	563	16	155	78	INSTITUTOFEDERAL
-5	1	4	1	7	4	369	723	42	86	96	ELECTORAL
+5	1	4	1	7	3	386	563	16	156	78	INSTITUTOFEDERAL
+5	1	4	1	7	4	384	723	16	91	96	ELECTORAL
 5	1	4	1	7	5	388	1183	14	26	47	qe
 2	1	5	0	0	0	0	905	0	375	-1	
 3	1	5	1	0	0	0	905	0	375	-1	
