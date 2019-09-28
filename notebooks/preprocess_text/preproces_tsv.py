@@ -15,7 +15,7 @@ class tsv_prep():
 
     Methods:
     --------
-    join_tsv(tsv_1, tsv_2): joins the text column of two tsv containing ocr 
+    join_tsv(tsv_1, tsv_2): joins the text column of two tsv containing ocr
     info of the id
 
     identify_cardtype(text_vector): identifies de id card type by text
@@ -25,17 +25,15 @@ class tsv_prep():
     preprocess(): wrapper method to transform tsv information for the web search script
     '''
     def __init__(self, tsv_front, tsv_back):
-      self.tsv_front = tsv_front
-      self.tsv_back = tsv_back
+        self.tsv_front = tsv_front
+        self.tsv_back = tsv_back
 
-    @staticmethod
-    def join_tsv(tsv_1, tsv_2):
-        all_text = np.append(tsv_1.text.dropna(), tsv_2.text.dropna())
+    def join_tsv(self):
+        all_text = np.append(self.tsv_1.text.dropna(), self.tsv_2.text.dropna())
         all_text = [x.upper() for x in all_text]
         return(all_text)
-    
-    @staticmethod
-    def identify_cardtype(text_vector):
+
+    def identify_cardtype(self, text_vector):
         if(('FEDERAL' in text_vector) and ((any('DMEX' in mystring for mystring in text_vector) or (any('IDMEX' in mystring for mystring in text_vector))))):
             cred_type = 'd'
         elif('NACIONAL' in text_vector):
@@ -45,9 +43,8 @@ class tsv_prep():
         else:
             cred_type = 'NOT DETECTED'
         return(cred_type)
-    
-    @staticmethod
-    def prep_text(text_vector, cardtype):
+
+    def prep_text(self, text_vector, cardtype):
         if cardtype == 'a':
             cve_elector = "placeholder"
             emision = "placeholder"
@@ -83,20 +80,20 @@ class tsv_prep():
             cve_ciudadano = ''
             err_msg = 'ERROR: Por favor mejorar la calidad de la imagen'
         outputs = list()
-        outputs.extend([str(cardtype), str(cve_elector), str(emision), 
-                        str(ocr_v), str(ocr_h), str(cic), str(cve_ciudadano), 
+        outputs.extend([str(cardtype), str(cve_elector), str(emision),
+                        str(ocr_v), str(ocr_h), str(cic), str(cve_ciudadano),
                         str(err_msg)])
-        
+
         outputs = pd.Series(outputs,
-                            index=[('tipo_cred'), ('cve_elec'), 
+                            index=[('tipo_cred'), ('cve_elec'),
                                    ('emision'), ('ocr_vertical'),
-                                   ('ocr_horizontal'), ('cic'), 
+                                   ('ocr_horizontal'), ('cic'),
                                    ('cve_ciudadano'), ('err_msg')])
-    
+
         return(outputs)
-    
+
     def preprocess(self):
-        joined_text = self.join_tsv(self.tsv_front, self.tsv_back)
+        joined_text = self.join_tsv()
         tipo_cred = self.identify_cardtype(joined_text)
         data_id = self.prep_text(joined_text, tipo_cred)
         return(data_id)
