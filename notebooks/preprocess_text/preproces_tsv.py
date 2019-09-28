@@ -3,6 +3,7 @@ import numpy as np
 
 class tsv_prep():
 
+
     '''
     Class for preprocessing ocr text recognition
     --------------------------------------------
@@ -29,7 +30,7 @@ class tsv_prep():
         self.tsv_back = tsv_back
 
     def join_tsv(self):
-        all_text = np.append(self.tsv_1.text.dropna(), self.tsv_2.text.dropna())
+        all_text = np.append(self.tsv_front.text.dropna(), self.tsv_back.text.dropna())
         all_text = [x.upper() for x in all_text]
         return(all_text)
 
