@@ -1,0 +1,1025 @@
+Sample,FormatFront,FormatReverse,Equal,Tipo,RotationFront,RotationReverse,LegibleFront,LegibleReverse,ObstrucciónFront,ObstrucciónReverse,Margenes claros F,Margenes claros R,Fondo F,Fondo R,Comments
+2,jpg,jpg,1,e,2,2,,,sombra,sombra,0,0,blanco,blanco,
+3,jpg,jpg,1,e,1,3,,,dedo,dedo,0,0,madera,madera,
+4,jpg,jpg,1,a,2,1,,,sombra,,1,1,azul,azul,
+5,jpeg,jpeg,1,e,1,1,,,,,1,1,blanco,blanco,
+6,jpeg,jpeg,1,e,1,1,,,,,1,1,beige,beige,
+7,jpg,jpg,1,a,1,1,,,reflejo,sombra,0,0,,,
+8,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+9,jpg,jpg,1,e,1,1,,,reflejo,reflejo,0,0,madera,madera,
+10,jpg,jpg,1,a,1,1,,,dedo,dedo,0,0,gris,gris,blurry
+11,jpg,jpg,1,a,2,2,,,sombra,sombra,0,0,gris,gris,
+12,jpg,jpg,1,e,1,1,,,recortada,recortada,0,0,blanco,blanco,
+13,jpg,jpg,1,a,2,2,,,,sombra,1,0,gris,gris,
+14,jpg,jpg,1,e,1,1,,,reflejo,reflejo,1,1,blanco,blanco,
+15,jpg,jpg,1,e,1,1,,,reflejo,,1,1,gris,gris,
+16,jpg,jpg,1,e,1,1,,,reflejo,reflejo,0,0,negro,negro,
+17,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+18,jpg,jpg,1,e,2,2,,,,,0,0,blanco,blanco,
+19,jpg,jpg,1,d,1,1,,,,,0,0,blanco,azul,
+20,jpg,jpg,1,e,1,1,,,,,1,0,blanco,blanco,
+21,jpg,jpg,1,e,1,1,,,reflejo,reflejo,1,1,piel,piel,
+22,png,png,1,e,2,2,,,,,0,0,,,
+23,jpg,jpg,1,e,4,4,,,,,0,1,gris,gris,
+24,jpeg,jpeg,1,e,1,1,,,,,0,1,blanco,blanco,
+25,jpeg,jpeg,1,e,4,4,,,,,0,1,gris,gris,
+26,jpg,jpg,1,e,1,1,,,reflejo,,0,0,blanco,blanco,
+27,jpg,jpg,1,a,1,1,,,,,1,1,azul,azul,
+28,jpeg,jpeg,1,a,1,1,,,sombra,sombra,1,1,madera,madera,
+29,jpeg,jpeg,1,e,4,4,,,dedo,dedo,0,0,,,
+30,jpg,jpeg,0,e,2,2,,,,,1,1,blanco,blanco,
+31,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+32,jpg,jpg,1,d,2,2,,,,,1,1,blanco,blanco,
+33,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+34,jpg,jpg,1,a,1,1,,,reflejo,reflejo,0,0,blanco,blanco,
+35,jpg,jpg,1,e,1,4,,,,,0,1,gris,gris,
+36,jpg,jpg,1,e,1,1,,,dedo,dedo,0,0,blanco,blanco,
+37,jpg,jpg,1,a,4,4,,,,,0,1,blanco,blanco,
+38,jpeg,jpeg,1,e,1,1,,,,,1,0,blanco,blanco,switched front back
+39,jpg,jpg,1,d,4,4,,,,,1,0,blanco,blanco,
+40,jpg,jpg,1,e,4,1,,,,,0,1,blanco,blanco,
+41,jpeg,jpeg,1,e,1,1,,,reflejo,,1,0,blanco,blanco,
+42,jpg,jpg,1,d,1,1,,,sombra,reflejo,1,1,gris,gris,
+43,jpeg,jpeg,1,e,1,1,,,,,1,1,gris,gris,
+44,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+45,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+46,jpg,jpg,1,e,2,2,,,,,1,1,blanco,blanco,
+47,jpg,jpg,1,a,1,1,,,dedo,dedo,1,1,piel,piel,
+48,jpg,jpg,1,e,2,2,,,,,0,0,gris,gris,
+49,jpg,jpg,1,a,4,1,,,reflejo,,1,1,rojo,rojo,
+50,jpg,jpg,1,a/e,1,1,,,,,1,1,gris,gris,no coincide front con back
+51,jpg,jpg,1,d,1,2,,,,,1,0,gris,gris,
+52,jpg,jpg,1,e,1,1,,,,,0,0,,,
+53,jpg,jpg,1,e,1,1,,,,,0,1,blanco,blanco,
+54,jpeg,jpeg,1,a,1,1,,,,sombra,1,1,gris,gris,
+55,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+56,jpeg,jpeg,1,e,1,1,,,,,0,0,,,
+57,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+58,jpg,jpg,1,e,1,1,,,,,0,0,gris,gris,
+59,jpg,jpg,1,e,2,2,,,,,1,1,madera,madera,
+60,jpg,jpg,1,a,2,2,,,,,1,1,gris,gris,
+61,jpg,jpg,1,a,2,2,,,,,1,0,gris,gris,
+62,jpg,jpg,1,a,1,1,,,,,1,1,rojo,rojo,
+63,jpg,jpg,1,e,2,2,,,reflejo,reflejo,1,1,azul,azul,switched front back
+64,jpeg,jpg,0,a,1,1,,,,,0,0,negro,blanco,
+65,jpg,jpg,1,e,1,2,,,,,0,0,gris,gris,image size small
+66,jpg,jpg,1,a,1,1,,,,,0,0,blanco,blanco,image size small
+67,jpg,jpg,1,a,2,2,,,reflejo,reflejo,0,0,gris,gris,
+68,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+69,jpg,jpg,1,d,4,4,,,,,1,1,azul,azul,
+70,jpg,jpg,1,e,4,4,,,,,1,1,gris,gris,
+71,jpg,jpg,1,e,4,4,,,,,1,1,gris,gris,
+72,jpg,jpg,1,e,1,1,,,sombra,sombra,0,0,,,
+73,jpg,jpg,1,e,2,2,,,,,1,1,blanco,blanco,
+74,jpg,jpg,1,e,1,2,,,reflejo,reflejo,0,0,blanco,blanco,
+75,jpg,jpg,1,e,2,1,,,,,0,1,blanco,blanco,
+76,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,"tottaly blurred
+"
+77,jpg,jpg,1,e,1,1,,,,,0,1,blanco,blanco,
+78,jpg,jpg,1,e,2,1,,,,,1,0,gris,girs,
+79,jpg,jpg,1,e,2,2,,,,,1,1,gris,girs,
+80,jpg,jpg,1,e,2,2,,,,,0,0,,,
+81,jpg,jpg,1,e,2,1,,,reflejo,,1,1,madera,madera,
+82,jpeg,jpeg,1,e,4,4,,,reflejo,,1,1,madera,madera,great example just rotated
+83,jpg,jpg,1,e,1,1,,,,,1,0,blanco,blanco,great example
+84,jpeg,jpeg,1,e,4,4,,,reflejo,reflejo,0,1,madera,madera,
+85,jpg,jpg,1,d,1,1,,,dedo,dedo,0,0,blanco,blanco,
+86,jpg,jpg,1,e,2,2,,,sombra,,1,1,blanco,blanco,
+87,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+88,jpeg,jpeg,1,e,4,4,,,,,1,1,blanco,blanco,good quality
+89,jpg,jpg,1,e,4,1,,,,,1,1,gris,gris,
+90,jpg,jpg,1,a,2,2,,,,,1,1,gris,blanco,
+91,jpg,jpg,1,e,1,1,,,dedo,dedo,0,0,verde,verde,back very blurry
+92,jpg,jpg,1,e,1,2,,,,,1,1,negro,negro,
+93,jpeg,jpeg,1,e,2,2,,,,,1,0,madera,madera,
+94,jpg,jpg,1,e,2,1,,,reflejo,reflejo,1,1,blanco,blanco,
+95,jpeg,jpeg,1,e,1,1,,,,,1,1,gris,gris,a bit skewed
+96,jpg,jpg,1,e,1,1,,,,sombra,0,1,,blanco,blurry front
+97,jpg,jpg,1,a,2,2,,,,,1,1,blanco,blanco,small image
+98,jpg,jpg,1,a,1,1,,,,,1,1,madera,madera,bit blurry back
+99,jpg,jpg,1,e,2,2,,,,,0,1,"
+","gris
+",
+100,jpg,jpg,1,a,1,1,,,,,1,1,gris,gris,good quality
+101,jpg,jpg,1,e,2,2,,,,,0,0,gris,gris,
+102,jpg,jpg,1,a,1,1,,,,sombra,0,1,blanco,"blanco
+",
+103,jpg,jpg,1,e,1,1,,,reflejo,dedo,0,0,negro,negro,
+104,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+105,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+106,jpg,jpg,1,a,4,4,,,,,0,1,azul,azul,
+107,jpg,jpg,1,e,2,2,,,reflejo,"sombra
+",0,0,blanco,blanco,
+108,jpg,jpg,1,e,2,2,,,,,1,1,madera,madera,good quality
+109,jpg,jpg,1,a,1,1,,,,,1,1,negro,negro,back blurry
+110,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+111,jpg,jpg,1,e,1,1,,,,reflejo,1,1,azul,azul,
+112,jpeg,jpeg,1,e,2,2,,,,,1,1,blanco,blanco,"good quality
+"
+113,jpg,jpg,1,e,2,2,,,,,0,0,blanco,blanco,"good quality
+"
+114,jpeg,jpeg,1,e,1,1,,,dedo,dedo,0,0,piel,piel,
+115,jpg,jpg,1,e,1,1,,,,,0,1,madera,madera,
+116,jpg,jpg,1,e,2,2,,,reflejo,,1,1,gris,gris,
+117,jpg,jpg,1,d,4,4,,,,,1,0,madera,madera,good quality
+118,jpg,jpg,1,e,1,1,,,,,0,1,rojo,rojo,
+119,jpg,jpg,1,a,1,1,,,reflejo,,1,0,gris,gris,
+120,jpg,jpg,1,e,1,1,,,,,1,1,azul,azul,good quality
+121,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,good quality
+122,jpg,jpg,1,a,1,1,,,dedo,reflejo,0,1,gris,gris,
+123,jpg,jpg,1,e,2,2,,,,,0,1,madera,madera,
+124,jpg,jpg,1,e,1,1,,,reflejo,,1,1,madera,madera,
+125,jpg,jpg,1,e,1,1,,,,,0,0,azul,azul,
+126,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+127,jpg,jpg,1,a,1,1,,,reflejo,,0,0,blanco,blanco,
+128,jpg,jpg,1,e,1,1,,,,,0,0,,,cropped
+129,jpg,jpg,1,e,1,1,,,,,0,0,verde,verde,
+130,jpg,jpg,1,e,1,1,,,,,0,0,,,cropped
+131,jpg,jpg,1,e,1,1,,,reflejo,,1,1,azul,azul,
+132,jpg,jpg,1,e,2,2,,,,,1,1,madera,madera,
+133,jpg,jpg,1,e,1,1,,,,,1,0,azul,azul,good quality
+134,jpeg,jpeg,1,a,4,4,,,reflejo,,1,1,gris,gris,
+135,jpg,jpg,1,e,4,4,,,,,1,1,gris,gris,good quality
+136,jpg,jpg,1,a,3,3,,,reflejo,reflejo,1,1,blanco,blanco,
+137,jpg,jpg,1,d,,4,,,,dedo,1,0,,gris,fornt not found
+138,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+139,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+140,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+141,jpeg,jpeg,1,e,4,4,,,,,0,1,blanco,blanco,good quality
+142,jpeg,jpeg,1,a,1,3,,,,,1,1,azul,azul,
+143,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,good quality
+144,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+145,jpg,jpg,1,e,1,1,,,,,0,0,gris,gris,good quality
+146,jpeg,jpeg,1,e,2,2,,,,sombra,0,0,madera,madera,
+147,jpeg,jpeg,1,e,1,1,,,,,1,1,blanco,blanco,
+148,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,different backgrounds
+149,jpg,jpg,1,a,2,1,,,,,1,1,azul,azul,good qualilty
+150,jpg,jpg,1,e,3,2,,,,,1,0,blanco,"blanco
+",different backgrounds
+151,jpeg,jpeg,1,a,2,2,,,reflejo,,0,0,blanco,blanco,
+152,jpeg,jpeg,1,a,1,1,,,,,1,1,madera,madera,
+153,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,wierd position
+154,jpg,jpg,1,e,1,1,,,,,1,0,gris,gris,
+155,jpg,jpg,1,e,2,1,,,,,0,1,gris,gris,watermarks
+156,jpeg,jpeg,1,,,,,,,,,,,,passaport
+157,jpeg,jpeg,1,e,1,1,,,reflejo,,0,0,blanco,blanco,
+158,jpg,jpg,1,a,1,1,,,dedo,dedo,1,1,piel,piel,
+159,jpg,jpg,1,e,2,1,,,,,1,1,gris,gris,
+160,jpg,jpg,1,a,2,2,,,,,1,1,blanco,blanco,
+161,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,good quality
+162,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+163,jpg,jpg,1,a,1,3,,,,,0,1,verde,verde,
+164,jpg,jpg,1,a,1,1,,,,,0,0,,,crop
+165,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+166,jpg,jpg,1,e,2,2,,,,,0,1,blanco,blanco,
+167,jpg,jpg,1,a,1,,,,,,0,,blanco,,cant open reverse
+168,jpeg,jpeg,1,e,2,2,,,,,1,1,blanco,blanco,good quality
+169,jpg,jpg,1,e,1,1,,,,,0,1,blanco,blanco,
+170,jpg,jpg,1,a,1,4,,,,,1,0,azul,azul,
+171,jpg,jpg,1,e,2,1,,,reflejo,,1,1,blanco,blanco,
+172,jpg,jpg,1,a,1,1,,,sombra,,1,1,blanco,blanco,
+173,jpeg,jpeg,1,e,1,1,,,,,0,0,,,crop
+174,jpg,jpg,1,e,1,1,,,dedo,dedo,0,0,piel ,piel,
+175,jpg,jpg,1,e,1,1,,,,,0,0,madera,madera,good quality
+176,jpg,jpg,1,e,2,2,,,reflejo,reflejo,1,1,rosa,rosa,
+177,jpg,jpg,1,e,2,2,,,,sombra,1,1,madera,madera,
+178,jpg,jpg,1,e,1,1,,,,,0,1,blanco,blanco,
+179,jpg,jpg,1,e,1,1,,,dedo,dedo,0,0,blanco,blanco,
+180,jpg,jpg,1,e,2,2,,,,,1,1,madera,madera,good quality
+181,jpeg,jpeg,1,e,1,1,,,,,0,0,negro,negro,good quality
+182,jpeg,jpeg,1,e,1,1,,,reflejo,reflejo,1,1,amarillo,amarillo,
+183,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+184,JPG,JPG,1,e,1,2,,,,reflejo,0,0,gris,gris,flip
+185,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+186,jpg,jpg,1,a,2,2,,,,,1,1,madera,madera,
+187,jpeg,jpeg,1,e,1,1,,,reflejo,,1,1,madera,madera,
+188,jpg,jpg,1,e,2,2,,,,,1,1,negro,negro,
+189,jpg,jpg,1,a,2,2,,,,,1,1,blanco,blanco,
+190,jpg,jpg,1,a,1,1,,,,,0,0,blanco,blanco,small image
+191,jpg,jpg,1,e,1,2,,,,,0,0,rosa,rosa,good quality
+192,jpeg,jpeg,1,e,1,1,,,,,1,1,blanco,blanco,
+193,jpg,jpg,1,a,1,1,,,reflejo,reflejo,0,1,negro,negro,
+194,jpg,jpg,1,e,2,3,,,,,1,1,blanco,blanco,front blurry
+195,jpg,jpg,1,a,1,1,,,,,1,0,negro,negro,
+196,jpg,jpg,1,a,1,1,,,,,0,0,blanco,blanco,crop
+197,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+198,jpg,jpg,1,e,1,1,,,dedo,dedo,0,0,piel ,piel,good quality
+199,jpeg,jpeg,1,e,1,1,,,,,1,1,blanco,blanco,
+200,jpg,jpg,1,e,1,1,,,,,1,0,madera,madera,
+201,jpg,jpg,1,e,2,1,,,,,1,1,blanco,blanco,
+202,jpg,jpg,1,e,4,4,,,sombra,sombra,0,1,blanco,blanco,
+203,jpeg,jpeg,1,a,1,2,,,,reflejo,1,1,blanco,blanco,
+204,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+205,jpeg,jpeg,1,e,4,4,,,dedo,dedo,0,0,negro,negro,
+206,pdf,pdf,1,,,,,,,,,,,,
+207,jpg,jpg,1,e,2,2,,,,,0,1,negro,negro,
+208,jpg,jpg,1,e,1,1,,,,,0,0,gris,gris,
+209,jpg,jpg,1,e,2,2,,,,,1,0,blanco,blanco,good quality
+210,jpeg,jpeg,1,a,2,2,,,,,1,1,gris,gris,
+211,jpg,jpg,1,e,3,2,,,,,0,0,gris,gris,
+212,jpg,jpg,1,e,1,1,,,sombra,sombra,0,0,azul ,azul,
+213,jpg,jpg,1,e,1,1,,,,,1,1,amarillo,amarillo,good quality
+214,jpg,jpg,1,e,2,2,,,,,1,0,blanco,blanco,
+215,jpeg,jpeg,1,e,2,2,,,,,1,1,gris,gris,good quality
+216,jpg,jpg,1,e,1,1,,,,sombra,1,1,madera,madera,
+217,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+218,jpg,jpg,1,a,4,4,,,,,0,0,negro,negro,
+219,jpg,jpg,1,e,1,1,,,reflejo,nada,1,1,madera,madera,
+220,jpg,jpg,1,e,1,1,,,,,0,1,blanco,blanco,
+221,jpg,jpg,1,e,1,1,,,,reflejo,1,1,blanco,blanco,small image
+222,jpg,jpg,1,e,1,1,,,,,0,1,madera,madera,
+223,jpg,jpg,1,e,2,2,,,reflejo,reflejo,0,1,madera,madera,
+224,pdf,pdf,1,,,,,,,,,,,,
+225,jpg,jpg,1,e,1,1,,,,,0,0,,,crop
+226,jpg,jpg,1,e,1,1,,,,,0,1,rojo,rojo,
+227,jpg,jpg,1,e,2,2,,,,,1,1,blanco,blanco,
+228,JPEG,JPEG,1,e,1,1,,,,,1,1,blanco,naranja,different background
+229,jpg,jpg,1,e,2,2,,,,,0,1,blanco,blanco,
+230,jpg,jpg,1,d,1,1,,,,,0,0,rosa,rosa,good quality
+231,jpg,jpg,1,e,1,1,,,,,1,1,azul,azul,good quality
+232,jpg,jpg,1,e,1,1,,,,,0,1,naranja,naranja,good quality
+233,jpg,jpg,1,e,4,4,,,,,1,1,negro,negro,good quality
+234,jpeg,jpg,0,e,1,4,,,,,1,1,blanco,negro,different background
+235,jpg,jpg,1,e,2,2,,,,,1,1,blanco,blanco,good quality
+236,jpg,jpg,1,a,1,4,,,,,1,1,blanco,blanco,
+237,jpg,jpg,1,d,2,2,,,,,1,1,blanco,blanco,good quality
+238,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+239,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+240,jpeg,jpeg,1,e,2,2,,,,,0,0,,,crop
+241,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+242,jpg,jpg,1,a,1,1,,,reflejo,reflejo,0,0,madera,negro,suspicious pic
+243,jpg,jpg,1,e,4,4,,,,,1,1,azul,azul,
+244,jpg,jpg,1,d,2,2,,,,,0,0,,,crop
+245,jpg,jpg,1,e,1,1,,,,,0,1,blanco,blanco,
+246,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+247,jpg,jpg,1,e,1,1,,,,,0,1,blanco,blanco,
+248,jpg,jpg,1,e,1,1,,,dedo,dedo,0,0,piel,piel,
+249,JPG,JPG,1,e,1,1,,,dedo,dedo,0,0,blanco,blanco,good quality
+250,jpg,jpg,1,a,4,4,,,,,1,0,negro,negro,
+251,jpg,jpg,1,e,4,1,,,,reflejo,1,1,madera,madera,
+252,jpg,jpg,1,e,2,2,,,,,0,0,blanco,blanco,
+253,jpg,jpg,1,a,3,2,,,,,0,0,blanco,blanco,
+254,jpeg,jpeg,1,a,1,1,,,,,0,0,piel,piel,
+255,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+256,jpg,jpg,1,e,2,2,,,reflejo,,1,0,blanco,blanco,
+257,jpg,jpg,1,e,2,2,,,,,1,0,madera,madera,
+258,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,good quality
+259,jpg,jpg,1,e,2,2,,,,,1,1,madera,madera,
+260,jpg,jpg,1,e,1,1,,,,,0,1,negro,negro,
+261,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+262,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,good quality
+263,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+264,jpg,jpg,1,e,2,2,,,,,0,1,amarillo,amarillo,good quality
+265,jpg,jpg,1,a,1,,,,,,1,,piel,,
+266,jpg,jpg,1,e,1,1,,,,,0,1,madera,madera,
+267,jpg,jpg,1,a,1,1,,,dedo,dedo,0,0,gris,gris,
+268,jpg,jpg,1,e,1,1,,,,,0,0,,piel,different background
+269,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+270,jpg,jpg,1,e,4,2,,,,,0,0,gris,gris,
+271,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+272,jpg,jpg,1,a,2,2,,,,,0,1,gris,gris,
+273,jpg,jpg,1,a,2,2,,,,,1,1,azul,azul,
+274,jpg,jpg,1,a,4,1,,,,,1,0,blanco,blanco,
+275,jpg,jpg,1,e,2,2,,,,,0,0,madera,madera,good quality
+276,jpg,jpg,1,e,2,2,,,,,0,1,azul,azul,
+277,jpeg,jpeg,1,e,1,1,,,reflejo,reflejo,0,1,blanco,blanco,
+278,jpg,jpg,1,a,1,1,,,reflejo,reflejo,1,1,madera,madera,
+279,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,good quality
+280,jpg,jpg,1,e,1,2,,,,,1,1,negro,blanco,different background
+281,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+282,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+283,jpg,jpg,1,e,4,3,,,,,0,0,blanco,blanco,
+284,jpg,jpg,1,a,2,2,,,reflejo,,1,1,blanco,blanco,
+285,jpg,jpg,1,e,1,1,,,,sombra,0,0,rosa,rosa,
+286,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,blurry front
+287,jpeg,jpeg,1,e,2,2,,,,,1,1,gris,gris,good quality
+288,jpg,jpeg,0,a,1,1,,,,dedo,1,1,piel,piel,
+289,jpg,jpg,1,e,1,1,,,,,0,0,madera,madera,
+290,jpg,jpg,1,a,2,2,,,reflejo,,0,0,gris,gris,flip
+291,jpg,jpg,1,a,1,1,,,,,1,1,madera,madera,blurry reverse
+292,jpg,jpg,1,e,4,4,,,,,1,1,gris,gris,good quality
+293,jpeg,jpeg,1,a,2,2,,,reflejo,reflejo,1,1,madera,madera,
+294,jpg,jpg,1,e,1,1,,,reflejo,dedo,0,0,negro,negro,good quality
+295,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+296,jpg,jpg,1,e,2,1,,,,,1,1,gris,gris,
+297,jpg,jpg,1,e,1,1,,,dedo,dedo,0,0,blanco,blanco,
+298,jpeg,jpeg,1,a,1,1,,,,,1,1,blanco,blanco,
+299,jpg,jpg,1,a,2,2,,,,,1,1,madera,madera,
+300,jpg,jpg,1,a,1,1,,,,,0,0,blanco,blanco,
+301,jpeg,jpeg,1,a,1,1,,,,,1,1,"gris
+",gris,
+302,png,png,1,e,1,1,,,,,0,0,,,crop
+303,jpg,jpg,1,e,1,2,,,sombra,sombra,1,1,blanco,blonco,
+304,jpg,jpg,1,e,2,2,,,,,1,0,negro,negro,
+305,jpeg,jpeg,1,e,3,4,,,reflejo,,1,1,amarillo,amarillo,
+306,jpg,jpg,1,e,4,4,,,,,1,1,blanco,blanco,good
+307,jpg,jpg,1,e,1,1,,,,dedo,1,0,amarillo,piel,different background
+308,jpg,jpg,1,e,1,1,,,,,1,0,blanco,blanco,good quality
+309,jpg,jpg,1,e,2,2,,,reflejo,reflejo,0,0,madera,madera,
+310,jpeg,jpeg,1,a,1,1,,,,,1,0,gris,gris,
+311,jpeg,jpeg,1,a,1,1,,,,,0,0,azul,azul,
+312,jpeg,jpeg,1,d,2,2,,,,,1,1,madera,madera,
+313,jpg,jpg,1,e,1,1,,,reflejo,reflejo,0,0,blanco,blanco,good quality
+314,jpeg,jpg,0,e,1,1,,,,,1,1,negro,negro,good quality
+315,jpg,jpg,1,e,1,1,,,,,0,1,verde,verde,
+316,jpg,jpg,1,e,1,1,,,,,0,0,gris,gris,good quality
+317,jpg,jpg,1,e,1,1,,,dedo,reflejo,0,1,piel,gris,different background
+318,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+319,jpg,jpg,1,a,4,4,,,,,0,0,blanco,blanco,
+320,jpg,jpg,1,e,4,4,,,,,0,1,madera,madera,
+321,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,good quality
+322,jpg,jpg,1,e,2,2,,,,,0,0,blanco,blanco,
+323,jpg,jpg,1,e,2,2,,,reflejo,,0,1,blanco,madera,front blurry
+324,jpg,jpg,1,e,2,2,,,,,0,0,madera,madera,
+325,jpeg,jpeg,1,e,1,4,,,reflejo,,1,1,madera,madera,
+326,jpg,jpg,1,a,1,,,,,,0,,gris,,only front
+327,jpg,jpg,1,e,3,2,,,,,0,1,blanco,blanco,blurry front
+328,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+329,jpg,jpg,1,a,1,1,,,,,0,1,azul,azul,
+330,jpeg,jpeg,1,e,2,2,,,reflejo,reflejo,0,0,,,crop
+331,jpeg,jpeg,1,e,1,1,,,,,0,1,blanco,blanco,blurry reverse
+332,jpeg,jpeg,1,a,1,1,,,,,1,1,amarillo,amarillo,
+333,jpeg,jpeg,1,e,2,2,,,,,1,1,gris,gris,
+334,jpg,jpg,1,e,1,1,,,reflejo,dedo,0,0,piel,piel,
+335,jpg,jpg,1,e,2,2,,,,,1,0,blanco,blanco,good quality
+336,png,png,1,e,1,1,,,,,1,1,azul,azul,
+337,jpg,jpg,1,e,4,4,,,,,1,0,azul,azul,blurry front
+338,jpg,jpg,1,e,1,1,,,dedo,,0,,piel,,only front
+339,jpg,jpg,1,a,1,2,,,,,1,1,blanco,blanco,
+340,jpg,jpg,1,e,1,1,,,,,0,0,azul,azul,blurry front
+341,jpg,jpg,1,a,4,2,,,,,1,1,madera,madera,blurry back
+342,jpg,jpg,1,e,4,4,,,,reflejo,0,0,,,crop
+343,jpg,jpg,1,e,1,1,,,,,1,1,Blanco,Blanco,
+344,jpg,jpg,1,d,2,3,,,,,1,1,gris,girs,blurry front
+345,jpeg,jpeg,1,a,1,1,,,,,1,1,amariillo,amarillo,
+346,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,good quality
+347,jpeg,jpeg,1,e,4,4,,,,,0,0,azul,azul,
+348,jpg,jpg,1,e,1,1,,,,,0,0,azul,azul,
+349,jpg,jpg,1,d,1,1,,,,reflejo,0,0,blanco,blanco,
+350,jpg,jpg,1,e,4,4,,,,,1,1,blanco,blanco,
+351,jpg,jpg,1,d,4,4,,,,,1,1,rosa,rosa,good quality
+352,jpg,jpg,1,e,2,2,,,,,1,1,verde,verde,blurry front
+353,jpg,jpg,1,a,2,2,,,,,1,0,rojo,rojo,
+354,jpg,jpg,1,a,1,1,,,,,1,0,negro,negro,
+355,JPG,JPG,1,e,1,1,,,,,1,1,blanco,blanco,goof quality
+356,jpg,jpg,1,e,1,2,,,reflejo,,0,0,blanco,rojo,different backgrounds
+357,jpg,jpg,1,e,1,2,,,,,1,1,negro,negro,blurry reverse
+358,jpg,jpg,1,e,1,2,,,cut,,0,0,,,crop
+359,jpg,jpg,1,a,1,1,,,referjo,reflejo,1,0,negro,negro,
+360,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+361,jpg,jpg,1,d,1,2,,,,,1,1,gris,gris,
+362,jpg,jpg,1,e,2,1,,,,,1,1,blanco,blanco,good quality
+363,jpg,jpg,1,e,4,4,,,,,1,1,gris,gris,
+364,jpg,jpg,1,a,2,1,,,,,1,1,madera,madera,
+365,jpg,jpg,1,e,3,2,,,,,0,0,blanco,blanco,bllurry front
+366,jpg,jpg,1,a,4,4,,,,,0,0,blanco,blanco,
+367,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+368,jpg,jpg,1,e,4,4,,,,,0,1,"madera
+",madera,
+369,jpg,jpg,1,a,1,1,,,,,0,0,gris,gris,
+370,jpg,jpg,1,e,2,2,,,dedo,dedo,0,0,piel,"piel
+",good quality
+371,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+372,jpg,jpg,1,e,2,1,,,refeljo,,0,0,negro,negro,
+373,jpg,jpg,1,a,4,4,,,,,1,1,madera,madera,flip
+374,jpg,jpg,1,e,1,1,,,dedo,dedo,1,1,piel,"piel
+",good quality
+375,jpeg,jpeg,1,e,2,2,,,,,1,1,negro,negro,blurry fornt
+376,jpg,jpg,1,e,2,1,,,,,1,1,rojo,rojo,
+377,jpg,jpg,1,a,1,1,,,,,0,0,negro,negro,
+378,jpg,jpg,1,a,1,1,,,dedo,dedo,0,0,piel,"piel
+",
+379,jpg,jpg,1,e,1,1,,,sombra,sombra,1,1,blanco,blanco,
+380,jpg,jpg,1,e,1,1,,,,,0,0,madera,madera,
+381,jpg,jpg,1,a,2,2,,,,,1,1,blanco,blanco,
+382,jpg,jpg,1,a,2,2,,,,,1,1,negro,negro,
+383,JPG,JPG,1,e,1,1,,,,,0,0,amarillo,amarillo,good quality
+384,jpg,jpg,1,e,1,1,,,dedo,dedo,0,0,piel,"piel
+",
+385,jpeg,jpeg,1,e,4,2,,,,,0,0,,,crop
+386,jpg,jpg,1,e,1,1,,,,,1,1,vlanco,blanco,small image
+387,jpg,jpg,1,a,1,3,,,,,0,0,blanco,madera,different background
+388,jpg,jpg,1,e,1,1,,,,,0,1,rojo,rojo,
+389,jpeg,jpeg,1,d,2,1,,,refllejo,refllejo,0,0,madera,madera,good quality
+390,jpg,jpg,1,e,1,1,,,dedo,dedo,0,0,blanco,blanco,good quality
+391,jpg,jpg,1,e,3,3,,,,,1,1,naranja,naranja,
+392,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,blurry front
+393,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,good quality
+394,jpg,jpg,1,a,1,1,,,,reflejo,0,0,negro,negro,
+395,jpeg,jpeg,1,a,1,1,,,reflejo,reflejo,0,1,madera,madera,
+396,jpg,jpg,1,e,3,2,,,,,0,0,blanco,blanco,
+397,jpg,jpg,1,d,2,2,,,dedo,dedo,0,0,piel,piel,
+398,jpg,jpg,1,a,1,1,,,reflejo,reflejo,0,0,blanco,blanco,
+399,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+400,jpg,jpg,1,e,4,4,,,,,1,1,morado,morado,good quality
+401,jpg,jpg,1,d,1,1,,,,,1,1,verde,"verde
+",good quality
+402,jpeg,jpeg,1,e,1,1,,,,,1,1,negro,negro,good quality
+403,jpg,jpg,1,e,4,4,,,,,0,0,negro,negro,good quality
+404,jpg,png,0,a,1,,,,,,0,,,,cant be read
+405,jpg,jpg,1,e,1,1,,,,,1,1,negro,negro,
+406,jpeg,jpeg,1,e,2,2,,,,,0,0,blanco,blanco,
+407,jpg,jpg,1,d,1,1,,,,,1,1,gris,gris,good quality
+408,jpg,jpg,1,a,4,2,,,reflejo,reflejo,1,1,blanco,blanco,
+409,jpg,jpg,1,e,2,2,,,reflejo,reflejo,1,1,madera,madera,
+410,jpg,jpg,1,a,2,2,,,,,1,1,blanco,blanco,
+411,jpg,jpg,1,e,1,1,,,reflejo,,0,1,azul,azul,"blurry front
+"
+412,JPG,JPG,1,a,2,1,,,,,0,0,blanco,blanco,
+413,jpg,jpg,1,e,2,1,,,,,0,0,gris,gris,good quality
+414,jpg,jpg,1,e,3,1,,,,,0,0,gris,gris,dark pic
+415,jpg,jpg,1,e,1,1,,,,,0,0,,,crop
+416,JPG,JPG,1,e,1,1,,,,,0,0,madera,madera,
+417,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+418,jpg,jpg,1,e,4,4,,,,,0,1,rosa,blanco,differenct background
+419,jpg,jpg,1,a,1,1,,,reflejo,,1,1,"gris
+",gris,
+420,jpeg,jpeg,1,a,1,1,,,,,0,0,,,crop
+421,jpeg,jpeg,1,e,3,2,,,,,1,1,madera,madera,
+422,jpg,jpg,1,e,1,1,,,,,0,1,blanco,amarillo,flip
+423,jpg,jpg,1,d,2,2,,,reflejo,,0,0,blanco,blanco,
+424,jpg,jpg,1,e,1,1,,,reflejo,,1,1,blanco,blanco,
+425,jpg,jpg,1,e,4,4,,,dedo,dedo,0,0,piel,piel,good quality
+426,jpg,jpg,1,e,1,1,,,dedo,sombra,0,0,"piel
+",gris,
+427,jpg,jpg,1,e,1,1,,,,,1,0,blanco,blanco,good quality
+428,jpg,jpg,1,e,1,1,,,,dedo,1,1,azul,azul,
+429,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,good quality
+430,jpg,jpg,1,e,2,3,,,,,1,0,blanco,blanco,
+431,jpg,jpg,1,e,4,4,,,,,0,1,gris,gris,good quality
+432,jpg,jpg,1,e,1,2,,,,,1,1,gris,gris,good quality
+433,png,png,1,a,1,1,,,,,0,0,,,crop
+434,jpg,jpg,1,e,2,1,,,reflejo,reflejo,0,0,gris,gris,
+435,jpg,jpg,1,e,,1,,,,,,0,,blanco,only reverse
+436,jpg,jpeg,0,a,1,2,,,,,1,0,madera,madera,different brackground
+437,jpg,jpg,1,e,1,1,,,,,1,1,blanca,blanca,good quality
+438,jpg,jpg,1,a,1,1,,,,,1,1,gris,gris,
+439,jpg,jpg,1,d,1,1,,,,,0,1,gris,gris,good quality
+440,jpg,jpg,1,e,1,4,,,,,0,0,blanco,blanco,blurry front
+441,jpeg,jpeg,1,e,1,1,,,,,1,0,madera,madera,good quality
+442,jpg,jpg,1,e,2,2,,,,,1,1,rosa,rosa,
+443,jpg,jpg,1,e,1,4,,,,dedo,1,1,madera,piel,different background
+444,JPG,JPG,1,e,1,1,,,,,0,0,madera,,blurry reverse
+445,jpg,jpg,1,,,,,,,,,,,,cant read
+446,jpg,jpg,1,e,1,2,,,,,1,1,rosa,rosa,good quality
+447,jpg,jpg,1,d,1,2,,,sombra,sombra,1,1,blanco,blanco,good quality
+448,jpg,jpg,1,a,1,1,,,,,0,1,rosa,rosa,
+449,jpg,jpg,1,e,1,2,,,reflejo,,0,0,,,crop
+450,jpg,jpg,1,e,2,1,,,sombra,,1,0,madera,blanco,good quality
+451,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+452,jpg,jpg,1,a,1,1,,,reflejo,,1,1,negro,rosa,small image
+453,jpg,jpg,1,a,1,2,,,,,1,1,gris,gris,
+454,jpg,jpg,1,e,1,1,,,dedo,dedo,0,0,banclo,banclo,
+455,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+456,jpg,jpg,1,d,2,2,,,,,0,0,blanco,blanco,
+457,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+458,jpg,jpg,1,e,1,1,,,,,0,0,gris,gris,good quality
+459,jpg,jpg,1,a,2,2,,,,,1,1,mmadera,madera,dark pic
+460,JPG,JPG,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+461,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,good quality
+462,jpeg,jpeg,1,e,4,4,,,,,1,1,blanco,blanco,good quality
+463,jpeg,jpeg,1,a,2,2,,,,,1,1,blanco,blanco,
+464,jpg,jpg,1,d,1,1,,,,,1,1,madera,madera,goos quality
+465,jpg,jpg,1,e,2,1,,,reflejo,,1,1,gris,blanco,different background
+466,jpg,jpg,1,a,1,1,,,,,1,1,madera,madera,small image
+467,jpg,jpg,1,e,1,1,,,,,0,1,madera,madera,good quality
+468,jpg,jpg,1,e,1,2,,,,,0,1,gris,gris,good quality
+469,png,png,1,,,,,,,,,,,,cant read
+470,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,good quality
+471,jpg,jpg,1,a,1,1,,,,,0,0,gris,gris,
+472,png,png,1,,,,,,,,,,,,cant read
+473,jpg,jpg,1,d,1,1,,,,,0,0,azul,azul,good quality
+474,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,good quality
+475,jpg,jpg,1,e,1,1,,,,,0,0,madera,madera,good quality
+476,jpg,jpg,1,e,1,1,,,,,1,1,azul,azul,good quality
+477,jpg,jpg,1,a,1,1,,,,,1,0,blanco,blanco,
+478,jpg,jpg,1,e,1,1,,,,,0,1,blanco,blanco,good quality
+479,jpeg,jpeg,1,e,1,1,,,,,0,1,gris,gris,
+480,jpg,jpg,1,a,1,1,,,reflejo,reflejo,1,1,blanco,blanco,
+481,jpg,jpg,1,e,3,1,,,reflejo,reflejo,0,1,blanco,blanco,
+482,jpg,jpg,1,e,2,2,,,,,1,1,"blanco
+",blanco,good quality
+483,jpg,jpg,1,e,1,1,,,,,1,0,"gris
+",gris,
+484,jpg,jpg,1,a,1,1,,,dedo,dedo,0,0,piel,piel,
+485,jpg,jpg,1,e,2,2,,,,,1,1,"blanco
+",blanco,good quality
+486,jpg,jpg,1,e,1,1,,,,sombra,1,1,blanco,blanco,good quality
+487,jpg,jpg,1,e,1,1,,,,,0,1,blanco,blanco,
+488,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+489,jpg,jpg,1,d,2,2,,,,,1,1,azul,azul,good quality
+490,jpg,jpg,1,e,2,2,,,reflejo,,0,0,gris,gris,blurry front
+491,jpg,jpg,1,e,1,1,,,reflejo,,1,1,madera,madera,
+492,jpg,jpg,1,e,1,4,,,reflejo,reflejo,1,0,madera,madera,
+493,jpg,jpg,1,e,1,1,,,sombra,sombra,1,1,blanco,blanco,
+494,jpg,jpg,1,e,2,3,,,,,1,1,blanco,blanco,good quality
+495,jpg,jpg,1,a,4,1,,,,,0,1,gris,gris,
+496,jpg,jpg,1,e,4,4,,,reflejo,sombra,1,1,azul,azul,
+497,jpg,jpg,1,e,1,1,,,,,1,0,madera,azul,different background
+498,jpg,jpg,1,d,4,4,,,reflejo,reflejo,0,0,blanco,blanco,good quality
+499,jpg,jpg,1,e,2,2,,,crop,,0,0,negro,negro,good quality
+500,jpg,jpg,1,e,2,2,,,,sombra,0,0,gris,gris,
+501,jpg,jpg,1,d,2,1,,,,,0,0,amarillo,amarillo,good quality
+502,jpg,jpg,1,e,1,1,,,,,0,1,madera,madera,
+503,jpeg,jpeg,1,a,1,1,,,reflejo,"dedo
+",0,0,negro,negro,
+504,jpg,jpg,1,e,1,1,,,dedo,"dedo
+",0,0,piel,piel,
+505,jpg,jpg,1,e,1,1,,,reflejo,reflejo,1,1,negro,negro,
+506,jpg,jpg,1,e,4,4,,,,,1,1,blanco,blanco,
+507,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+508,jpeg,jpeg,1,a,1,1,,,,,1,1,gris,gris,
+509,jpg,jpg,1,e,2,3,,,,,0,0,madera,madera,good quality
+510,jpg,jpg,1,a,1,1,,,,,1,1,madera,madera,
+511,jpg,jpg,1,e,4,4,,,,,0,0,blanco,"blanco
+",
+512,jpg,jpg,1,e,1,1,,,reflejo,reflejo,0,0,negro,negro,
+513,jpg,jpg,1,a,1,1,,,,,1,1,madera,madera,
+514,jpg,jpg,1,e,1,1,,,,,0,0,azul,azul,
+515,jpg,jpg,1,e,1,2,,,,,1,1,gris,verde,blurry back
+516,jpg,jpg,1,e,1,1,,,,,1,1,negro,negro,blurry front
+517,jpg,jpg,1,e,1,1,,,,,0,0,rojo,rojo,
+518,jpg,jpg,1,e,4,4,,,reflejo,,1,1,gris,gris,
+519,jpeg,jpeg,1,e,2,1,,,,,0,0,,,crop
+520,jpeg,jpeg,1,e,2,1,,,,,0,1,amarillo,amarillo,
+521,jpg,jpg,1,e,1,1,,,,,0,0,madera,madera,
+522,jpg,jpg,1,e,3,3,,,,,1,0,blanco,blanco,different background
+523,jpg,jpg,1,e,1,1,,,,,0,0,madera,madera,
+524,jpg,jpg,1,e,1,1,,,,,0,0,,,crop
+525,jpg,jpg,1,e,4,4,,,,,0,0,blanco,blanco,
+526,jpg,jpg,1,e,2,2,,,,,1,1,blanco,blanco,
+527,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,blurry front
+528,jpg,jpg,1,e,2,2,,,reflejo,,1,1,rojo,rojo,blurry front
+529,jpeg,jpeg,1,e,4,1,,,,,0,1,blanco,blanco,good quality
+530,jpeg,jpeg,1,e,2,1,,,sombra,sombra,1,1,blanco,blanco,
+531,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,good quality
+532,jpg,jpg,1,e,1,1,,,,,0,1,verde,verde,
+533,jpeg,jpeg,1,e,1,1,,,,,0,0,azul,azul,
+534,jpg,jpg,1,a,3,3,,,,,0,0,madera,madera,different background
+535,jpg,jpg,1,e,1,1,,,,,1,1,amarillo,amarillo,
+536,jpg,jpg,1,e,3,2,,,,,0,0,negro,negro,
+537,jpg,jpg,1,a,1,1,,,,,0,0,,,crop
+538,jpg,jpg,1,a,2,1,,,,,0,0,negro,negro,
+539,jpeg,jpeg,1,a,1,1,,,,,0,0,negro,negri,
+540,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+541,jpg,jpg,1,a,2,1,,,,,0,0,,,crop
+542,jpg,jpg,1,a,1,1,,,,,0,1,azul,azul,
+543,jpg,jpg,1,a,2,2,,,,,0,1,azul,azul,
+544,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+545,PNG,PNG,1,e,1,1,,,,,0,0,,,crop
+546,jpg,jpg,1,e,4,4,,,,,1,1,blanco,azul,blurry front
+547,jpg,jpg,1,a,2,2,,,,,1,0,blanco,blanco,
+548,jpg,jpg,1,e,4,4,,,dedos,dedos,0,0,azul,azul,
+549,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+550,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+551,jpg,jpg,1,e,1,4,,,,,1,1,negro,negro,blurry front
+552,jpg,jpg,1,e,1,1,,,,,0,0,,,crop
+553,jpg,jpg,1,a,1,1,,,,,0,0,madera,madera,
+554,jpg,jpg,1,e,1,1,,,,,0,1,madera,madera,blurry back
+555,jpg,jpg,1,e,3,2,,,,,0,1,blanco,blanco,
+556,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+557,jpg,jpg,1,e,2,2,,,,,1,1,madera,madera,
+558,jpg,jpg,1,e,4,1,,,,,0,1,azul,azul,
+559,jpg,jpg,1,e,1,1,,,,,0,0,verde,verde,
+560,jpg,jpg,1,e,4,4,,,,,1,1,blanco,blanco,
+561,jpg,jpg,1,e,2,1,,,,,0,0,azul,azul,
+562,jpeg,jpeg,1,e,4,4,,,,,1,1,gris,gris,
+563,jpg,jpg,1,e,1,1,,,dedos,dedos,0,0,piel,piel,
+564,jpg,jpg,1,e,1,2,,,,,1,1,madera,madera,
+565,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+566,jpeg,jpeg,1,e,1,1,,,,,1,1,negro,negro,
+567,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+568,jpg,jpg,1,a,1,1,,,,,0,0,gris,gris,
+569,jpeg,jpeg,1,e,1,1,,,,,1,1,gris,gris,
+570,jpg,jpg,1,e,1,1,,,,sombra,0,1,blanco,blanco,
+571,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,blurry front
+572,jpg,jpg,1,e,2,1,,,,,0,1,blanco,blanco,different background
+573,jpg,jpg,1,e,2,2,,,,,1,1,rosa,rosa,
+574,jpeg,jpeg,1,e,4,2,,,,,1,1,azul,azul,
+575,jpg,jpg,1,e,2,2,,,,,0,0,madera,madera,
+576,jpeg,jpeg,1,e,2,1,,,,,1,0,madera,madera,
+577,jpg,jpg,1,e,4,2,,,,,1,1,amarillo,amarillo,
+578,jpg,jpg,1,e,1,1,,,,,0,0,azul,azul,
+579,jpeg,jpg,0,e,2,2,,,,,0,0,blanco,negro,different background
+580,jpg,jpg,1,e,4,1,,,,,0,1,negro,negro,
+581,jpg,jpg,1,a,1,1,,,,,0,0,madera,madera,
+582,jpg,jpg,1,e,1,1,,,,,0,1,blanco,blanco,
+583,jpg,jpg,1,a,4,4,,,,,1,1,blanco,blanco,
+584,jpg,jpg,1,e,1,1,,,,,1,1,azul,azul,different background
+585,jpg,jpg,1,e,2,1,,,,,0,1,rojo,rojo,
+586,jpg,jpg,1,e,2,2,,,,,0,0,rosa,rosa,
+587,jpg,jpg,1,a,1,2,,,,,1,1,madera,madera,
+588,jpg,jpg,1,a,2,2,,,,,0,0,azul,azul,
+589,jpg,jpg,1,a,1,1,,,,,1,1,azul,azul,blurry front
+590,jpeg,jpeg,1,a,2,2,,,,,1,1,blanco,blanco,blurry reverse
+591,jpg,jpg,1,e,2,3,,,,,0,1,azul,azul,
+592,jpg,jpg,1,a,2,2,,,,,0,0,negro,negro,
+593,jpg,jpg,1,e,4,4,,,,,1,1,blanco,blanco,
+594,jpg,jpg,1,a,2,2,,,,,0,0,blanco,blanco,
+595,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+596,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+597,jpg,jpg,1,a,2,2,,,,,1,1,blanco,blanco,
+598,jpg,jpg,1,e,4,2,,,,,0,0,cafe,cafe,
+599,jpg,jpg,1,e,2,1,,,,,1,1,amarillo,amarillo,
+600,jpg,jpg,1,e,1,1,,,,,1,0,azul,blanco,different background
+601,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+602,jpg,jpg,1,e,2,2,,,,,1,1,blanco,blanco,
+603,jpeg,jpeg,1,a,1,1,,,,,1,1,azul,azul,
+604,jpg,jpg,1,e,1,1,,,,,1,1,negro,negro,
+605,jpg,jpg,1,a,1,1,,,,,0,1,madera,madera,
+606,jpg,jpg,1,e,1,1,,,dedos,dedos,0,0,piel,piel,
+607,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+608,jpeg,jpeg,1,e,1,1,,,,,0,0,,0,crop
+609,jpg,jpg,1,a,4,2,,,,,1,1,azul,azul,blurry front
+610,jpeg,jpg,0,e,4,2,,,,dedos,1,0,blanco,dedos,
+611,jpeg,jpeg,1,e,2,2,,,,,1,1,negro,negro,
+612,jpg,jpg,1,e,1,1,,,,,1,1,rojo,rojo,
+613,jpg,jpg,1,e,1,2,,,,,1,1,negro,negro,
+614,jpg,jpg,1,e,2,2,,,,,0,0,negro,negro,
+615,jpg,jpg,1,e,2,2,,,,,1,1,blanco,blanco,
+616,jpg,jpg,1,a,1,2,,,,,0,0,blanco,blanco,
+617,jpg,jpg,1,a,1,1,,,,,1,1,rojo,rojo,
+618,jpg,jpg,1,a,1,1,,,,,0,0,negro,negro,
+619,jpg,jpg,1,e,1,1,,,,,0,0,,0,crop
+620,jpg,jpg,1,e,1,1,,,,,0,1,blanco,blanco,
+621,jpeg,jpeg,1,a,1,1,,,,,0,0,,0,crop
+622,jpg,jpg,1,e,1,1,,,,,0,0,negro,negro,
+623,jpg,jpg,1,e,1,1,,,dedos,dedos,0,0,piel,piel,
+624,jpg,jpg,1,e,2,2,,,,,0,0,piel,piel,
+625,jpeg,jpeg,1,e,2,2,,,dedos,dedos,0,0,piel,piel,
+626,png,png,1,e,2,2,,,,,0,0,blanco,blanco,
+627,jpg,jpg,1,e,1,1,,,,,1,1,negro,negro,
+628,jpg,jpg,1,e,1,1,,,,,1,1,rojo,rojo,
+629,jpeg,jpeg,1,e,2,2,,,,,1,1,verde,verde,
+630,jpeg,jpeg,1,e,2,2,,,,,0,1,madera,madera,
+631,jpg,jpg,1,e,4,4,,,,,0,1,rosa,rosa,
+632,jpeg,jpeg,1,e,1,1,,,,,1,1,blanco,blanco,
+633,jpg,jpg,1,a,1,1,,,reflejo,,1,0,cafe,cafe,
+634,jpg,jpg,1,e,1,1,,,,,0,0,rojo,rojo,
+635,jpg,jpg,1,e,2,2,,,,,1,1,blanco,blanco,
+636,jpg,jpg,1,e,1,1,,,,sombra,1,0,blanco,blanco,
+637,jpg,jpg,1,a,1,1,,,,,0,0,blanco,blanco,
+638,jpg,jpg,1,a,1,1,,,dedos,dedos,0,0,piel,piel,
+639,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+640,jpeg,jpeg,1,a,2,2,,,,,1,1,madera,madera,
+641,jpeg,jpeg,1,e,1,1,,,reflejo,reflejo,0,0,blanco,blanco,
+642,JPG,JPG,1,e,1,1,,,,,0,0,blanco,blanco,
+643,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+644,jpg,png,0,e,1,1,,,,,0,0,blanco,blanco,
+645,jpg,jpg,1,e,1,1,,,,,0,0,rosa,rosa,different background
+646,jpg,jpg,1,e,4,4,,,,,1,1,blanco,blanco,
+647,jpg,jpg,1,a,1,1,,,,,1,1,verde,verde,
+648,jpg,jpg,1,e,4,4,,,,,0,0,blanco,blanco,
+649,jpg,jpg,1,a,1,1,,,,,0,0,,0,crop
+650,jpg,jpg,1,e,2,1,,,reflejo,,1,1,rosa,rosa,
+651,jpeg,jpeg,1,e,1,1,,,,,1,1,verde,verde,
+652,jpg,jpg,1,a,1,1,,,,,0,0,,,crop
+653,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+654,jpg,jpg,1,e,4,4,,,,,0,0,blanco,blanco,
+655,jpg,jpg,1,e,2,1,,,,,1,0,blanco,blanco,
+656,jpg,,1,a,1,1,,,,,1,1,azul,azul,
+657,jpg,jpg,1,e,1,1,,,,,0,0,,0,crop
+658,jpg,jpg,1,e,2,2,,,,,1,1,negro,negro,
+659,jpg,jpg,1,e,2,2,,,,,1,1,blanco,blanco,
+660,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+661,jpeg,jpeg,1,e,2,2,,,,,1,1,madera,madera,
+662,jpg,jpg,1,e,1,1,,,reflejo,,1,1,amarillo,amarillo,
+663,jpg,jpg,1,e,4,4,,,,,0,0,blanco,blanco,
+664,jpeg,jpeg,1,e,1,1,,,,,0,0,,0,crop
+665,jpg,jpg,1,e,3,2,,,,,1,1,madera,madera,
+666,jpg,jpg,1,e,1,1,,,,,0,0,gris,gris,
+667,JPG,JPG,1,a,1,1,,,,,1,1,gris,gris,
+668,jpg,jpg,1,a,1,1,,,,,0,0,blanco,blanco,
+669,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+670,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+671,jpeg,jpeg,1,e,2,2,,,,,1,1,rojo,rojo,
+672,jpg,jpg,1,e,1,1,,,,,0,0,madera,madera,
+673,jpg,jpg,1,a,2,2,,,,,1,0,negro,negro,
+674,jpg,jpg,1,e,2,2,,,,,0,0,negro,negro,
+675,jpg,jpg,1,e,2,2,,,,,1,1,negro,negro,
+676,jpg,jpg,1,e,2,1,,,,,1,1,rojo,rojo,blurry reverse
+677,jpg,jpg,1,e,1,1,,,sombra,sombra,1,1,naranja,naranja,
+678,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+679,jpeg,jpeg,1,e,4,4,,,,,1,0,madera,madera,
+680,jpg,jpg,1,a,4,1,,,,,0,0,negro,negro,
+681,jpg,jpg,1,e,1,2,,,,,0,0,blanco,blanco,
+682,jpeg,jpeg,1,a,2,2,,,,reflejo,0,0,blanco,blanco,
+683,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+684,jpeg,jpeg,1,e,1,1,,,,,1,1,madera,madera,
+685,jpg,jpg,1,e,2,2,,,,,0,0,negro,negro,
+686,JPG,JPG,1,a,4,4,,,,,0,0,negro,negro,
+687,jpg,jpg,1,a,1,2,,,,,0,0,azul,azul,
+688,jpg,jpg,1,e,2,2,,,reflejo,,1,1,verde,verde,
+689,jpg,jpg,1,e,1,1,,,,,0,0,,0,crop
+690,jpeg,jpeg,1,e,2,2,,,,,1,1,gris,gris,
+691,jpg,jpg,1,e,1,1,,,reflejo,,0,0,azul,azul,
+692,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+693,jpg,jpg,1,e,1,2,,,,,1,1,negro,negro,
+694,jpg,jpg,1,e,2,2,,,,,0,0,madera,madera,
+695,jpg,jpg,1,a,1,1,,,,,0,0,blanco,blanco,
+696,jpg,jpg,1,e,1,2,,,,,1,1,negro,negro,
+697,jpg,jpg,1,a,1,3,,,,,0,0,blanco,blanco,
+698,jpeg,jpeg,1,a,4,4,,,,,1,1,blanco,blanco,
+699,jpg,jpg,1,a,1,2,,,sombra,sombra,1,1,blanco,blanco,
+700,jpg,jpg,1,e,2,2,,,,,0,1,negro,negro,
+701,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+702,jpg,jpg,1,e,1,1,,,sombra,,0,0,verde,verde,
+703,jpg,jpg,1,e,1,1,,,,,0,0,madera,madera,blurry front
+704,jpeg,jpeg,1,e,1,1,,,,,1,1,madera,madera,
+705,jpg,jpg,1,a,1,3,,,,,1,0,amarillo,amarillo,
+706,jpg,jpg,1,a,4,4,,,,,1,1,negro,negro,blurry front
+707,jpg,jpg,1,a,1,1,,,,,1,1,naranja,naranja,blurry reverse
+708,jpg,jpg,1,a,1,1,,,,,0,0,,0,crop
+709,jpeg,jpeg,1,e,1,1,,,,,1,0,madera,madera,
+710,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+711,jpg,jpg,1,e,1,1,,,,reflejo,0,0,madera,madera,
+712,jpg,jpg,1,e,1,1,,,,,1,1,rojo,rojo,
+713,jpg,jpg,1,a,1,1,,,,,0,0,rojo,rojo,
+714,jpeg,jpeg,1,e,2,2,,,,,1,1,rosa,rosa,
+715,jpg,jpg,1,e,2,1,,,,,1,1,blanco,blanco,different background
+716,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+717,jpg,jpg,1,a,4,1,,,dedos,dedos,0,0,piel,piel,
+718,jpg,jpg,1,a,1,1,,,dedos,dedos,0,0,piel,piel,
+719,jpg,jpg,1,e,1,2,,,,,0,0,verde,verde,
+720,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+721,jpg,jpg,1,a,1,1,,,,,0,0,negro,negro,
+722,jpg,jpg,1,e,1,1,,,dedos,dedos,0,0,piel,piel,
+723,jpg,jpg,1,e,4,4,,,,,0,0,negro,negro,
+724,jpg,jpg,1,a,2,2,,,,,0,1,blanco,blanco,different backgroun
+725,pdf,pdf,1,a,1,1,,,,,0,0,blanco,blanco,scan
+726,jpg,jpg,1,a,1,1,,,,,0,0,gris,gris,
+727,jpg,jpg,1,e,4,3,,,,,0,0,verde,verde,
+728,jpg,jpg,1,a,4,4,,,,,1,1,blanco,blanco,
+729,jpg,jpg,1,a,1,1,,,,,0,0,blanco,blanco,
+730,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+731,jpg,jpg,1,e,4,4,,,,,1,0,madera,madera,
+732,jpg,jpg,1,e,1,2,,,,,1,0,blanco,blanco,
+733,jpg,jpg,1,e,1,1,,,,reflejo,1,1,blanco,blanco,
+734,jpg,jpg,1,e,4,4,,,,,1,0,azul,azul,
+735,jpg,jpg,1,e,1,2,,,sombra,sombra,0,0,gris,gris,
+736,jpg,jpg,1,e,1,1,,,,,0,0,,0,crop
+737,jpg,jpg,1,e,1,1,,,,,1,1,negro,negro,
+738,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,
+739,jpg,jpg,1,e,4,4,,,,,1,1,blanco,blanco,
+740,jpeg,jpeg,1,e,1,1,,,,sombra,0,0,amarillo,amarillo,
+741,jpg,jpg,1,e,1,1,,,,,0,0,,0,crop
+742,jpg,jpg,1,a,1,2,,,,,1,1,azul,azul,
+743,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+744,jpg,jpg,1,e,4,4,,,,,1,1,blanco,blanco,
+745,jpg,jpg,1,e,1,1,,,,,0,0,verde,verde,
+746,jpg,jpg,1,e,1,1,,,,,1,1,azul,azul,
+747,jpg,jpg,1,a,1,1,,,,,1,1,blanco,blanco,blurry front
+748,jpg,jpg,1,e,4,4,,,dedos,dedos,0,0,piel,piel,
+749,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+750,jpg,jpg,1,e,1,1,,,,,0,0,azul,azul,
+751,jpg,jpg,1,a,1,,,,sombra,sombra,1,1,negro,negro,
+752,jpg,jpg,1,a,4,3,,,,,0,0,madera,madera,
+753,jpg,jpg,1,a,2,2,,,,,0,0,,0,crop
+754,jpg,jpg,1,e,1,1,,,,,0,0,,0,crop
+755,jpg,jpg,1,a,1,4,,,reflejo,,1,1,negro,negro,
+756,jpg,jpg,1,e,1,1,,,dedos,,0,0,piel,piel,
+757,jpg,jpg,1,a,4,4,,,,,1,1,verde,verde,different background
+758,jpg,jpg,1,a,1,1,,,,,0,0,gris,gris,
+759,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+760,jpg,jpg,1,e,2,2,,,,,0,0,,0,crop
+761,jpg,jpg,1,e,4,4,,,,,1,1,negro,negro,
+762,jpg,jpg,1,e,1,2,,,reflejo,,0,0,blanco,blanco,
+763,jpg,jpg,1,e,1,1,,,dedos,dedos,0,0,piel,piel,
+764,jpg,jpg,1,e,1,3,,,,,1,0,azul,azul,different background
+765,jpg,jpg,1,e,4,4,,,,,1,1,cafe,cafe,
+766,jpg,jpg,1,e,1,1,,,,,0,0,negro,negro,
+767,jpg,jpg,1,e,1,1,,,,,0,0,negro,negro,
+768,jpg,jpg,1,e,4,4,,,,,0,0,blanco,blanco,
+769,jpg,jpg,1,e,1,1,,,,,0,0,negro,negro,blurry reverse
+770,jpg,jpg,1,a,2,2,,,reflejo,reflejo,1,1,gris,gris,
+771,jpg,jpg,1,e,2,2,,,dedos,dedos,0,0,piel,piel,
+772,jpg,jpg,1,a,1,1,,,,,0,0,madera,madera,
+773,jpeg,jpeg,1,e,1,1,,,,,0,0,,0,crop
+774,jpg,jpg,1,e,1,2,,,,dedos,0,0,gris,gris,
+775,png,png,1,a,1,1,,,dedos,dedos,0,0,gris,gris,
+776,jpg,jpg,1,a,2,2,,,,,1,1,gris,gris,
+777,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+778,jpg,jpg,1,e,1,1,,,reflejo,reflejo,0,0,blanco,blanco,
+779,jpg,jpg,1,e,1,1,,,,,0,0,negro,negro,blurry front
+780,jpeg,jpeg,1,d,1,1,,,,,0,0,rojo,rojo,blurry reverse
+781,jpg,jpg,1,a,1,1,,,,,0,0,blanco,blanco,
+782,jpg,jpg,1,e,4,1,,,reflejo,,0,1,blanco,blanco,
+783,jpg,jpg,1,a,1,2,,,,,1,1,negro,negro,
+784,jpg,jpg,1,e,1,1,,,,,1,1,verde,verde,
+785,jpg,jpg,1,a,2,2,,,,,1,1,blanco,blanco,
+786,jpg,jpg,1,e,1,1,,,,,0,0,,0,crop
+787,jpg,jpg,1,e,1,1,,,,,0,0,negro,negro,
+788,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+789,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+790,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+791,jpeg,jpeg,1,e,1,1,,,,,0,0,,0,crop
+792,jpg,jpg,1,a,4,4,,,reflejo,,0,0,blanco,blanco,
+793,jpg,jpg,1,e,4,4,,,,,0,1,azul,azul,
+794,jpg,jpg,1,a,1,2,,,,,0,0,negro,negro,
+795,jpg,jpg,1,d,2,1,,,sombra,sombra,1,0,madera,madera,
+796,jpeg,jpeg,1,e,1,1,,,,,1,1,madera,madera,
+797,jpg,jpg,1,a,1,1,,,dedos,,0,0,piel,piel,
+798,jpg,jpg,1,a,1,1,,,,,1,1,madera,madera,
+799,jpg,jpg,1,a,4,1,,,,,1,1,negro,blanco,different background
+800,jpeg,jpeg,1,a,2,2,,,,,1,1,madera,madera,
+801,jpg,jpg,1,e,1,1,,,,,0,0,cafe,cafe,
+802,jpg,jpg,1,e,1,1,,,,reflejo,0,0,negro,negro,
+803,jpg,jpg,1,a,4,4,,,,,1,1,azul,azul,
+804,jpg,jpg,1,e,2,2,,,,,0,0,negro,negro,
+805,jpg,jpg,1,e,2,2,,,reflejo,,1,1,negro,negro,
+806,jpg,jpg,1,d,1,1,,,,,0,0,gris,gris,different background
+807,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+808,jpg,jpg,1,e,2,2,,,,,1,1,amarillo,amarillo,
+809,jpg,jpg,1,d,1,1,,,,,0,0,madera,madera,blurry reverse
+810,jpg,jpg,1,e,4,4,,,,reflejo,1,1,azul,azul,
+811,jpg,jpg,1,e,3,3,,,,,0,0,negro,negro,
+812,jpg,jpg,1,e,4,4,,,,,1,0,madera,madera,
+813,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+814,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+815,jpg,jpg,1,e,1,1,,,,,1,1,negro,negro,
+816,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+817,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,blurry front
+818,jpg,jpg,1,e,2,2,,,,,0,0,negro,negro,
+819,jpeg,jpeg,1,e,2,2,,,dedos,dedos,0,0,piel,piel,
+820,jpg,jpg,1,e,4,4,,,,,0,0,gris,gris,
+821,jpg,jpg,1,e,2,2,,,,,0,0,blanco,blanco,
+822,jpg,jpg,1,a,2,2,,,,,1,1,negro,negro,
+823,jpeg,jpeg,1,e,1,1,,,,,0,0,blanco,blanco,
+824,jpg,jpg,1,e,1,2,,,,,1,0,gris,gris,blurry front
+825,jpg,jpg,1,e,2,2,,,,reflejo,1,1,blanco,blanco,different background
+826,jpg,jpg,1,e,4,4,,,,,1,1,gris,gris,
+827,jpg,jpg,1,a,1,1,,,,,1,1,madera,madera,
+828,jpg,jpg,1,a,2,1,,,,dedos,1,0,piel,piel,
+829,jpg,jpg,1,a,1,1,,,,,0,0,madera,madera,
+830,jpg,jpg,1,a,1,1,,,dedos,dedos,0,0,piel,piel,
+831,jpg,jpg,1,e,1,1,,,,,1,1,negro,negro,
+832,jpg,jpg,1,e,1,1,,,,,0,0,amarillo,amarillo,
+833,jpg,jpg,1,e,4,4,,,,,1,1,negro,negro,
+834,jpeg,jpeg,1,e,2,2,,,,,0,0,,0,crop
+835,jpg,jpg,1,e,1,1,,,,reflejo,1,1,gris,gris,
+836,jpg,jpg,1,e,4,4,,,,,1,1,blanco,blanco,
+837,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+838,jpeg,jpeg,1,e,1,1,,,,,1,1,blanco,blanco,
+839,jpg,jpg,1,e,1,1,,,reflejo,reflejo,0,0,blanco,blanco,
+840,jpg,jpg,1,a,1,1,,,sombra,,0,1,madera,madera,
+841,jpg,jpg,1,e,4,4,,,,,0,0,negro,,
+842,jpg,jpg,1,e,2,4,,,,,1,1,azul,azul,
+843,jpeg,jpeg,1,e,2,1,,,,dedos,0,0,madera,piel,
+844,jpg,jpg,1,e,1,1,,,,,0,0,blanco,blanco,
+845,jpg,jpg,1,e,1,1,,,,,1,1,gris,gris,
+846,jpg,jpg,1,a,1,2,,,,,0,0,gris,gris,
+847,jpg,jpg,1,e,2,2,,,,,1,1,gris,gris,
+848,jpg,jpg,1,e,2,2,,,,,1,1,gris,gris,
+849,jpg,jpg,1,a,1,1,,,,,0,0,madera,madera,
+850,jpg,jpg,1,e,1,1,,,sombra,sombra,0,0,blanco,blanco,
+851,jpg,jpg,1,e,1,1,,,sombra,sombra,0,0,naranja,naranja,
+852,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+853,jpg,jpg,1,a,2,2,,,,,1,1,naranja,naranja,blurry reverse
+854,jpg,jpg,1,a,1,1,,,,,1,1,negro,negro,
+855,jpg,jpg,1,d,1,1,,,,,0,1,azul,azul,
+856,jpg,jpg,1,a,2,2,,,,,0,0,amarillo,amarillo,
+857,jpg,jpg,1,d,1,1,,,reflejo,reflejo,1,1,verde,verde,
+858,jpg,jpg,1,e,1,1,,,,,0,0,madera,madera,
+859,jpg,jpg,1,a,1,1,,,,,0,0,madera,madera,
+860,jpg,jpg,1,e,4,1,,,reflejo,,1,1,azul,azul,blurry reverse
+861,jpg,jpg,1,a,1,2,,,,,1,1,blanco,blanco,
+862,jpg,jpg,1,a,4,4,,,,,0,1,negro,negro,
+863,jpg,jpg,1,a,1,2,,,,,0,0,azul,azul,
+864,jpg,jpg,1,e,1,1,,,,,0,0,amarillo,amarillo,
+865,jpeg,jpeg,1,e,1,1,,,,,1,1,madera,madera,
+866,jpg,jpg,1,e,1,2,,,,,1,1,blanco,blanco,
+867,jpg,jpg,1,e,1,1,,,dedos,dedos,0,0,piel,piel,
+868,jpg,jpg,1,a,1,1,,,,,1,1,azul,azul,
+869,jpg,jpg,1,e,4,4,,,,,1,1,naranja,naranja,
+870,jpg,jpg,1,a,1,1,,,,,1,1,madera,madera,
+871,jpeg,jpeg,1,a,1,1,,,sombra,sombra,0,0,blanco,blanco,
+872,jpg,jpg,1,e,1,1,,,dedos,dedos,0,0,piel,piel,
+873,jpg,jpg,1,e,2,2,,,dedos,dedos,0,0,piel,piel,
+874,jpg,jpg,1,a,2,2,,,,,0,0,azul,azul,
+875,jpg,jpg,1,e,2,2,,,,,1,1,blanco,blanco,
+876,jpeg,jpeg,1,e,1,1,,,,,0,0,gris,gris,
+877,jpg,jpg,1,e,2,2,,,,,0,1,azul,azul,
+878,jpg,jpg,1,e,1,1,,,,,0,1,gris,gris,
+879,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+880,jpg,jpg,1,e,2,4,,,,,1,1,madera,madera,
+881,jpg,jpg,1,e,2,2,,,,,1,1,negro,,
+882,jpg,jpg,1,e,2,1,,,,,1,1,blanco,blanco,
+883,jpg,jpg,1,a,1,1,,,,,0,0,azul,azul,
+884,jpg,jpg,1,e,1,1,,,,,1,0,negro,negro,
+885,jpeg,jpeg,1,e,2,2,,,,,1,0,cafe,cafe,
+886,jpg,jpg,1,a,1,1,,,,,1,1,azul,azul,
+887,jpg,jpg,1,a,1,1,,,,,0,0,cafe,cafe,
+888,JPG,JPG,1,e,1,1,,,,,0,0,verde,verde,
+889,jpg,jpg,1,d,1,1,,,,,1,1,azuk,azuk,
+890,jpeg,jpeg,1,e,4,1,,,,,1,0,azul,azul,
+891,jpg,jpg,1,e,2,2,,,,,1,1,madera,madera,
+892,jpg,jpg,1,e,2,1,,,,,0,0,,0,crop
+893,jpg,jpg,1,e,2,1,,,,,0,0,blanco,blanco,
+894,jpg,jpg,1,e,1,1,,,,,0,0,gris,gris,blurry front
+895,jpg,jpg,1,e,1,2,,,,,0,0,madera,madera,
+896,jpg,jpg,1,a,1,1,,,reflejo,reflejo,1,1,madera,madera,
+897,jpg,jpg,1,e,1,1,,,,,1,1,negro,negro,
+898,jpg,jpg,1,e,2,2,,,,,1,1,madera,madera,
+899,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+900,jpg,jpg,1,a,1,1,,,sombra,sombra,1,1,madera,madera,
+901,jpeg,jpeg,1,a,2,2,,,,,1,1,madera,madera,
+902,jpg,jpg,1,a,2,1,,,,,1,1,morado,morado,
+903,jpg,jpg,1,e,1,1,,,,,0,0,madera,madera,
+904,jpg,jpg,1,e,2,2,,,,,1,1,madera,madera,
+905,jpg,jpg,1,e,1,1,,,,sombra,1,1,blanco,blanco,
+906,jpg,jpg,1,e,1,1,,,,,0,0,gris,gris,
+907,jpg,jpg,1,a,4,4,,,,,0,1,cafe,cafe,
+908,jpg,jpg,1,e,2,4,,,dedos,dedos,0,0,piel,piel,
+909,jpg,jpg,1,d,1,1,,,,,1,1,negro,negro,
+910,jpg,jpg,1,e,1,1,,,,,0,0,negro,negro,
+911,jpg,jpg,1,a,3,3,,,,,0,1,azul,azul,
+912,jpg,jpg,1,e,1,1,,,,,0,1,gris,gris,
+913,jpg,jpg,1,e,4,4,,,dedos,dedos,0,0,piel,piel,
+914,jpg,jpg,1,e,2,2,,,,,0,0,morado,morado,
+915,jpg,jpg,1,a,1,2,,,,,1,1,madera,madera,
+916,jpg,jpg,1,e,3,3,,,,,1,1,blanco,blanco,
+917,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+918,jpg,jpg,1,e,1,1,,,,,1,1,cafe,cafe,
+919,jpg,jpg,1,a,4,4,,,,,0,0,blanco,blanco,
+920,jpg,jpg,1,e,1,2,,,reflejo,reflejo,0,0,,0,crop
+921,jpg,jpg,1,e,2,2,,,,,1,1,rojo,rojo,
+922,jpg,jpg,1,e,1,4,,,,,0,0,blanco,blanco,
+923,jpg,jpg,1,e,4,3,,,,,1,1,cafe,cafe,
+924,jpeg,jpeg,1,e,2,1,,,,,0,0,rojo,rojo,blurry front
+925,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+926,jpg,jpg,1,a,2,2,,,,,0,0,madera,madera,
+927,jpg,jpg,1,e,1,1,,,dedos,dedos,0,0,piel,piel,
+928,png,png,1,a,1,1,,,,,0,0,blanco,blanco,
+929,jpg,jpg,1,e,4,4,,,,,1,1,blanco,blanco,
+930,jpeg,jpeg,1,a,2,2,,,,,1,1,blanco,blanco,
+931,jpg,jpg,1,a,2,2,,,,,1,1,blanco,blanco,
+932,bmp,bmp,1,,,,,,,,,,,0,NONEXISTENT
+933,jpg,jpg,1,a,1,1,,,,,1,1,madera,madera,
+934,jpg,jpg,1,e,1,1,,,,,1,1,azul,azul,
+935,jpg,jpg,1,e,1,1,,,,,1,0,gris,gris,
+936,jpg,jpg,1,e,1,1,,,,,0,0,gris,gris,
+937,jpg,jpg,1,e,1,1,,,,,0,0,,0,crop
+938,jpg,jpg,1,e,2,2,,,sombra,sombra,0,0,azul,azul,
+939,jpg,jpg,1,a,4,4,,,,,1,1,madera,madera,
+940,jpeg,jpeg,1,e,1,1,,,,,0,0,gris,gris,blurry front
+941,jpg,jpg,1,e,1,1,,,,,0,0,morado,morado,
+942,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+943,jpg,jpg,1,a,1,1,,,,dedos,1,0,amarillo,piel,different background
+944,jpg,jpg,1,e,1,1,,,,,0,0,gris,gris,
+945,jpg,jpg,1,e,4,4,,,,,0,0,negro,negro,
+946,jpg,jpg,1,a,4,1,,,,,1,1,gris,gris,
+947,jpg,jpg,1,e,1,1,,,dedos,dedos,0,0,piel,piel,
+948,jpg,jpg,1,e,2,1,,,reflejo,reflejo,1,1,blanco,blanco,
+949,jpg,jpg,1,e,2,2,,,reflejo,reflejo,1,1,negro,negro,different background
+950,jpg,jpg,1,a,1,1,,,,,0,0,blanco,blanco,
+951,jpg,jpg,1,a,2,2,,,,,0,0,,,crop
+952,jpg,jpg,1,e,2,2,,,,,1,1,blanco,blanco,
+953,jpg,jpg,1,e,1,1,,,,,0,0,cafe,cafe,
+954,jpg,jpg,1,a,2,2,,,,,1,1,negro,negro,
+955,jpg,jpg,1,d,1,2,,,,,1,1,azul,azul,
+956,jpg,jpg,1,e,1,1,,,,,0,1,azul,azul,
+957,jpg,jpg,1,a,1,1,,,,,1,1,morado,morado,
+958,jpg,jpg,1,e,1,1,,,dedos,dedos,0,0,piel,piel,
+959,jpg,jpg,1,a,2,2,,,reflejo,reflejo,1,1,blanco,blanco,
+960,jpg,jpg,1,a,1,1,,,,,1,1,azul,azul,
+961,jpg,jpg,1,e,4,1,,,,,0,1,naranja,naranja,
+962,jpg,jpg,1,e,1,4,,,,,1,1,azul,azul,
+963,jpg,jpg,1,d,1,1,,,,,1,1,cafe,cafe,
+964,jpg,jpg,1,a,3,3,,,,,1,1,blanco,blanco,
+965,jpeg,jpeg,1,e,1,1,,,,,0,0,madera,madera,
+966,jpeg,jpeg,1,e,1,1,,,,,0,0,,0,crop
+967,jpg,jpg,1,a,1,1,,,,,0,0,azul,azul,
+968,jpg,jpg,1,e,2,2,,,,,0,0,gris,gris,
+969,jpg,jpg,1,a,1,1,,,,,0,0,gris,gris,
+970,jpg,jpg,1,e,1,1,,,,,1,1,amarillo,amarillo,
+971,jpg,jpg,1,e,2,2,,,,,0,0,negro,negro,
+972,jpg,jpg,1,e,2,2,,,,,1,1,madera,madera,
+973,jpg,jpg,1,a,1,1,,,,,0,0,negro,negro,
+974,jpg,jpg,1,a,1,1,,,,dedos,0,0,piel,piel,different background
+975,jpg,jpg,1,a,1,1,,,reflejo,reflejo,1,1,gris,gris,
+976,jpg,jpg,1,e,1,2,,,,,1,1,gris,gris,
+977,pdf,pdf,1,e,1,1,,,,,0,0,,0,crop
+978,jpg,jpg,1,a,1,1,,,dedos,dedos,0,0,piel,piel,
+979,jpg,jpg,1,e,1,2,,,,,1,1,gris,gris,
+980,jpeg,jpeg,1,e,1,1,,,,,1,1,azul,azul,
+981,jpg,jpg,1,e,2,2,,,,,1,1,azul,azul,
+982,jpg,jpg,1,e,1,1,,,,,0,0,cafe,cafe,
+983,jpg,jpg,1,e,1,4,,,,,0,0,azul,azul,different background
+984,jpg,jpg,1,e,1,1,,,,,1,1,madera,madera,
+985,jpg,jpg,1,e,1,1,,,,,1,1,blanco,blanco,
+986,jpg,jpg,1,e,1,1,,,,,0,0,,0,crop
+987,jpg,jpg,1,e,1,1,,,,,0,0,morado,morado,blurry front
+988,jpg,jpg,1,a,1,1,,,,,1,1,madera,madera,
+989,jpg,jpg,1,e,2,2,,,sombra,sombra,1,1,blanco,,
+990,jpg,jpg,1,e,1,1,,,sombra,,0,0,gris,gris,
+991,jpeg,jpeg,1,e,2,2,,,reflejo,reflejo,1,1,blanco,blanco,
+992,jpg,jpg,1,e,1,1,,,reflejo,reflejo,0,0,rojo,rojo,
+993,JPG,JPG,1,a,1,1,,,,,1,1,blanco,blanco,
+994,jpg,jpg,1,e,1,1,,,reflejo,,0,0,blanco,gris,different backgorund
+995,jpg,jpg,1,a,1,1,,,,,0,0,madera,madera,
+996,png,png,1,e,1,1,,,,,0,0,blanco,blanco,
+997,jpg,jpg,1,a,3,3,,,,,1,1,azul,azul,
+998,jpg,jpg,1,a,2,2,,,,,0,1,madera,madera,
+999,jpg,jpg,1,e,1,1,,,,,0,1,madera,madera,good quality
+1000,jpg,jpg,1,e,1,1,,,,,0,0,gris,gris,good quality
+1001,jpg,jpg,1,a,3,1,,,,,0,0,madera,madera,
