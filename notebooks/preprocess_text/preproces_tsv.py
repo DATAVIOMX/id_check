@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import re
 
 class tsv_prep():
 
@@ -47,7 +48,11 @@ class tsv_prep():
 
     def prep_text(self, text_vector, cardtype):
         if cardtype == 'a':
-            cve_elector = "placeholder"
+            try:
+                regex_find = re.compile(r"\w{6}\d{8}\w\d{3}")
+                cve_elector = list(filter(regex_find.search, text_vector))[0]
+            except:
+                cve_elector = 'NOT DETECTED'
             emision = "placeholder"
             ocr_v = "placeholder"
             cic = ''
@@ -55,23 +60,37 @@ class tsv_prep():
             cve_ciudadano = ''
             err_msg = ''
         elif cardtype == 'd':
-            cve_elector = ''
+            try:
+                regex_find = re.compile(r"\w{6}\d{8}\w\d{3}")
+                cve_elector = list(filter(regex_find.search, text_vector))[0]
+            except:
+                cve_elector = 'NOT DETECTED'
             emision = ''
             ocr_v = ''
             cve_ciudadano = ''
             err_msg = ''
             flt = np.array(['DMEX' in mystring for mystring in text_vector])
-            cic, ocr_h = np.array(text_vector)[flt][0].split('<<')
-            cic = cic[-10:len(cic)]
+            try:
+                cic, ocr_h = np.array(text_vector)[flt][0].split('<<')
+                cic = cic[-10:len(cic)]
+            except:
+                cic, ocr_h = ("NOT DETECTED", "NOT DETECTED")
         elif cardtype == 'e':
-            cve_elector = ''
+            try:
+                regex_find = re.compile(r"\w{6}\d{8}\w\d{3}")
+                cve_elector = list(filter(regex_find.search, text_vector))[0]
+            except:
+                cve_elector = 'NOT DETECTED'
             emision = ''
             ocr_v = ''
             ocr_h = ''
             err_msg = ''
             flt = np.array(['DMEX' in mystring for mystring in text_vector])
-            cic, cve_ciudadano = np.array(text_vector)[flt][0].split('<<')
-            cic = cic[-10:len(cic)]
+            try:
+                cic, cve_ciudadano = np.array(text_vector)[flt][0].split('<<')
+                cic = cic[-10:len(cic)]
+            except:
+                cic, cve_ciudadano = ("NOT DETECTED", "NOT DETECTED")
         elif cardtype == 'NOT DETECTED':
             cve_elector = ''
             emision = ''
