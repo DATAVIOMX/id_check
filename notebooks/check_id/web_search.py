@@ -3,6 +3,7 @@ import requests
 from python_anticaptcha import AnticaptchaClient, NoCaptchaTaskProxylessTask
 import pandas as pd
 from datetime import datetime as dt
+import string
 
 class consulta_id():
     '''
@@ -19,16 +20,17 @@ class consulta_id():
 
     '''
 
-
-    
     def __init__(self, id_data):
-      self.cve_elec = str(id_data['cve_elec'])
-      self.num_emis = str(id_data['emision'])
-      self.ocr_v = str(id_data['ocr_vertical'])
-      self.ocr_h = str(id_data['ocr_horizontal'])
-      self.cic = str(id_data['cic'])
-      self.id_ciud = str(id_data['cve_ciudadano'])
-      self.tipo = str(id_data['tipo_cred'])
+      self.cve_elec = str(id_data['cve_elec']).strip(string.punctuation)      
+      self.num_emis = str(id_data['emision']).strip(string.punctuation)     
+      self.ocr_v = str(id_data['ocr_vertical']).strip(string.punctuation)
+      self.ocr_h = str(id_data['ocr_horizontal']).strip(string.punctuation)
+      self.cic = str(id_data['cic']).strip(string.punctuation)
+      self.id_ciud = str(id_data['cve_ciudadano']).strip(string.punctuation)      
+      self.tipo = str(id_data['tipo_cred']).strip(string.punctuation)
+
+      print([self.cve_elec, self.num_emis, self.ocr_v, self.ocr_h, self.cic, self.id_ciud, self.tipo])
+
 
     def ine_check(self, api_key):
       print("Tipo de IFE/INE {}:".format(self.tipo))
