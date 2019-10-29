@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 from python_anticaptcha import AnticaptchaClient, NoCaptchaTaskProxylessTask
 import pandas as pd
+from datetime import datetime as dt
 
 class consulta_id():
     '''
@@ -21,15 +22,16 @@ class consulta_id():
 
     
     def __init__(self, id_data):
-      self.cve_elec = id_data['cve_elec']
-      self.num_emis = id_data['emision']
-      self.ocr_v = id_data['ocr_vertical']
-      self.ocr_h = id_data['ocr_horizontal']
-      self.cic = id_data['cic']
-      self.id_ciud = id_data['cve_ciudadano']
-      self.tipo = id_data['tipo_cred']
+      self.cve_elec = str(id_data['cve_elec'])
+      self.num_emis = str(id_data['emision'])
+      self.ocr_v = str(id_data['ocr_vertical'])
+      self.ocr_h = str(id_data['ocr_horizontal'])
+      self.cic = str(id_data['cic'])
+      self.id_ciud = str(id_data['cve_ciudadano'])
+      self.tipo = str(id_data['tipo_cred'])
 
     def ine_check(self, api_key):
+      print("Tipo de IFE/INE {}:".format(self.tipo))
       #### GET INE PAGE ####
       ine_lista_page = requests.get("https://listanominal.ine.mx/scpln/")
       soup = BeautifulSoup(ine_lista_page.content, 'html.parser')
@@ -43,6 +45,7 @@ class consulta_id():
 
       if all(x == data_sitekeys[0] for x in data_sitekeys):
           print("All the data-sitekeys are identical")
+          str_time = dt.now()
           captcha_site_key = all_captchas[0].attrs['data-sitekey']
           ##### CAPTCHA SOLUTION ####
           site_key =  captcha_site_key # grab from site
@@ -53,6 +56,9 @@ class consulta_id():
           job = client.createTask(task)
           job.join()
           hashed_key = job.get_solution_response()
+          end_time = dt.now()
+          total_time = end_time-str_time
+          print('total time {}'.format(str(total_time)))
       else:
           print("All the data-sitekeys are not identical") #For every data-site-key solve captcha
           ##### CAPTCHA SOLUTION ####
@@ -108,10 +114,6 @@ class consulta_id():
 
     def check_curp(self):
       pass
-
-
-
-
 
 
 

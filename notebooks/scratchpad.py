@@ -4,21 +4,36 @@ import pandas as pd
 import numpy as np
 import os
 import re
+import xlrd
+from bs4 import BeautifulSoup
 
-proj_dir = '/home/ferhdzschz/sandbox/projects/datavio/notebooks/'
+#proj_dir = '/home/ferhdzschz/sandbox/projects/datavio/notebooks/'
+#
+#tsv_1 = pd.read_csv(proj_dir + 'ifes_ocr/2_front.tsv', sep='\t')
+#tsv_2 = pd.read_csv(proj_dir + 'ifes_ocr/2_back.tsv', sep='\t')
+#
+#x = preproces_tsv.tsv_prep(tsv_1, tsv_2)
+#
+#test_list = x.join_tsv()
+#tipo_cred = x.identify_cardtype(test_list)
+#
+#
 
-tsv_1 = pd.read_csv(proj_dir + 'ifes_ocr/1_front.tsv', sep='\t')
-tsv_2 = pd.read_csv(proj_dir + 'ifes_ocr/1_back.tsv', sep='\t')
+tsv_completo = pd.read_excel('/home/ferhdzschz/Downloads/revision_manual.xlsx', sheet_name=4)
 
-x = preproces_tsv.tsv_prep(tsv_1, tsv_2)
+pruebas = tsv_completo.loc[(tsv_completo['tipo_cred'] == 'e') & (tsv_completo['cic'] != 'NOT DETECTED'), :]
 
-test_list = x.join_tsv()
-tipo_cred = x.identify_cardtype(test_list)
-prueba = x.prep_text(test_list, tipo_cred)   
+test = pruebas.iloc[22]
+respuestas = []
 
-w_s = web_search.consulta_id(prueba)
-w_s.ine_check('f93c8b9646c63020ef084ecac088583d')
+for i in range(3,100):       
+    test = pruebas.iloc[i]
+    w_s = web_search.consulta_id(test)
+    response = w_s.ine_check('f93c8b9646c63020ef084ecac088583d')
+    otuput = [test['sample'], response.find('p', {'class': 'lead'})]
+    respuestas.append(otuput)
 
+respuestas[9]  
 #indexes_CLAVE = [i for i,x in enumerate(test_list) if x == 'CLAVE']
 #indexes_DE = [i for i,x in enumerate(test_list) if x == 'DE']
 #index_ELECTOR = test_list.index("ELECTOR")

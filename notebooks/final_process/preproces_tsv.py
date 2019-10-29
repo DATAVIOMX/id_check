@@ -47,7 +47,8 @@ class tsv_prep():
 
     def prep_text(self, text_vector, cardtype):
         if cardtype == 'a':
-            cve_elector = "placeholder"
+            regex_find = re.compile(r"\w{6}\d{8}\w\d{3}")
+            cve_elector = list(filter(regex_find.search, text_vector))[0]
             emision = "placeholder"
             ocr_v = "placeholder"
             cic = ''
@@ -55,7 +56,8 @@ class tsv_prep():
             cve_ciudadano = ''
             err_msg = ''
         elif cardtype == 'd':
-            cve_elector = ''
+            regex_find = re.compile(r"\w{6}\d{8}\w\d{3}")
+            cve_elector = list(filter(regex_find.search, text_vector))[0]
             emision = ''
             ocr_v = ''
             cve_ciudadano = ''
@@ -64,7 +66,8 @@ class tsv_prep():
             cic, ocr_h = np.array(text_vector)[flt][0].split('<<')
             cic = cic[-10:len(cic)]
         elif cardtype == 'e':
-            cve_elector = ''
+            regex_find = re.compile(r"\w{6}\d{8}\w\d{3}")
+            cve_elector = list(filter(regex_find.search, text_vector))[0]
             emision = ''
             ocr_v = ''
             ocr_h = ''
