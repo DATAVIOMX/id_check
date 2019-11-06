@@ -36,11 +36,11 @@ class tsv_prep():
         return(all_text)
 
     def identify_cardtype(self, text_vector):
-        if(('FEDERAL' in text_vector) and ((any('DMEX' in mystring for mystring in text_vector) or (any('IDMEX' in mystring for mystring in text_vector))))):
+        if(any('FEDERAL' in mystring for mystring in text_vector)) and ((any('DMEX' in mystring for mystring in text_vector) or (any('IDMEX' in mystring for mystring in text_vector)))):
             cred_type = 'd'
-        elif('NACIONAL' in text_vector):
+        elif(any('NACIONAL' in mystring for mystring in text_vector)):
             cred_type = 'e'
-        elif(('FEDERAL' in text_vector) and ((any('DOCUMENTO' in mystring for mystring in text_vector) or (any('INTRANSFERIBLE' in mystring for mystring in text_vector))))):
+        elif(any('TO FEDERAL' in mystring for mystring in text_vector)) and ((any('DOCUMENTO' in mystring for mystring in text_vector) or (any('INTRANSFERIBLE' in mystring for mystring in text_vector)))):
             cred_type = 'a'
         else:
             cred_type = 'NOT DETECTED'
@@ -85,7 +85,7 @@ class tsv_prep():
             ocr_v = ''
             ocr_h = ''
             err_msg = ''
-            flt = np.array(['DMEX' in mystring for mystring in text_vector])
+            flt = np.array(['DMEX' in mystring for mystring in text_vector])#buscar en todos los resultados
             try:
                 cic, cve_ciudadano = np.array(text_vector)[flt][0].split('<<')
                 cic = cic[-10:len(cic)]
