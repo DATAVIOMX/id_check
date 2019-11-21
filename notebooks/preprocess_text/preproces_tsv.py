@@ -36,11 +36,20 @@ class tsv_prep():
         return(all_text)
 
     def identify_cardtype(self, text_vector):
-        if(any('FEDERAL' in mystring for mystring in text_vector)) and ((any('DMEX' in mystring for mystring in text_vector) or (any('IDMEX' in mystring for mystring in text_vector)))):
+        ##### OJO HAY QUE TENER CUIDADO CON EL TEXTO ELECCIONES FEDERALES
+        if((any('TO FEDERAL' in mystring for mystring in text_vector)) and \
+            ((any('DMEX' in mystring for mystring in text_vector)) or \
+                (any('IDMEX' in mystring for mystring in text_vector)) or \
+                    (any('0MEX' in mystring for mystring in text_vector)))):
             cred_type = 'd'
-        elif(any('NACIONAL' in mystring for mystring in text_vector)):
+        elif(any('TO NACIONAL' in mystring for mystring in text_vector) or any('TO NACION' in mystring for mystring in text_vector)):
             cred_type = 'e'
-        elif(any('TO FEDERAL' in mystring for mystring in text_vector)) and ((any('DOCUMENTO' in mystring for mystring in text_vector) or (any('INTRANSFERIBLE' in mystring for mystring in text_vector)))):
+        elif(any('TO FEDERAL' in mystring for mystring in text_vector) and \
+            ((any('DOCUMENTO' in mystring for mystring in text_vector)) or \
+                (any('TACHA' in mystring for mystring in text_vector)) or \
+                (any('ENMENDADURA' in mystring for mystring in text_vector)) or \
+                    (any('INTRANSFERIBLE' in mystring for mystring in text_vector)) \
+            )):
             cred_type = 'a'
         else:
             cred_type = 'NOT DETECTED'
