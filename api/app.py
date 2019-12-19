@@ -69,6 +69,11 @@ class AddImageAPI(Resource):
         post method to upload an image file, it must specify the filename, file
         and if it is the front or back of the ID
         """
+        parser.add_argument('picture', type=werkzeug.datastructures.FileStorage)
+        filename = ""
+        image_id = ""
+        atype = ""
+        size = ""
         # Post image to database as HTTP message
         return_dict{"filename": filename, "image-id": image_id, "type": atype
                     "size":size} 
@@ -84,6 +89,11 @@ class ImageAPI(Resource):
         """
         Helper method to check if image exists and its properties
         """
+        filename = ""
+        image_id = ""
+        atype = ""
+        size = ""
+
         return {"filename": filename, "image-id":image_id, "size":size,
                 "type":atype}, 200
 
