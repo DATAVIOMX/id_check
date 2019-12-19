@@ -12,14 +12,16 @@ images
 check-ids
 """
 from flask import Flask, request
-from flask_restful import Resource, Api
+from flask_restful import Resource, Api, reqparse
 import sqlite3
 
 
 app = Flask(__name__)
 api = Api(app)
 
-class Users(Resource):
+parser = reqparse.RequestParser()
+
+class UsersAPI(Resource):
     """
     Users class methods define the calls available through the API to act over
     users in the DB, in this case GET, PUT, POST, DELETE
@@ -28,7 +30,6 @@ class Users(Resource):
         """
         GET method stub, this will query the database for the userid
         """
-        print(userid)
         date_created = '2019-12-16'
         date_termination = '2020-01-16'
         date_last_payment = '2019-12-16'
@@ -43,7 +44,21 @@ class Users(Resource):
         else:
             return {'error':'user not found'}, 404
 
-api.add_resource(Users, '/api/v1/users/<string:userid>')
+class AddUserAPI(Resource):
+    def post(self):
+        """
+        Creates a new user, requires username, and password to generate an API
+        key that is returned to the user
+        """
+        parser.add_argument('username', type=str)
+        parser.add_argument('password', type=str)
+        data = parser.parse_args()         
+        api_key = 'SDDFSF123rs12085654'
+        return {'username': data['username'], 'password': data["password"],
+                "api_key": api_key}, 201
+
+api.add_resource(AddUserAPI, '/api/v1/users') 
+api.add_resource(UsersAPI, '/api/v1/users/<string:userid>')
 
 if __name__ == '__main__':
     app.run(debug=True)
