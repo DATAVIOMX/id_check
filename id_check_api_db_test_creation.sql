@@ -20,3 +20,9 @@ CREATE TABLE api-calls(
 );
 
 
+CREATE TABLE images(
+imageid TEXT,
+creation-date TEXT,
+image BLOB,
+img-type TEXT
+);

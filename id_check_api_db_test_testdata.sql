@@ -1,0 +1,39 @@
+/* 
+DATA INSERTION FOR TESTING THE DATABASE
+AUTHOR: MOTOKO RESEARCH
+DATE: 2019-12-20
+*/
+
+
+/* Data insertion */
+
+INSERT INTO users() VALUES ();
+INSERT INTO users() VALUES ();
+INSERT INTO users() VALUES ();
+INSERT INTO users() VALUES ();
+INSERT INTO users() VALUES ();
+INSERT INTO users() VALUES ();
+INSERT INTO users() VALUES ();
+INSERT INTO users() VALUES ();
+INSERT INTO users() VALUES ();
+INSERT INTO users() VALUES ();
+
+INSERT INTO api-calls() VALUES ();
+INSERT INTO api-calls() VALUES ();
+INSERT INTO api-calls() VALUES ();
+INSERT INTO api-calls() VALUES ();
+INSERT INTO api-calls() VALUES ();
+INSERT INTO api-calls() VALUES ();
+INSERT INTO api-calls() VALUES ();
+INSERT INTO api-calls() VALUES ();
+INSERT INTO api-calls() VALUES ();
+INSERT INTO api-calls() VALUES ();
+INSERT INTO api-calls() VALUES ();
+
+/* IMAGES CAN BE STORED AS NUMPY ARRAY STRINGS */
+INSERT INTO TABLE images()
+INSERT INTO TABLE images()
+INSERT INTO TABLE images()
+INSERT INTO TABLE images()
+INSERT INTO TABLE images()
+INSERT INTO TABLE images()
