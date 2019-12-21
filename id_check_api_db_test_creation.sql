@@ -1,28 +1,29 @@
 CREATE TABLE users(
-    userid INTEGER AUTOINCREMENT PRIMARY KEY,
+    userid INTEGER AUTO INCREMENT PRIMARY KEY,
     username TEXT,
     pwhash TEXT,
-    creation-date TEXT,
-    update-date TEXT,
+    creation_date TEXT,
+    update_date TEXT,
     status INT,
-    api-key TEXT,
-    api-key-exp-date TEXT
+    api_key TEXT,
+    api_key_exp_date TEXT
     );
     
-CREATE TABLE api-calls(
-    callid INTEGER AUTOINCREMENT PRIMARY KEY
-    userid INTEGER FOREIGN KEY REFERENCES users(userid),
-    api-key TEXT,
-    call-date TEXT,
-    call-point TEXT,
-    status code INT,
-    call-text TEXT
+CREATE TABLE api_calls(
+    callid INTEGER AUTO INCREMENT PRIMARY KEY,
+    userid INTEGER,
+    api_key TEXT,
+    call_date TEXT,
+    call_point TEXT,
+    status_code INT,
+    call_text TEXT,
+    FOREIGN KEY(userid) REFERENCES users(userid)
 );
 
 
 CREATE TABLE images(
 imageid TEXT,
-creation-date TEXT,
+creation_date TEXT,
 image BLOB,
-img-type TEXT
+img_type TEXT
 );
