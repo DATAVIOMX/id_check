@@ -98,7 +98,7 @@ class image_recognition():
 
   def handling_ocr_func(self, img):
       try:
-          texto = pytesseract.image_to_string(img, lang="spa")
+          texto = pytesseract.image_to_string(img, lang="spa").strip().split('\n')
       except ValueError:
           texto = ''
       return(texto)
@@ -107,5 +107,6 @@ class image_recognition():
       comp_text = []
       [comp_text.append(self.handling_ocr_func(imagen)) \
           for imagen in self.rois]
-      usefull_text = [palabra for palabra in comp_text if palabra != '']
+      usefull_text = [palabra for frase in comp_text \
+          for palabra in frase if palabra != '']
       return(usefull_text)
