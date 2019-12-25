@@ -17,6 +17,7 @@ import sqlite3
 import werkzeug
 import secrets
 import datetime
+from dateutil.relativedelta import *
 
 app = Flask(__name__)
 api = Api(app)
@@ -57,17 +58,32 @@ class AddUserAPI(Resource):
         key that is returned to the user
         """
         # Get last user id from DB
-        
-        api_key = secrets.url_safe
-        date_created = date.today()
-        date_termination = date_created + 1
+        conn = sqlite3.connect("id-check-db.sqlite")
+        cur = conn.cursor()
+        q_str = """SELECT MAX(userid) from users"""
+        cur.execute(q_str)
+        userid = cur.fetchone()[0] + 1
+        api_key = secrets.token_urlsafe(40)[1:32]
+        now = datetime.datetime.now()
+        creation_date = now.strftime("%Y-%m-%dT%H:%M:%S.%f")
+        update_date = creation_date
+        api_key_exp_date_obj = now + relativedelta(months=+1)
+        api_key_exp_date = api_key_exp_date_obj.strftime("%Y-%m-%dT%H:%M:%S.%f")
         status = 2
+        calls_remaining = 1000
         
         # Load in DB
-        INSERT INTO users (username, passwd, date_created, date_termination,
-        date_last_payment,api_key, ) VALUES ()
-        return {'username': data['username'], 'password': data["password"],
-                "api_key": api_key}, 201
+        cur.execute("""INSERT INTO users (userid, creation_date, update_date,
+                    status, api_key, api_key_exp_date, calls_remaining) 
+                    VALUES (?,?,?,?,?,?,?)""",(userid, creation_date, 
+                    update_date, status, api_key, api_key_exp_date,
+                    calls_remaining))
+        conn.commit()
+        conn.close()
+        return {"userid": userid, "creation_date": creation_date, 
+                "update_date": update_date, "status": "inactive", 
+                "api_key": api_key, "api_key_exp_date": api_key_exp_date,
+                "calls_remaining": calls_remaining }, 201
 
 # class IDCheck(Resource):
     # """
@@ -89,7 +105,7 @@ class AddUserAPI(Resource):
         # return {result_page:, call_date, remaining_calls, termination_date}, 200
 
 api.add_resource(UsersAPI, '/api/v1/users/<int:userid>')
-#api.add_resource(AddUserAPI, '/api/v1/users') 
+api.add_resource(AddUserAPI, '/api/v1/users') 
 #api.add_resource(IDCheck, '/api/v1/id-check')
 
 if __name__ == '__main__':
