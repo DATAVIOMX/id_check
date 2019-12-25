@@ -7,33 +7,9 @@ DATE: 2019-12-20
 
 /* Data insertion */
 
-INSERT INTO users(userid, username, pwhash, creation_date, update_date, status, api_key, api_key_exp_date) VALUES (1, 'Otto',,'','');
-INSERT INTO users(userid, username, pwhash, creation_date, update_date, status, api_key, api_key_exp_date) VALUES (2, 'Omar',,'','');
-INSERT INTO users(userid, username, pwhash, creation_date, update_date, status, api_key, api_key_exp_date) VALUES (3, 'Fernando',,'','');
-INSERT INTO users(userid, username, pwhash, creation_date, update_date, status, api_key, api_key_exp_date) VALUES (4, 'Victoria',,'','');
-INSERT INTO users(userid, username, pwhash, creation_date, update_date, status, api_key, api_key_exp_date) VALUES (5, 'Hugo',,'','');
-INSERT INTO users(userid, username, pwhash, creation_date, update_date, status, api_key, api_key_exp_date) VALUES (6, 'Paco',,'','');
-INSERT INTO users(userid, username, pwhash, creation_date, update_date, status, api_key, api_key_exp_date) VALUES (7, 'Luis',,'','');
-INSERT INTO users(userid, username, pwhash, creation_date, update_date, status, api_key, api_key_exp_date) VALUES (8, 'Donald',,'','');
-
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (1,1,'','','','','');
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (2,1,'','','','','');
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (3,2,'','','','','');
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (4,2,'','','','','');
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (5,3,'','','','','');
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (6,4,'','','','','');
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (7,5,'','','','','');
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (8,6,'','','','','');
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (9,7,'','','','','');
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (10,8,'','','','','');
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (11,9,'','','','','');
-INSERT INTO api-calls(callid, userid, api_key, call_date, call_point, status_code, call_text) VALUES (12,8,'','','','','');
-
-/* IMAGES CAN BE STORED AS NUMPY ARRAY STRINGS
-INSERT INTO TABLE images()
-INSERT INTO TABLE images()
-INSERT INTO TABLE images()
-INSERT INTO TABLE images()
-INSERT INTO TABLE images()
-INSERT INTO TABLE images()
-*/
+INSERT INTO users(userid, creation_date, update_date, status, api_key, api_key_exp_date, calls_remaining) VALUES (1, '2019-12-21T12:00:00.0000','2019-12-21T12:00:00.0000', 0, 'oBE3PSTPOswJDRIfGCbhRnxE00rgGNNW','2020-01-21T12:00:00.0000',1000);
+INSERT INTO users(userid, creation_date, update_date, status, api_key, api_key_exp_date, calls_remaining) VALUES (2, '2019-12-21T12:00:00.0000','2019-12-21T12:00:00.0000', 1, 'B7AX0KEmUXUwhKO8MjBxFw6VJ-PzNMCp','2020-01-21T12:00:00.0000',1000);
+INSERT INTO users(userid, creation_date, update_date, status, api_key, api_key_exp_date, calls_remaining) VALUES (3, '2019-12-21T12:00:00.0000','2019-12-21T12:00:00.0000', 2, 'OEU6muXB4fGCtTWc1CU_9O8bf9FLpCzO','2020-01-21T12:00:00.0000',1000);
+INSERT INTO users(userid, creation_date, update_date, status, api_key, api_key_exp_date, calls_remaining) VALUES (4, '2019-12-21T12:00:00.0000','2019-12-21T12:00:00.0000', 0, 'jqYGUkI9bHfdGVhQAS6_zqnLwlY3M1uI','2020-01-21T12:00:00.0000',1000);
+INSERT INTO users(userid, creation_date, update_date, status, api_key, api_key_exp_date, calls_remaining) VALUES (5, '2019-12-21T12:00:00.0000','2019-12-21T12:00:00.0000', 0, '_LbQU-0KWafYh5Krgco0CvBq03_n7U3d','2019-01-01T12:00:00.0000',1000);
+INSERT INTO users(userid, creation_date, update_date, status, api_key, api_key_exp_date, calls_remaining) VALUES (6, '2019-12-21T12:00:00.0000','2019-12-21T12:00:00.0000', 0, 'MJfvgk91xkTdRyDNPc-TO1LhxK6fo_4a','2020-01-21T12:00:00.0000',0);

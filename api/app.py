@@ -15,6 +15,8 @@ from flask import Flask, request
 from flask_restful import Resource, Api, reqparse
 import sqlite3
 import werkzeug
+import secrets
+import datetime
 
 app = Flask(__name__)
 api = Api(app)
@@ -30,84 +32,65 @@ class UsersAPI(Resource):
         """
         GET method stub, this will query the database for the userid
         """
-        date_created = '2019-12-16'
-        date_termination = '2020-01-16'
-        date_last_payment = '2019-12-16'
-        remaining_calls = 1000
-        if userid == "AAA111":
-            return_dict = {"date-created": date_created,
-                       "end-of-service-date": date_termination,
-                       "date-of-last-payment": date_last_payment,
-                       "remaining-calls": remaining_calls
-                        }
-            return return_dict
-        else:
+        conn = sqlite3.connect("id-check-db.sqlite")
+        cur = conn.cursor()
+        q_str = """SELECT creation_date, api_key_exp_date, calls_remaining
+                from users where userid=?"""
+        cur.execute(q_str, (userid,))
+        result = cur.fetchone()
+        conn.close()
+        print(result)
+        if not result:
             return {'error':'user not found'}, 404
+        else:
+            return_dict = {"date-created": result[0],
+                       "api-key-expiration-date": result[1],
+                       "remaining-calls": result[2]
+                        }
+            return return_dict, 200
+
 
 class AddUserAPI(Resource):
-    def post(self):
+     def post(self):
         """
         Creates a new user, requires username, and password to generate an API
         key that is returned to the user
         """
-        parser.add_argument('username', type=str)
-        parser.add_argument('password', type=str)
-        data = parser.parse_args()         
-        api_key = 'SDDFSF123rs12085654'
+        # Get last user id from DB
+        
+        api_key = secrets.url_safe
+        date_created = date.today()
+        date_termination = date_created + 1
+        status = 2
+        
+        # Load in DB
+        INSERT INTO users (username, passwd, date_created, date_termination,
+        date_last_payment,api_key, ) VALUES ()
         return {'username': data['username'], 'password': data["password"],
                 "api_key": api_key}, 201
 
-class AddImageAPI(Resource):
-    """
-    AddImageAPI is a resource for uploading images to the database where they
-    are stored as blobs, the POST request must use either HTTP or multipart
-    this class along with image class are needed because JSON can't be used to
-    upload a file and sending HTTP requests with files inside is not RESTful.
-    """
-    def post(self):
-        """
-        post method to upload an image file, it must specify the filename, file
-        and if it is the front or back of the ID
-        """
-        parser.add_argument('picture', type=werkzeug.datastructures.FileStorage)
-        filename = ""
-        image_id = ""
-        atype = ""
-        size = ""
-        # Post image to database as HTTP message
-        return_dict{"filename": filename, "image-id": image_id, "type": atype
-                    "size":size} 
-        return return_dict, 201
+# class IDCheck(Resource):
+    # """
+    # IDCheck is a class that receives images as numpy arrays, and an API key,
+    # validates the key and uses OCR to extract the data from the image and query
+    # INE's database
+    # """
+    # def post(self):
+        # parser.add_argument("front")
+        # parser.add_argument("back")
+        # parser.add_argument("api_key")
+        # # query api_key
+        # # If key does not exist
+            # return {error: key does not exist}, 404
+        # # if key is invalid (
+            # return {error: Expired key, contact your provider, cause:}, 503
+        # # if key is valid, payment is OK and has remaining calls
+        # result_page = id_check.check(front, back)
+        # return {result_page:, call_date, remaining_calls, termination_date}, 200
 
-class ImageAPI(Resource):
-    """
-    ImageAPI class is a resource for checking and deleting images already
-    uploaded, it checks the database for the image_id and either returns the
-    file properties or deletes the file
-    """
-    def get(self, image_id):
-        """
-        Helper method to check if image exists and its properties
-        """
-        filename = ""
-        image_id = ""
-        atype = ""
-        size = ""
-
-        return {"filename": filename, "image-id":image_id, "size":size,
-                "type":atype}, 200
-
-    def delete(self, image_id):
-        """
-        Helper method to delete image by image_id 
-        """
-        #Delete image with image id
-        return {"image_id": image_id, "message": "succesfuly deleted"}, 200
-
-api.add_resource(AddUserAPI, '/api/v1/users') 
-api.add_resource(UsersAPI, '/api/v1/users/<string:userid>')
-api.add_resource(AddImageAPI, '/api/v1/images')
-api.add_resource(ImageAPI, '/api/v1/images/<string:image_id')
+api.add_resource(UsersAPI, '/api/v1/users/<int:userid>')
+#api.add_resource(AddUserAPI, '/api/v1/users') 
+#api.add_resource(IDCheck, '/api/v1/id-check')
 
 if __name__ == '__main__':
     app.run(debug=True)
