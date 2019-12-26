@@ -1,66 +1,80 @@
-from notebooks.check_id import web_search
-from notebooks.preprocess_text import preproces_tsv
-import pandas as pd
-import numpy as np
-import os
+
+#import notebooks.text_recog.image_recog as i_r
+#import notebooks.preprocess_text.text_filter as t_f
+#import notebooks.check_id.web_search as w_s
+#import re
+#import os
+#
+#from PIL import Image
+#import pytesseract
+#import cv2
+#import imutils
+#import numpy as np
+#import string
+#from pyzbar.pyzbar import decode
+#from pyzbar.pyzbar import ZBarSymbol
+#from bs4 import BeautifulSoup
+#import requests
+
+import complete_validation.comp_proces as c_p
 import re
-import xlrd
-from bs4 import BeautifulSoup
+import os
 
-#proj_dir = '/home/ferhdzschz/sandbox/projects/datavio/notebooks/'
+#Paths & Files
+dir_path = '/home/ferhdzschz/sandbox/projects/datavio_files/lime/2nd_dataset/images2/'
+filenames = os.listdir('/home/ferhdzschz/sandbox/projects/datavio_files/lime/2nd_dataset/images2')
+filenames.sort()
+filtered_term = re.compile('^38_.*')
+ex_files = list(filter(filtered_term.search, filenames))
+
+image_test = c_p.id_all_flow(dir_path+ex_files[0], dir_path+ex_files[1], [300, 500, 800, 900])
+
+X = image_test.id_wrapper()
+
+
+
+#Init ocr & imgs
+test_front = i_r.image_recognition(img_path = dir_path+ex_files[0],  h_list = [300, 500, 800, 900])
+test_back = i_r.image_recognition(img_path = dir_path+ex_files[1],  h_list = [300, 500, 800, 900])
+
+#Text ocr
+front_text = test_front.ocr_image()
+back_text = test_back.ocr_image()
+
+#Init text preprocess
+text_vector = t_f.text_prep(front_text, back_text)
+
+#Preprocess text
+data_dict = text_vector.preprocess()
+
+#Find QR info
+qr_front = test_front.check_qr()
+qr_back = test_back.check_qr()
+
+data_dict['qr_url'] = [qr_url for qr_url in [qr_front, qr_back] if 'http' in str(qr_url)][0]
+
+#Init web check
+ine_revision = w_s.consulta_id(data_dict)
+
+ine_revision.qr_url != ''
+#QR check
+qr_output = ine_revision.unpack_qr_ine_response()
+'puedes votar' in str(qr_output[0])
+
+#Ordinary check
+API_KEY = 'f93c8b9646c63020ef084ecac088583d'
+response_ord = ine_revision.ine_check(API_KEY)
+
+#tabla_respuesta = ine_revision.unpack_ord_ine_response(response_ord)
 #
-#tsv_1 = pd.read_csv(proj_dir + 'ifes_ocr/2_front.tsv', sep='\t')
-#tsv_2 = pd.read_csv(proj_dir + 'ifes_ocr/2_back.tsv', sep='\t')
-#
-#x = preproces_tsv.tsv_prep(tsv_1, tsv_2)
-#
-#test_list = x.join_tsv()
-#tipo_cred = x.identify_cardtype(test_list)
+#'si-vota' in str(tabla_respuesta[0])
 #
 #
-
-tsv_completo = pd.read_excel('/home/ferhdzschz/Downloads/revision_manual.xlsx', sheet_name=4)
-
-pruebas = tsv_completo.loc[(tsv_completo['tipo_cred'] == 'e') & (tsv_completo['cic'] != 'NOT DETECTED'), :]
-
-test = pruebas.iloc[22]
-respuestas = []
-
-for i in range(3,100):       
-    test = pruebas.iloc[i]
-    w_s = web_search.consulta_id(test)
-    response = w_s.ine_check('f93c8b9646c63020ef084ecac088583d')
-    otuput = [test['sample'], response.find('p', {'class': 'lead'})]
-    respuestas.append(otuput)
-
-respuestas[9]  
-#indexes_CLAVE = [i for i,x in enumerate(test_list) if x == 'CLAVE']
-#indexes_DE = [i for i,x in enumerate(test_list) if x == 'DE']
-#index_ELECTOR = test_list.index("ELECTOR")
-#ndexes_CLAVE[indexes_CLAVE.index(index_ELECTOR-2)]
-#indexes_DE[indexes_DE.index(index_ELECTOR-1)]
-
-#CVE ELECTOR
-regex_find = re.compile(r"\w{6}\d{8}\w\d{3}")
-list(filter(regex_find.search, test_list))[0]
-
-regex_find = re.compile(r"REGISTRO")
-registro_index = [i for i,x in enumerate(test_list) if x == list(filter(regex_find.search, test_list))[-1]][-1]
-test_list[registro_index+1]
-test_list[registro_index+2]
-
-if len(test_list[registro_index+1]) >= 7:
-    print(test_list[registro_index+1][-2:])
-elif len(test_list[registro_index+1]) == 4:
-    print(test_list[registro_index+2])
-
-#CURP
-regex_find = re.compile(r"\w{4}\d{6}\w{6}\d{2}|\w{4}\d{6}\w{8}")
-list(filter(regex_find.search, test_list))
-
-
-HESF 910629 HDFRNR 08 , HRSNFR 91062909 H 300
-GARV 880310 MNERVC 00 , GRRVVC 88031088 M 400,
-PEMM 900126 HMCRLN 06 , PMRLMN 90012615 H 600
-CEVA 930217 HDFRRN 00 , CRVRAN 83021709 H 800
-AACJ 840113 HDFRRR 08 , ARCRJR 84011309 H 400
+##ine_lista_page = requests.get(url_ine)
+##soup = BeautifulSoup(ine_lista_page.content, 'html.parser')
+##soup.find(name = 'div', id = "menje")
+##
+##cv2.imshow('img', test_back.resized_imgs[13])
+##cv2.waitKey(0)
+##cv2.destroyAllWindows()
+#
