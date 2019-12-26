@@ -1,10 +1,12 @@
 from PIL import Image
 import pytesseract
-import argparse
 import cv2
 import os
 import imutils
 import numpy as np
+from pyzbar.pyzbar import decode
+from pyzbar.pyzbar import ZBarSymbol
+
 
 class image_recognition():
 
@@ -110,3 +112,15 @@ class image_recognition():
       usefull_text = [palabra for frase in comp_text \
           for palabra in frase if palabra != '']
       return(usefull_text)
+
+  def check_qr(self):
+      try:
+          qrs = [decode(cred, symbols=[ZBarSymbol.QRCODE]) \
+              for cred in self.resized_imgs]
+          url_qr = [qr_info for qr_element in qrs \
+              for qr_info in qr_element if qr_element != []][0][0]
+      except IndexError:
+          url_qr = "NOT DETECTED"
+    
+      return url_qr
+
