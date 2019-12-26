@@ -16,5 +16,6 @@ CREATE TABLE api_calls(
     call_point TEXT,
     status_code INT,
     call_text TEXT,
+    response TEXT,
     FOREIGN KEY(userid) REFERENCES users(userid)
 );

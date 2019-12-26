@@ -22,8 +22,6 @@ from dateutil.relativedelta import *
 app = Flask(__name__)
 api = Api(app)
 
-parser = reqparse.RequestParser()
-
 class UsersAPI(Resource):
     """
     Users class methods define the calls available through the API to act over
@@ -85,24 +83,75 @@ class AddUserAPI(Resource):
                 "api_key": api_key, "api_key_exp_date": api_key_exp_date,
                 "calls_remaining": calls_remaining }, 201
 
-# class IDCheck(Resource):
-    # """
-    # IDCheck is a class that receives images as numpy arrays, and an API key,
-    # validates the key and uses OCR to extract the data from the image and query
-    # INE's database
-    # """
-    # def post(self):
-        # parser.add_argument("front")
-        # parser.add_argument("back")
-        # parser.add_argument("api_key")
-        # # query api_key
-        # # If key does not exist
-            # return {error: key does not exist}, 404
-        # # if key is invalid (
-            # return {error: Expired key, contact your provider, cause:}, 503
-        # # if key is valid, payment is OK and has remaining calls
-        # result_page = id_check.check(front, back)
-        # return {result_page:, call_date, remaining_calls, termination_date}, 200
+class IDCheck(Resource):
+    """
+    IDCheck is a class that receives images as numpy arrays, and an API key,
+    validates the key and uses OCR to extract the data from the image and query
+    INE's database
+    """
+    def post(self):
+        parser = reqparse.RequestParser(bundle_errors=True)
+        parser.add_argument("front", type=list, required=True)
+        parser.add_argument("back", type=list, required=True)
+        parser.add_argument("api_key", type=str, required=True)
+        args = parser.parse_args()
+        
+        # query api_key
+        q_str = """SELECT * from users WHERE api_key=?"""
+        cur.execute(q_str, (args["api_key"],))
+        db_response = cur.fetchone()
+        
+        # Stuff to log from the call
+        userid = 
+        call_dt = datetime.datetime.now()
+        
+        if not db_response:
+            # log call
+            cur.execute("""INSERT INTO api_calls ()""")
+            conn.commit()
+            conn.close()
+            # return
+            return {"error": "key does not exist"}, 403
+        else:
+            userid
+            creation_date
+        if status == 1:
+            # log call
+            cur.execute("""INSERT INTO api_calls""")
+            conn.commit()
+            conn.close()
+            # return
+            return {"error": "key does not exist"}, 401
+        if status == 2:
+            # log call
+            cur.execute("""INSERT INTO api_calls""")
+            conn.commit()
+            conn.close()
+            # return
+            return {"error": "key does not exist"}, 402
+        if api_key_exp_date < today:
+            # log call
+            cur.execute("""INSERT INTO api_calls""")
+            conn.commit()
+            conn.close()
+            # return
+            return {"error": "key is expired"}, 403
+        if calls_remaining <= 0:
+            # log call
+            cur.execute("""INSERT INTO api_calls""")
+            conn.commit()
+            conn.close()
+            # return
+            return {"error": "No remaining calls"}, 403
+        if calls_remaining > 0 and api_key_exp_date > today and status == 0 and db_response[] == args.api_key:
+            results_page = id_check(args["front"], args["back"])
+            # log call
+            cur.execute("""INSERT INTO api_calls""")
+            conn.commit()
+            conn.close()
+            return {result_page:, call_date, remaining_calls, termination_date}, 200
+        return {"error": "Passthrough API"}, 500
+
 
 api.add_resource(UsersAPI, '/api/v1/users/<int:userid>')
 api.add_resource(AddUserAPI, '/api/v1/users') 
