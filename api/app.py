@@ -18,6 +18,7 @@ import werkzeug
 import secrets
 import datetime
 from dateutil.relativedelta import *
+import json
 
 app = Flask(__name__)
 api = Api(app)
@@ -90,72 +91,103 @@ class IDCheck(Resource):
     INE's database
     """
     def post(self):
+        req_data = request.get_json()
+        raw_req = json.dumps(req_data)
         parser = reqparse.RequestParser(bundle_errors=True)
         parser.add_argument("front", type=list, required=True)
         parser.add_argument("back", type=list, required=True)
         parser.add_argument("api_key", type=str, required=True)
         args = parser.parse_args()
+        # print(args)
+        
+        conn = sqlite3.connect("id-check-db.sqlite")
+        cur = conn.cursor()
+        
+        today = datetime.datetime.now()
         
         # query api_key
-        q_str = """SELECT * from users WHERE api_key=?"""
+        q_str = """SELECT userid,
+                    api_key, 
+                    api_key_exp_date,
+                    status, 
+                    calls_remaining
+                    from users WHERE api_key=?"""
         cur.execute(q_str, (args["api_key"],))
         db_response = cur.fetchone()
-        
-        # Stuff to log from the call
-        userid = 
-        call_dt = datetime.datetime.now()
+        print("DB response", db_response)
         
         if not db_response:
             # log call
-            cur.execute("""INSERT INTO api_calls ()""")
+            call_dt = datetime.datetime.now()
+            cur.execute("""INSERT INTO api_calls (call_date, call_point,
+                        status_code, call_text, response) VALUES 
+                        (?,?,?,?,?)""", (call_dt, 'id-check', 403, raw_req,
+                        '{"error":"key does not exist"}',))
             conn.commit()
             conn.close()
-            # return
             return {"error": "key does not exist"}, 403
         else:
-            userid
-            creation_date
-        if status == 1:
-            # log call
-            cur.execute("""INSERT INTO api_calls""")
-            conn.commit()
-            conn.close()
-            # return
-            return {"error": "key does not exist"}, 401
-        if status == 2:
-            # log call
-            cur.execute("""INSERT INTO api_calls""")
-            conn.commit()
-            conn.close()
-            # return
-            return {"error": "key does not exist"}, 402
-        if api_key_exp_date < today:
-            # log call
-            cur.execute("""INSERT INTO api_calls""")
-            conn.commit()
-            conn.close()
-            # return
-            return {"error": "key is expired"}, 403
-        if calls_remaining <= 0:
-            # log call
-            cur.execute("""INSERT INTO api_calls""")
-            conn.commit()
-            conn.close()
-            # return
-            return {"error": "No remaining calls"}, 403
-        if calls_remaining > 0 and api_key_exp_date > today and status == 0 and db_response[] == args.api_key:
-            results_page = id_check(args["front"], args["back"])
-            # log call
-            cur.execute("""INSERT INTO api_calls""")
-            conn.commit()
-            conn.close()
-            return {result_page:, call_date, remaining_calls, termination_date}, 200
-        return {"error": "Passthrough API"}, 500
+            # Stuff to log from the call
+            userid = db_response[0]
+            api_key = db_response[1]
+            api_exp = datetime.datetime.strptime(db_response[2], "%Y-%m-%dT%H:%M:%S.%f")
+            status = db_response[3]
+            calls = db_response[4]
+            call_dt = datetime.datetime.now()
+            if status == 1:
+                # log call
+                cur.execute("""INSERT INTO api_calls (userid, api_key, call_date, call_point,
+                        status_code, call_text, response) VALUES 
+                        (?,?,?,?,?,?,?)""", (userid, api_key, call_dt, 'id-check', 403, raw_req,
+                        '{"error":"payment processing in progress"}',))
+                conn.commit()
+                conn.close()
+                return {"error": "payment processing in progress"}, 401
+            elif status == 2:
+                # log call
+                cur.execute("""INSERT INTO api_calls (userid, api_key, call_date, call_point,
+                        status_code, call_text, response) VALUES 
+                        (?,?,?,?,?,?,?)""", (userid, api_key, call_dt, 'id-check', 403, raw_req,
+                        '{"error":"payment required"}',))
+                conn.commit()
+                conn.close()
+                return {"error": "payment required"}, 402
+            elif api_exp < today:  # <-- date comparison required
+                print("expired key")
+                # log call
+                cur.execute("""INSERT INTO api_calls (userid, api_key, call_date, call_point,
+                        status_code, call_text, response) VALUES 
+                        (?,?,?,?,?,?,?)""", (userid, api_key, call_dt, 'id-check', 403, raw_req,
+                        '{"error":"key is expired"}',))
+                conn.commit()
+                conn.close()
+                return {"error": "key is expired"}, 403
+            elif calls <= 0:
+                # log call
+                cur.execute("""INSERT INTO api_calls (userid, api_key, call_date, call_point,
+                        status_code, call_text, response) VALUES 
+                        (?,?,?,?,?,?,?)""", (userid, api_key, call_dt, 'id-check', 403, raw_req,
+                        '{"error":"No remaining calls"}',))
+                conn.commit()
+                conn.close()
+                return {"error": "No remaining calls"}, 403
+            else:
+                # NOTE: results_page needs to be in a try except or in an if
+                # block to return either a 200 status or a 500 status
+                # results_page = id_check(args["front"], args["back"])
+                # log call
+                cur.execute("""INSERT INTO api_calls (userid, api_key, call_date, call_point,
+                        status_code, call_text, response) VALUES 
+                        (?,?,?,?,?,?,?)""", (userid, api_key, call_dt, 'id-check', 403, raw_req,
+                        '{"success":"call successful"}',))
+                conn.commit()
+                conn.close()
+                return {"success":"call successful"}, 200
 
 
 api.add_resource(UsersAPI, '/api/v1/users/<int:userid>')
 api.add_resource(AddUserAPI, '/api/v1/users') 
-#api.add_resource(IDCheck, '/api/v1/id-check')
+api.add_resource(IDCheck, '/api/v1/id-check')
 
 if __name__ == '__main__':
     app.run(debug=True)
