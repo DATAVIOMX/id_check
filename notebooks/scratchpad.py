@@ -1,36 +1,18 @@
-
-import text_recog.image_recog as i_r
-import preprocess_text.text_filter as t_f
-import check_id.web_search as w_s
-import re
-import os
-import cv2
-
-from PIL import Image
-import pytesseract
-import cv2
-import imutils
-import numpy as np
-import string
-from pyzbar.pyzbar import decode
-from pyzbar.pyzbar import ZBarSymbol
-from bs4 import BeautifulSoup
-import requests
-
 from complete_validation import comp_proces
 import re
 import os
+import numpy as np
 
 #Paths & Files
 dir_path = '/home/ferhdzschz/sandbox/projects/datavio_files/lime/2nd_dataset/images2/'
 filenames = os.listdir('/home/ferhdzschz/sandbox/projects/datavio_files/lime/2nd_dataset/images2')
 
-
-dir_path = '/home/ferhdzschz/sandbox/projects/datavio_files/lime/1st_dataset/images/'
-filenames = os.listdir('/home/ferhdzschz/sandbox/projects/datavio_files/lime/1st_dataset/images')
-
+hlimits = [300, 500, 800, 900]
 filenames.sort()
-filtered_term = re.compile('^561_.*')
+
+fnames_index  = np.unique(np.array([str(s).split(sep='_')[0] for s in filenames]))
+
+filtered_term = re.compile('^2_.*')
 ex_files = list(filter(filtered_term.search, filenames))
 
 image_test = comp_proces.id_all_flow(dir_path+ex_files[0], \
@@ -38,15 +20,31 @@ image_test = comp_proces.id_all_flow(dir_path+ex_files[0], \
 
 X = image_test.id_wrapper()
 
+
 image_test.text_vector.all_text
 
-import sys
-import importlib
+import cv2
+import imutils
 
-def m_reload():
-    for k,v in sys.modules.items():
-        if k.startswith('your-package-name'):
-            importlib.reload(v)
+for i in range(len(image_test.img_front.binaries)):
+  cv2.imshow('roi', image_test.img_front.binaries[i])
+  cv2.waitKey(0)
+  cv2.destroyAllWindows
+
+import check_id.web_search as w_s
+import text_recog.image_recog as i_r
+
+web_check_ine = w_s.consulta_id(image_test.data_dict)
+
+HTML_response = web_check_ine.ine_check(image_test.API_KEY)
+web_check_ine.unpack_ord_ine_response(HTML_response)
+
+ima = cv2.imread(dir_path+ex_files[0])
+ima
+
+cv2.imshow('img', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows
 
 #Init ocr & imgs
 test_front = i_r.image_recognition(img_path = dir_path+ex_files[0],  h_list = [300, 500, 800, 900])

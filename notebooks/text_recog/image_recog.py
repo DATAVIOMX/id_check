@@ -29,13 +29,16 @@ class image_recognition():
 
         #Transformations
         # transform into grayscale the images
-        self.grayscales = [cv2.GaussianBlur(cv2.cvtColor(x, \
-            cv2.COLOR_BGR2GRAY), (3, 3), 0) \
-              for x in self.resized_imgs]
+        self.grayscales = [cv2.cvtColor(x, cv2.COLOR_BGR2GRAY) for x in self.resized_imgs]
+        self.binaries = [cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
+                            cv2.THRESH_BINARY, 11, 2) for img in self.grayscales]
+        self.grayscales = [cv2.GaussianBlur(img, (3, 3), 0) for img in self.grayscales]
+
         # smooth the image using a 3x3 Gaussian, then apply the blackhat
         # morphological operator to find dark regions on a light background
         self.blackhats = [cv2.morphologyEx(x, cv2.MORPH_BLACKHAT, \
             self.rectKernel) for x in self.grayscales]
+
         # compute the Scharr gradient of the blackhat image and scale the
         # result into the range [0, 255]
         self.gradX = [np.absolute(cv2.Sobel(x, ddepth=cv2.CV_32F, \
@@ -95,8 +98,9 @@ class image_recognition():
             cont_data[3] + (int((cont_data[1] + cont_data[3]) * 0.035) *2)] \
             for num_foto, cont_data, ar, crWidth in self.valid_contours]
         #cropped images
-        self.rois = [self.resized_imgs[num_foto][y:y + h, x:x + w] \
+        self.rois = [self.grayscales[num_foto][y:y + h, x:x + w] \
             for num_foto, pX, pY, x, y, w, h in self.coord_rectangles]
+        self.rois_bin = [cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2) for img in self.rois]
 
   def handling_ocr_func(self, img):
       try:
@@ -109,8 +113,12 @@ class image_recognition():
       comp_text = []
       [comp_text.append(self.handling_ocr_func(imagen)) \
           for imagen in self.rois]
+      #[comp_text.append(self.handling_ocr_func(imagen)) \
+      #    for imagen in self.binaries]   
       usefull_text = [palabra for frase in comp_text \
           for palabra in frase if palabra != '']
+
+    
       return(usefull_text)
 
   def check_qr(self):

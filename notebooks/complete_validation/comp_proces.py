@@ -26,7 +26,6 @@ class id_all_flow():
         self.img_front = i_r.image_recognition(img_path = self.front_img_path,  h_list = self.heigths)
         self.img_back = i_r.image_recognition(img_path = self.back_img_path,  h_list = self.heigths)
 
-
 #        for i in range(len(test_front.resized_imgs)):
 #            cv2.imshow('imagen', test_front.resized_imgs[i])
 #            cv2.waitKey(0)
@@ -81,7 +80,7 @@ class id_all_flow():
             self.ord_output = self.ine_revision.ine_check(self.API_KEY)
             self.validation_output = self.ine_revision.unpack_ord_ine_response(self.ord_output)
             self.respuesta_tipo = 'ORD'
-        elif (ine_revision.tipo == 'NOT DETECTED') | (ine_revision.cic == 'NOT DETECTED'):
+        elif (self.ine_revision.tipo == 'NOT DETECTED') | (self.ine_revision.cic == 'NOT DETECTED'):
             print('\n ID NOT DETECTED... PLEASE GIVE A BETTER IMAGE')
             self.respuesta_tipo = 'NA'
             self.validation_output = 'NA'
