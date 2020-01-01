@@ -7,12 +7,16 @@ import numpy as np
 dir_path = '/home/ferhdzschz/sandbox/projects/datavio_files/lime/2nd_dataset/images2/'
 filenames = os.listdir('/home/ferhdzschz/sandbox/projects/datavio_files/lime/2nd_dataset/images2')
 
+dir_path = '/home/ferhdzschz/sandbox/projects/datavio_files/lime/1st_dataset/correct_imgs/'
+filenames = os.listdir('/home/ferhdzschz/sandbox/projects/datavio_files/lime/1st_dataset/images')
+
+
 hlimits = [300, 500, 800, 900]
 filenames.sort()
 
 fnames_index  = np.unique(np.array([str(s).split(sep='_')[0] for s in filenames]))
 
-filtered_term = re.compile('^2_.*')
+filtered_term = re.compile('^16_.*')
 ex_files = list(filter(filtered_term.search, filenames))
 
 image_test = comp_proces.id_all_flow(dir_path+ex_files[0], \
@@ -25,6 +29,16 @@ image_test.text_vector.all_text
 
 import cv2
 import imutils
+import pytesseract
+
+
+cv2.imshow('roi', image_test.img_front.binaries[18])
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+pytesseract.image_to_string(image_test.img_front.binaries[16])
+
 
 for i in range(len(image_test.img_front.binaries)):
   cv2.imshow('roi', image_test.img_front.binaries[i])
