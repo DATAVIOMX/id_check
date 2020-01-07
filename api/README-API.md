@@ -36,9 +36,8 @@ Motoko Research
  
 ## Endpoints
 
-- users: Lista los usuarios 
+- users:Permite crear y consultar usuarios 
 - check-ids: Analiza las imágenes  
-- images: Permite subir las imágenes regresa una id de la imagen
 
 ## Estructura de archivos
 
@@ -58,17 +57,7 @@ id_check_api/
 GET a users/userid lista la fecha de creacion del usuario, y la fecha de
 terminación del servicio, fecha de ultimo pago y llamadas restantes  
 
-PUT a users/userid, actualiza un usuario
-
 POST a users crea un usuario y devuelve el userid y el API key
-
-DELETE a users/userid borra un usuario 
-
-### images
-
-POST a images sube una imagen y devuelve su id
-
-DELETE a images/imageid borra una imagen
 
 ### check-ids
 
@@ -78,21 +67,23 @@ GET a check-ids analiza la imagen (terminado el análisis borra las imágenes)
 
 ### Creación de un nuevo usuario
 
-TBD
+```
+curl -X POST http://localhost:5000/api/v1/users
+```
 
-### Borrar usuario
+### Consultar usuario
 
-TBD
-
-### Nueva llave de la API
-
-TBD
-
-### Subir imágenes
-
-TBD
+```
+curl 127.0.0.1:5000/api/v1/users/1
+```
 
 ### Analizar INE
 
-TBD
+```
+curl -d '{"api_key":"B7AX0KEmUXUwhKO8MjBxFw6VJ-PzNMCp", "front":"value2", "back":"value3"}' -H "Content-Type: application/json" -X POST http://localhost:5000/api/v1/id-check
+```
+
+
+## Algoritmo
+
 
