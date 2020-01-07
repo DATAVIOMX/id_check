@@ -45,7 +45,7 @@ class UsersAPI(Resource):
         else:
             return_dict = {"date-created": result[0],
                        "api-key-expiration-date": result[1],
-                       "remaining-calls": result[2]
+                       "calls-made": result[2]
                         }
             return return_dict, 200
 
@@ -69,7 +69,7 @@ class AddUserAPI(Resource):
         api_key_exp_date_obj = now + relativedelta(months=+1)
         api_key_exp_date = api_key_exp_date_obj.strftime("%Y-%m-%dT%H:%M:%S.%f")
         status = 2
-        calls_remaining = 1000
+        calls_remaining = 0
         
         # Load in DB
         cur.execute("""INSERT INTO users (userid, creation_date, update_date,
@@ -79,10 +79,10 @@ class AddUserAPI(Resource):
                     calls_remaining))
         conn.commit()
         conn.close()
-        return {"userid": userid, "creation_date": creation_date, 
-                "update_date": update_date, "status": "inactive", 
-                "api_key": api_key, "api_key_exp_date": api_key_exp_date,
-                "calls_remaining": calls_remaining }, 201
+        return {"userid": userid, "creation-date": creation_date, 
+                "update-date": update_date, "status": "inactive", 
+                "api-key": api_key, 
+                "calls-made": calls_remaining }, 201
 
 class IDCheck(Resource):
     """
@@ -152,25 +152,6 @@ class IDCheck(Resource):
                 conn.commit()
                 conn.close()
                 return {"error": "payment required"}, 402
-            elif api_exp < today:  # <-- date comparison required
-                print("expired key")
-                # log call
-                cur.execute("""INSERT INTO api_calls (userid, api_key, call_date, call_point,
-                        status_code, call_text, response) VALUES 
-                        (?,?,?,?,?,?,?)""", (userid, api_key, call_dt, 'id-check', 403, raw_req,
-                        '{"error":"key is expired"}',))
-                conn.commit()
-                conn.close()
-                return {"error": "key is expired"}, 403
-            elif calls <= 0:
-                # log call
-                cur.execute("""INSERT INTO api_calls (userid, api_key, call_date, call_point,
-                        status_code, call_text, response) VALUES 
-                        (?,?,?,?,?,?,?)""", (userid, api_key, call_dt, 'id-check', 403, raw_req,
-                        '{"error":"No remaining calls"}',))
-                conn.commit()
-                conn.close()
-                return {"error": "No remaining calls"}, 403
             else:
                 # NOTE: results_page needs to be in a try except or in an if
                 # block to return either a 200 status or a 500 status
