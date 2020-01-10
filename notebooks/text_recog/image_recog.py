@@ -90,31 +90,36 @@ class image_recognition():
             for num_foto, cont_data, ar, crWidth in self.contour_data if ar >= 4]
  
         #coordinate for cropping images
-        self.coord_rectangles = [[num_foto, int((cont_data[0] + cont_data[2]) * 0.035), \
-            int((cont_data[1] + cont_data[3]) * 0.035), \
-            cont_data[0] - int((cont_data[0] + cont_data[2]) * 0.035), \
-            cont_data[1] - int((cont_data[1] + cont_data[3]) * 0.035), \
-            cont_data[2] + (int((cont_data[0] + cont_data[2]) * 0.035) *2), \
-            cont_data[3] + (int((cont_data[1] + cont_data[3]) * 0.035) *2)] \
+        self.coord_rectangles = [[num_foto, int((cont_data[0] + cont_data[2]) * 0.03), \
+            int((cont_data[1] + cont_data[3]) * 0.03), \
+            cont_data[0] - int((cont_data[0] + cont_data[2]) * 0.03), \
+            cont_data[1] - int((cont_data[1] + cont_data[3]) * 0.03), \
+            cont_data[2] + (int((cont_data[0] + cont_data[2]) * 0.03) *2), \
+            cont_data[3] + (int((cont_data[1] + cont_data[3]) * 0.03) *2)] \
             for num_foto, cont_data, ar, crWidth in self.valid_contours]
         #cropped images
         self.rois = [self.grayscales[num_foto][y:y + h, x:x + w] \
             for num_foto, pX, pY, x, y, w, h in self.coord_rectangles]
-        self.rois_bin = [cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2) for img in self.rois]
+        self.rois_bin = [cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2) \
+            for img in self.rois]
 
   def handling_ocr_func(self, img):
-      try:
-          texto = pytesseract.image_to_string(img, lang="spa").strip().split('\n')
-      except ValueError:
+      if len(img) == 0:
           texto = ''
+      else:
+          try:
+              texto = pytesseract.image_to_string(img, lang="spa").strip().split('\n')
+          except ValueError:
+              texto = ''
       return(texto)
 
   def ocr_image(self):
       comp_text = []
       [comp_text.append(self.handling_ocr_func(imagen)) \
           for imagen in self.rois]
+      #range(len(self.grayscales))[::len(self.h_list)]
       #[comp_text.append(self.handling_ocr_func(imagen)) \
-      #    for imagen in self.binaries]   
+      #    for imagen in self.grayscales]   
       usefull_text = [palabra for frase in comp_text \
           for palabra in frase if palabra != '']
 
@@ -131,4 +136,6 @@ class image_recognition():
           url_qr = "NOT DETECTED"
     
       return url_qr
-
+  
+  def find_mx_seal(self):
+      pass
