@@ -52,36 +52,36 @@ class UsersAPI(Resource):
             return return_dict, 200
 
 
-# class AddUserAPI(Resource):
-     # def post(self):
-        # """
-        # Creates a new user, to generate an API
-        # key that is returned to the user
-        # """
-        # # Get last user id from DB
-        # conn = db.connect("dbname='id_check_db' user='otto' host='localhost'")
-        # cur = conn.cursor()
-        # api_key = secrets.token_urlsafe(40)[1:32]
-        # now = datetime.datetime.now()
-        # creation_date = now.strftime("%Y-%m-%dT%H:%M:%S.%f")
-        # update_date = creation_date
-        # api_key_exp_date_obj = now + relativedelta(months=+1)
-        # api_key_exp_date = api_key_exp_date_obj.strftime("%Y-%m-%dT%H:%M:%S.%f")
-        # status = 2
-        # calls_remaining = 0
+class AddUserAPI(Resource):
+     def post(self):
+        """
+        Creates a new user, to generate an API
+        key that is returned to the user
+        """
+        # Get last user id from DB
+        conn = db.connect("dbname='id_check_db' user='otto' host='localhost' password=ottoman")
+        cur = conn.cursor()
+        api_key = secrets.token_urlsafe(40)[1:32]
+        now = datetime.datetime.now()
+        creation_date = now.strftime("%Y-%m-%dT%H:%M:%S.%f")
+        update_date = creation_date
+        api_key_exp_date_obj = now + relativedelta(months=+1)
+        api_key_exp_date = api_key_exp_date_obj.strftime("%Y-%m-%dT%H:%M:%S.%f")
+        status = 2
+        calls_remaining = 0
         
-        # # Load in DB
-        # cur.execute("""INSERT INTO users (creation_date, update_date,
-                    # status, api_key, api_key_exp_date, calls_remaining) 
-                    # VALUES (?,?,?,?,?,?,?)""",(userid, creation_date, 
-                    # update_date, status, api_key, api_key_exp_date,
-                    # calls_remaining))
-        # conn.commit()
-        # conn.close()
-        # return {"creation-date": creation_date, 
-                # "update-date": update_date, "status": "inactive", 
-                # "api-key": api_key, 
-                # "calls-made": calls_remaining }, 201
+        # Load in DB
+        cur.execute("""INSERT INTO users (userid, creation_date, update_date,
+                    status, api_key, api_key_exp_date, calls_remaining) 
+                    VALUES (gen_random_uuid(),%s,%s,%s,%s,%s,%s)""",(now, 
+                    now, status, api_key, api_key_exp_date,
+                    calls_remaining))
+        conn.commit()
+        conn.close()
+        return {"creation-date": creation_date, 
+                "update-date": update_date, "status": "inactive", 
+                "api-key": api_key, 
+                "calls-made": calls_remaining }, 201
 
 # class IDCheck(Resource):
     # """
@@ -166,7 +166,7 @@ class UsersAPI(Resource):
 
 
 api.add_resource(UsersAPI, '/api/v1/users/<userid>')
-#api.add_resource(AddUserAPI, '/api/v1/users') 
+api.add_resource(AddUserAPI, '/api/v1/users') 
 #api.add_resource(IDCheck, '/api/v1/id-check')
 
 if __name__ == '__main__':
