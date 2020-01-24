@@ -86,4 +86,13 @@ curl -d '{"api_key":"B7AX0KEmUXUwhKO8MjBxFw6VJ-PzNMCp", "front":"value2", "back"
 
 ## Algoritmo
 
+Para encriptacion vamos a usar 2 extensiones de postgresql pgcrypto y chkpass las
+cuales son estandar en las distribuciones de postgres-contrib. 
+Con chkpass vamos a encriptar las llaves de la API y con pgcrypto vamos a generar
+encriptacion simetrica de la llamada y la respuesta, esto para cumplir con las 
+politicas de privacidad.
+Las llaves de usuario son generadas aleatoriamente para cada usuario utilizando
+pgcrypto con el generador v4, esto nos da llaves aleatorias y unicas.
+
+
 
