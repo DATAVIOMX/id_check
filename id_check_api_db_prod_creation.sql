@@ -21,14 +21,13 @@ CREATE TABLE users (
 );
 
 CREATE TABLE api_calls (
-    callid integer NOT NULL,
+    callid serial primary key,
     userid uuid references users(userid),
     call_date timestamp without time zone,
     call_point text,
     status_code text,
     call_text bytea,
     response bytea
-    
 );
 
 
