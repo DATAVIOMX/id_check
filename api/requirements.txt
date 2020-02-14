@@ -21,6 +21,7 @@ pkg-resources==0.0.0
 psycopg2==2.8.4
 pylint==2.4.4
 pytesseract==0.3.2
+python-anticaptcha==0.4.2
 python-dateutil==2.8.1
 pytz==2019.3
 pyzbar==0.1.8
