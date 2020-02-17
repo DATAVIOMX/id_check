@@ -23,10 +23,10 @@ Contents
 10. proc_web_response() OK (check)
 
 """
+import re
 from bs4 import BeautifulSoup
 import requests
 # import string
-# import re
 # import os
 # import cv2
 import pytesseract
@@ -78,11 +78,28 @@ def prep_img(img):
     - Filtering
     - Edge detection
     - Perspective warping
-    It receives an image and returns the processed image
+    It receives an image and returns the processed image as 4 images
     """
-    if img:
-        proc_img = None
-    return proc_img
+    # greyscale
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # Gaussian Blur
+    
+    # Binarization (Adaptive)
+    binary2 =  cv2.adaptiveThreshold(gray,255,cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY,9,2)
+    # Contour finding
+    
+    # Sort contours
+    
+    # Rotate
+    angles = [90, 180, 270]
+    rot_img = []
+    for angle in angles:
+        # rotate
+        rot_img.append[rot]
+        # Take largest for Perspective warp
+    
+        # crop
+    return rot_img
 
 def ocr_img(img):
     """
@@ -104,73 +121,21 @@ def proc_text(text, id_type):
     on the ID type
     REVISAR
     """
-    id_dict = None
-    if id_type == 'a':
-        try:
-            regex_find = re.compile(r"\w{6}\d{8}\w\d{3}")
-            cve_elector_completo = list(filter(regex_find.search, text_vector))[0]
-            cve_elector = regex_find.findall(cve_elector_completo)[0]
-        except:
-            cve_elector = 'NOT DETECTED'
-        emision = "placeholder"
-        ocr_v = "placeholder"
-        cic = ''
-        ocr_h = ''
-        cve_ciudadano = ''
-        err_msg = ''
-    if id_type == 'd':
-        try:
-            regex_find = re.compile(r"\w{6}\d{8}\w\d{3}")
-            cve_elector_completo = list(filter(regex_find.search, text_vector))[0]
-            cve_elector = regex_find.findall(cve_elector_completo)[0]
-        except:
-            cve_elector = 'NOT DETECTED'
-        emision = ''
-        ocr_v = ''
-        cve_ciudadano = ''
-        err_msg = ''
-        flt = np.array(['DMEX' in mystring for mystring in text_vector])
-        try:
-            cic, ocr_h = np.array(text_vector)[flt][0].split('<<')
+    cve_elec_re = re.compile(r"\w{6}\d{8}\w\d{3}")
+    cve_elector = cve_elec_re.findall(text)[0]
+    if not cve_elector:
+        return None
+    if cve_elector and id_type in ("d", "e"):
+        flt = ['DMEX' in mystring for mystring in text]
+        if flt:
+            cic, ocr_h = [flt][0].split('<<')
             cic = cic[-10:len(cic)]
-        except:
-            cic, ocr_h = ("NOT DETECTED", "NOT DETECTED")
-    if id_type == 'e':
-        try:
-            regex_find = re.compile(r"\w{6}\d{8}\w\d{3}")
-            cve_elector_completo = list(filter(regex_find.search, text_vector))[0]
-            cve_elector = regex_find.findall(cve_elector_completo)[0]
-        except:
-            cve_elector = 'NOT DETECTED'
-        emision = ''
-        ocr_v = ''
-        ocr_h = ''
-        err_msg = ''
-        # Buscar en todos los resultados
-        flt = np.array(['DMEX' in mystring for mystring in text_vector])
-        try:
-            cic, cve_ciudadano = np.array(text_vector)[flt][0].split('<<')
-            cic = cic[-10:len(cic)]
-        except:
-            cic, cve_ciudadano = ("NOT DETECTED", "NOT DETECTED")
-    if id_type == 'NOT DETECTED':
-        cve_elector = ''
-        emision = ''
-        ocr_v = ''
-        ocr_h = ''
-        cic = ''
-        cve_ciudadano = ''
-        err_msg = 'ERROR: Por favor mejorar la calidad de la imagen'
-    outputs = list()
-    outputs.extend([str(id_type), str(cve_elector), str(emision),
-                    str(ocr_v), str(ocr_h), str(cic), str(cve_ciudadano),
-                    str(err_msg)])
-    keys_ = ['tipo_cred', 'cve_elec', 'emision', 'ocr_vertical', \
-              'ocr_horizontal', 'cic', 'cve_ciudadano', 'err_msg']
-
-    id_dict = dict(zip(keys_, outputs))
-
-    return id_dict
+            id_dict = {"tipo_cred": id_type,
+                       "cve_elec": cve_elector,
+                       "cic":cic,
+                       "ocr_horizontal":ocr_h}
+            return id_dict
+    return None
 
 def get_id_type(text):
     """
@@ -295,6 +260,7 @@ def proc_web_response(content):
     as a Boolean value, returns its input and the extracted value as a
     dictionary
     """
+    # REVISAR
     resp_dict = {"Error":"Please provide better images"}
     if content is not None:
         extracted_response = content
