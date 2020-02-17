@@ -95,11 +95,24 @@ def prep_img(img):
     sorted_cnts = [sorted(imutils.grab_contours(x), key=cv2.contourArea,
                           reverse=True) for x in contours]
     # crop thresholded images to the largest contour
-    y = 0
-    h = 500
-    x = 0
-    w = 300
-    cropped = [x[y:y+h, x:x+w] for x in threshold]
+    contour_data = [[num_foto, cont_data, cont_data[2] / float(cont_data[3]),
+                     cont_data[2] / float(threshold[num_foto].shape[1])]
+                    for num_foto, cont_data in sorted_cnts]
+
+    valid_contours = [[num_foto, cont_data, ar, crWidth] for num_foto,
+                      cont_data, ar, crWidth in contour_data if ar >= 4]
+
+    #coordinate for cropping images
+    coord_rectangles = [[num_foto, int((cont_data[0] + cont_data[2]) * 0.03),
+                         int((cont_data[1] + cont_data[3]) * 0.03),
+                         cont_data[0] - int((cont_data[0] + cont_data[2]) * 0.03),
+                         cont_data[1] - int((cont_data[1] + cont_data[3]) * 0.03),
+                         cont_data[2] + (int((cont_data[0] + cont_data[2]) * 0.03) *2),
+                         cont_data[3] + (int((cont_data[1] + cont_data[3]) * 0.03) *2)]
+                        for num_foto, cont_data, ar, crWidth in valid_contours]
+    #cropped images
+    cropped = [threshold[num_foto][y:y + h, x:x + w] for num_foto,
+               pX, pY, x, y, w, h in coord_rectangles]
     return cropped
 
 def ocr_img(imgs):
@@ -107,7 +120,7 @@ def ocr_img(imgs):
     Calls tesseract on a processed image
     receives an image and returns a string
     """
-    
+
     all_text = "\n"
     for img in imgs:
         text = pytesseract.image_to_string(img, lang="spa")
