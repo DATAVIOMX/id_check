@@ -18,19 +18,20 @@ Contents
 5. clean_qr_response OK
 6. prep_img()
 7. ocr_img() OK
-8. proc_ocr_text()
-9. query_web()
+8. proc_ocr_text() OK
+9. query_web() OK
 10. proc_web_response() OK (check)
 
 """
 import re
 from bs4 import BeautifulSoup
 import requests
+import cv2
+import pytesseract
+import imutils
+# import numpy as np
 # import string
 # import os
-# import cv2
-import pytesseract
-# import numpy as np
 from pyzbar.pyzbar import decode
 from pyzbar.pyzbar import ZBarSymbol
 from python_anticaptcha import AnticaptchaClient, NoCaptchaTaskProxylessTask
@@ -80,37 +81,38 @@ def prep_img(img):
     - Perspective warping
     It receives an image and returns the processed image as 4 images
     """
+    # Rotations
+    rot_angles = [90, 180, 270]
+    rot_imgs = [imutils.rotate_bound(img, x) for x in rot_angles]
+    rot_imgs.insert(0, img)
     # greyscale
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    gray = [cv2.cvtColor(x, cv2.COLOR_BGR2GRAY) for x in rot_imgs]
     # Gaussian Blur
-    
-    # Binarization (Adaptive)
-    binary2 =  cv2.adaptiveThreshold(gray,255,cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY,9,2)
-    # Contour finding
-    
+    blurred = [cv2.GaussianBlur(x, (3, 3), 0) for x in gray]
+    threshold = [cv2.threshold(x, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU) for x in blurred]
+    contours = [cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)]
     # Sort contours
-    
-    # Rotate
-    angles = [90, 180, 270]
-    rot_img = []
-    for angle in angles:
-        # rotate
-        rot_img.append[rot]
-        # Take largest for Perspective warp
-    
-        # crop
-    return rot_img
+    sorted_cnts = [sorted(imutils.grab_contours(x), key=cv2.contourArea,
+                          reverse=True) for x in contours]
+    # crop thresholded images to the largest contour
+    y = 0
+    h = 500
+    x = 0
+    w = 300
+    cropped = [x[y:y+h, x:x+w] for x in threshold]
+    return cropped
 
-def ocr_img(img):
+def ocr_img(imgs):
     """
     Calls tesseract on a processed image
     receives an image and returns a string
     """
-    try:
+    
+    all_text = "\n"
+    for img in imgs:
         text = pytesseract.image_to_string(img, lang="spa")
-    except ValueError:
-        text = None
-    return text
+        all_text.join(text)
+    return all_text
 
 def proc_text(text, id_type):
     """
