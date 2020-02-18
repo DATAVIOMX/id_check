@@ -38,6 +38,7 @@ from python_anticaptcha import AnticaptchaClient, NoCaptchaTaskProxylessTask
 
 
 API_KEY = ""
+CVE_ELEC_RE = re.compile(r"\w{6}\d{8}\w\d{3}")
 
 def get_qr(img):
     """
@@ -132,13 +133,14 @@ def ocr_img(imgs):
     Calls tesseract on a processed image
     receives an image and returns a string
     """
-    if imgs != [] and imgs is not None:
-        all_text = "\n"
-        for img in imgs:
-            text = pytesseract.image_to_string(img, lang="spa+eng")
-            all_text.join(text)
-        return all_text
-    return None
+    if imgs is None or imgs == []:
+        return None
+    all_text = ""
+    for img in imgs:
+        # text = pytesseract.image_to_string(img, lang="spa+eng")
+        text = pytesseract.image_to_string(img)
+        all_text += text
+    return all_text
 
 def proc_text(text, id_type):
     """
@@ -149,24 +151,27 @@ def proc_text(text, id_type):
     on the ID type
     REVISAR
     """
+    print("----------------------------------------------------------")
+    print("text", text)
     if text is None or id_type is None:
-        return Nones
-    cve_elec_re = re.compile(r"\w{6}\d{8}\w\d{3}")
-    cve_elector = cve_elec_re.findall(text)[0]
-    if not cve_elector:
         return None
+    lines = [y for y in (x.strip() for x in text.splitlines()) if y]
+    for line in lines:
+        if CVE_ELEC_RE.match(text):
+            print("cve_elec FOUND")
+            cve_elector = CVE_ELEC_RE.findall(text)[0]
+            
+        else:
+            return None
     if cve_elector and id_type in ("d", "e"):
         print(text)
-        flt = 'DMEX' text.find(
+        flt = text.find('DMEX')
         if flt:
             cic, ocr_h = [flt][0].split('<<')
             cic = cic[-10:len(cic)]
-            id_dict = {"tipo_cred": id_type,
-                       "cve_elec": cve_elector,
-                       "cic":cic,
-                       "ocr_horizontal":ocr_h}
-            return id_dict
-    return None
+    print("----------------------------------------------------------")
+    return {"tipo_cred": id_type, "cve_elec": cve_elector,
+            "cic":cic, "ocr_horizontal":ocr_h}
 
 def get_id_type(text):
     """
@@ -174,6 +179,8 @@ def get_id_type(text):
     INPUT: text
     OUTPT: ID type (as a character), None on failure
     """
+    if text is None:
+        return None
     id_type = None
     if ((any('TO FEDERAL' in mystring for mystring in text)) and
             ((any('DMEX' in mystring for mystring in text)) or
@@ -196,6 +203,8 @@ def proc_ocr_text(text):
     Receives a string and returns a dictionary containing the ID fields
     and the ID type
     """
+    if text is None:
+        return None
     id_dict = None
     id_type = get_id_type(text)
     if id_type:
@@ -207,7 +216,10 @@ def query_web(id_dict):
     Simple web caller that receives a dictionary of data, fills a form
     and calls the INE website, returns the HTML response
     """
-    resp = None
+    if id_dict is None:
+        return None
+    if not any(elem in ["tipo", "cve_elec", "num_emis", "ocr_v"] for elem in id_dict.keys()):
+        return None
     #### GET INE PAGE ####
     ine_lista_page = requests.get("https://listanominal.ine.mx/scpln/")
     soup = BeautifulSoup(ine_lista_page.content, 'html.parser')
@@ -291,14 +303,15 @@ def proc_web_response(content):
     as a Boolean value, returns its input and the extracted value as a
     dictionary
     """
-    # REVISAR
-    resp_dict = {"Error":"Please provide better images"}
+    if content is None:
+        return None
     if content is not None:
-        extracted_response = content
-        valid_yn = [content.find_all('div', {'class': 'col-md-12'}),
-                    content.find_all('table', {'class': 'table'})]
-        return {"response": extracted_response, "valid": valid_yn}
-    return resp_dict
+        valid = content.findAll('h4')
+        for frag in valid:
+            text = ''.join(frag.findAll(text=True))
+            if text.find("vigente"):
+                return {"content":content, "valid_yn":"Y"}
+    return None
 
 def check_id_text(text_dict):
     """
@@ -307,7 +320,10 @@ def check_id_text(text_dict):
     INPUT: dictionary of fields as strings
     OUTPUT: response as list [html, validyn(string)]
     """
-    return_dict = {"Error": "Problem calling INE"}
+    if text_dict is None:
+        return {"Error": "Input is empty"}
+    if not any(elem in ["tipo", "cve_elec", "num_emis", "ocr_v"] for elem in text_dict.keys()):
+        return {"Error": "Invalid input"}
     response = query_web(text_dict)
     if response:
         return_dict = proc_web_response(response)
@@ -320,6 +336,8 @@ def check_id_img(front, back):
     INPUT: front, back : Image as numpy array
     OUTPUT: string representation of HTML response from server
     """
+    if front is None and back is None:
+        return {"Error": "Input is empty"}
     response = None
     return_dict = {}
     # First we check the OCR as it is easier
