@@ -46,11 +46,10 @@ def get_qr(img):
     INPUT: image as cv2 image
     OUTPUT: url as string or None
     """
-    qr_data = None
-    url = decode(img, symbols=[ZBarSymbol.QRCODE])
-    if url:
-        return url
-    return qr_data
+    url = None
+    if img is not None:
+        url = decode(img, symbols=[ZBarSymbol.QRCODE])[0].data.decode("utf-8")
+    return url
 
 def query_qr(url):
     """
@@ -58,17 +57,26 @@ def query_qr(url):
     INPUT: url as string
     OUTPUT: response as list [html, valid]
     """
-    response = requests.get(url)
-    return response.content
+    if not url:
+        return None
+    try:
+        response = requests.get(url)
+        return response.content
+    except ValueError:
+        return None
 
 def clean_qr_response(resp):
     """
     Cleanup function to extract the boolean value of valid ID from the
     HTML content of the response
     """
+    if resp is None or resp == "":
+        return None
     extracted_response = BeautifulSoup(resp, 'html.parser')
     valid_yn = extracted_response.find(name='div', id="menje")
-    return {"response": extracted_response, "valid": valid_yn}
+    if valid_yn:
+        return {"response": extracted_response, "valid": valid_yn}
+    return None
 
 def prep_img(img):
     """
@@ -81,6 +89,10 @@ def prep_img(img):
     - Perspective warping
     It receives an image and returns the processed image as 4 images
     """
+    if img is None:
+        return None
+    cv2.imshow("prep_img", img)
+    cv2.waitKey(0)
     # Rotations
     rot_angles = [90, 180, 270]
     rot_imgs = [imutils.rotate_bound(img, x) for x in rot_angles]

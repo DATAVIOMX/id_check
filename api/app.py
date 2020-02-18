@@ -147,7 +147,6 @@ class IDCheck(Resource):
             return {"error": "payment processing in progress"}, 401
         if status == 2:
             # log call
-            
             cur.execute("""INSERT INTO api_calls (userid, call_date,
                         call_point, status_code, call_text, response)
                         VALUES (%s,%s,%s,%s,pgp_sym_encrypt(%s,
