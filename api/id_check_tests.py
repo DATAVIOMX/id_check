@@ -140,80 +140,299 @@ def t012():
     Test ocr_img
     Condition: image is None; returns None
     """
-    
+    inp = None
+    result = id_check.ocr_img(inp)
+    if result is None:
+        return "OK"
+    else:
+        return "ERROR Invalid output for None input"
     
 
-def t014():
+def t013():
     """
     Test ocr_img
     Condition: image is not None returns text
     """
-    pass
+    inp = [cv2.imread("esp.helvetica.exp1.png")]
+    result = id_check.ocr_img(inp)
+    if result is not None and result != '\n':
+        return "OK", result
+    else:
+        return "ERROR, not returning anything"
 
-# def t016():
+def t014():
+    """
+    Test proc_text
+    Condition: text is None; result is None
+    """
+    inp = None
+    inp2 = None
+    result = id_check.proc_text(inp, inp2)
+    if result is None:
+        return "OK"
+    else:
+        return "ERROR Invalid output for None input"
+
+def t015():
+    """
+    Test proc_text
+    Condition: text is not None but invalid; result is None
+    """
+    inp = """
+    este era un perro que una vez
+    dijo 3 palabras:
+    Chinguen su madre
+    """
+    inp2 = "d"
+    result = id_check.proc_text(inp, inp2)
+    if result is None:
+        return "OK"
+    else:
+        return "ERROR Invalid output for None input", result
+
+def t016():
+    """
+    Test proc_text
+    Condition: text is not None; result is dict
+    """
+    inp = """
+    IDMEX1212544810<<3779071056199
+    8406217H2412311MEX<01<<38062<4
+    HAHN<HERRERA<<OTTO<<<<<<<<<<<<
+    """
+    inp2 = "d"
+    result = id_check.proc_text(inp, inp2)
+    if result is not None:
+        return "OK", result
+    else:
+        return "ERROR Invalid output for None input"
+
+def t017():
+    """
+    get_id_type
+    Condition text is None; result None
+    """
+    inp = None
+    result = id_check.get_id_type(inp)
+    if result is None:
+        return "OK"
+    else:
+        return "ERROR Invalid output for None input"
+
+def t018():
+    """
+    get_id_type
+    Condition text is not None but useless; result None
+    """
+    inp = """
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore 
+    magna aliqua.
+    """
+    result = id_check.get_id_type(inp)
+    if result is None:
+        return "OK"
+    else:
+        return "ERROR Invalid output for invalid input"
+
+def t019():
+    """
+    get_id_type
+    Condition: Text is not None; returns 'd'
+    """
+    inp = """
+    
+    """
+    result = id_check.get_id_type(inp)
+    if result == "d":
+        return "OK"
+    else:
+        return "ERROR Invalid output for invalid input"
+
+def t020():
+    """
+    proc-ocr_text
+    Condition: Text is None; returns None
+    """
+    inp = None
+    result = id_check.proc_ocr_text(inp)
+    if result is None:
+        return "OK"
+    else:
+        return "ERROR Invalid output for None input"
+
+def t021():
+    """
+    proc_ocr_text
+    Condition: Text is not None but useless; returns None
+    """
+    inp = """
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore 
+    magna aliqua.
+    """
+    result = id_check.proc_ocr_text(inp)
+    if result is None:
+        return "OK"
+    else:
+        return "ERROR Invalid output for invalid input"
+
+def t022():
+    """
+    proc_ocr_text
+    Condition: Text is not None, useful; returns dict
+    """
     # pass
 
-# def t017():
-    # pass
+def t023():
+    """
+    query_web
+    Condition: data load is None; returns None
+    """
+    inp = None
+    result = id_check.query_web(inp)
+    if result is None:
+        return "OK"
+    else:
+        return "ERROR Invalid output for invalid input"
 
-# def t018():
-    # pass
+def t024():
+    """
+    query_web
+    Condition: data load is invalid; returns None
+    """
+    inp = {}
+    result = id_check.query_web(inp)
+    if result is None:
+        return "OK"
+    else:
+        return "ERROR, invalid output for invalid input"
 
-# def t019():
-    # pass
+def t025():
+    """
+    query_web
+    Condition: data load isvalid; returns HTML and valid_yn
+    """
+    inp = {}
+    out_dict = {}
+    result = id_check.query_web(inp)
+    if result == out_dict:
+        return "OK"
+    else:
+        return "ERROR in response"
 
-# def t020():
-    # pass
+def t026():
+    """
+    proc_web_response
+    Condition: response is None; returns None
+    """
+    inp = None
+    result = id_check.proc_web_response(inp)
+    if result is None:
+        return "OK"
+    else:
+        return "ERROR in response"
 
-# def t021():
-    # pass
+def t027():
+    """
+    proc_web_response
+    Condition: response is not None but invalid; returns None
+    """
+    inp = {}
+    out_dict = {}
+    result = id_check.proc_web_response(inp)
+    if result is None:
+        return "OK"
+    else:
+        return "ERROR in response"
 
-# def t022():
-    # pass
+def t028():
+    """
+    proc_web_response
+    Condition: content is valid; returns dict
+    """
+    inp = {}
+    out_dict = {}
+    result = id_check.proc_web_response(inp)
+    if result == out_dict:
+        return "OK"
+    else:
+        return "ERROR in response"
 
-# def t023():
-    # pass
+def t029():
+    """
+    check_id_text
+    Condition: input is None; returns Error dictionary
+    """
+    inp = None
+    result = id_check.check_id_text(inp)
+    if result == {"Error": "invalid input"}:
+        return "OK"
+    else:
+        return "Error, bad processing"
 
-# def t024():
-    # pass
+def t030():
+    """
+    check_id_text
+    Condition: input is invalid; returns Error dictionary
+    """
+    inp = {"something":"bad"}
+    result = id_check.check_id_text(inp)
+    if result == {"Error": "invalid input"}:
+        return "OK"
+    else:
+        return "Error, bad processing"
 
-# def t025():
-    # pass
+def t031():
+    """
+    check_id_text
+    Condition: input is valid; returns dictionary with HTML and valid_yn
+    """
+    inp = {}
+    result = id_check.check_id_text(inp)
+    if result == {}:
+        return "OK"
+    else:
+        return "Error, bad processing"
 
-# def t026():
-    # pass
+def t032():
+    """
+    check_id_img
+    Condition: input is None returns error dictionary
+    """
+    inp = None
+    inp2 = None
+    result = id_check.check_id_img(inp, inp2)
+    if result == {}:
+        return "OK"
+    else:
+        return "Error, bad processing"
 
-# def t027():
-    # pass
+def t033():
+    """
+    check_id_img
+    Condition: input is invalid; returns error dictionary
+    """
+    inp = "lena.png"
+    inp2 = "lena.png"
+    result = id_check.check_id_images(inp, inp2)
+    if result == {"Error": "invalid input"}:
+        return "OK"
+    else:
+        return "Error, bad processing"
 
-# def t028():
-    # pass
-
-# def t029():
-    # pass
-
-# def t030():
-    # pass
-
-# def t031():
-    # pass
-
-# def t032():
-    # pass
-
-# def t033():
-    # pass
-
-
-# def t034():
-    # pass
-
-# def t035():
-    # pass
-
-# def t036():
-    # pass
-
+def t034():
+    """
+    check_img_id
+    Condition images are valid; returns dictionary with HTML and valid_yn
+    """
+    inp1 = ""
+    inp2 = ""
+    result = id_check.check_id_images(inp, inp2)
+    if result == {}:
+        return "OK"
+    else:
+        return "Error, bad processing"
 
 if __name__=='__main__':
     print("T001", t001())
@@ -229,24 +448,24 @@ if __name__=='__main__':
     # print("T011", t011())
     print("T012", t012())
     print("T013", t013())
-    # print("T014", t014())
-    # print("T015", t015())
-    # print("T016", t016())
-    # print("T017", t017())
-    # print("T018", t018())
-    # print("T019", t019())
-    # print("T020", t020())
-    # print("T021", t021())
-    # print("T022", t022())
-    # print("T023", t023())
-    # print("T024", t024())
-    # print("T025", t025())
-    # print("T026", t026())
-    # print("T027", t027())
-    # print("T028", t028())
-    # print("T029", t029())
-    # print("T030", t030())
-    # print("T031", t031())
-    # print("T032", t032())
-    # print("T033", t033())
-    # print("T034", t034())
+    print("T014", t014())
+    print("T015", t015())
+    print("T016", t016())
+    print("T017", t017())
+    print("T018", t018())
+    print("T019", t019())
+    print("T020", t020())
+    print("T021", t021())
+    print("T022", t022())
+    print("T023", t023())
+    print("T024", t024())
+    print("T025", t025())
+    print("T026", t026())
+    print("T027", t027())
+    print("T028", t028())
+    print("T029", t029())
+    print("T030", t030())
+    print("T031", t031())
+    print("T032", t032())
+    print("T033", t033())
+    print("T034", t034())

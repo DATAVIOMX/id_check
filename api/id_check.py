@@ -132,12 +132,13 @@ def ocr_img(imgs):
     Calls tesseract on a processed image
     receives an image and returns a string
     """
-
-    all_text = "\n"
-    for img in imgs:
-        text = pytesseract.image_to_string(img, lang="spa")
-        all_text.join(text)
-    return all_text
+    if imgs != [] and imgs is not None:
+        all_text = "\n"
+        for img in imgs:
+            text = pytesseract.image_to_string(img, lang="spa+eng")
+            all_text.join(text)
+        return all_text
+    return None
 
 def proc_text(text, id_type):
     """
@@ -148,12 +149,15 @@ def proc_text(text, id_type):
     on the ID type
     REVISAR
     """
+    if text is None or id_type is None:
+        return Nones
     cve_elec_re = re.compile(r"\w{6}\d{8}\w\d{3}")
     cve_elector = cve_elec_re.findall(text)[0]
     if not cve_elector:
         return None
     if cve_elector and id_type in ("d", "e"):
-        flt = ['DMEX' in mystring for mystring in text]
+        print(text)
+        flt = 'DMEX' text.find(
         if flt:
             cic, ocr_h = [flt][0].split('<<')
             cic = cic[-10:len(cic)]
