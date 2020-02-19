@@ -37,7 +37,7 @@ from pyzbar.pyzbar import ZBarSymbol
 from python_anticaptcha import AnticaptchaClient, NoCaptchaTaskProxylessTask
 
 
-API_KEY = ""
+API_KEY = "f93c8b9646c63020ef084ecac088583d"
 CVE_ELEC_RE = re.compile(r"\w{6}\d{8}\w\d{3}")
 
 def get_qr(img):
@@ -282,8 +282,8 @@ def query_web(id_dict):
         # ojo hay diferentes longitudes en las cadenas
         parametros = {
             'modelo':	'e',
-            'cic': id_dict["cic"][:9], # 9 digitos después de IDMEX
-            'idCiudadano':id_dict["id_ciud"][5:13],
+            'cic': id_dict["cic"],
+            'idCiudadano':id_dict["ocr_h"],
             'g-recaptcha-response': hashed_key}
 
         ##### POST ####
@@ -317,13 +317,16 @@ def check_id_text(text_dict):
     INPUT: dictionary of fields as strings
     OUTPUT: response as list [html, validyn(string)]
     """
+    return_dict = {"Error": "No response from server"}
     if text_dict is None:
         return {"Error": "Input is empty"}
-    if not any(elem in ["tipo", "cve_elec", "num_emis", "ocr_v"] for elem in text_dict.keys()):
+    if not any(elem in ["tipo", "cve_elec", "num_emis", "ocr_h"] for elem in text_dict.keys()):
         return {"Error": "Invalid input"}
     response = query_web(text_dict)
+    print("response", response)
     if response:
         return_dict = proc_web_response(response)
+        print("return_dict", return_dict)
     return return_dict
 
 def check_id_img(front, back):

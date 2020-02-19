@@ -449,12 +449,12 @@ def t031():
     Condition: input is valid; returns dictionary with HTML and valid_yn
     """
     # "tipo", "cve_elec", "num_emis", "ocr_v"
-    inp = {"tipo":"d", "cic": "1212544810", "ocr_h": "9071056199"}
+    inp = {"tipo":"e", "cic": "121254481", "ocr_h": "3779071056199"}
     result = id_check.check_id_text(inp)
     if result:
         return "OK", result
-    else:
-        return "Error, bad processing"
+    if result["Error"]:
+        return result
 
 def t032():
     """
@@ -504,7 +504,7 @@ if __name__=='__main__':
     print("T006", t006())
     print("T007", t007())
     print("T008", t008())
-    # print("T009", t009())  # Vamos aqui
+    # print("T009", t009())
     print("T010", t010())
     # print("T011", t011())
     print("T012", t012())
@@ -526,7 +526,7 @@ if __name__=='__main__':
     print("T028", t028())
     print("T029", t029())
     print("T030", t030())
-    # print("T031", t031())
+    print("T031", t031())
     print("T032", t032())
     # print("T033", t033())
     #print("T034", t034())
