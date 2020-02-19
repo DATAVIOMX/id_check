@@ -151,27 +151,24 @@ def proc_text(text, id_type):
     on the ID type
     REVISAR
     """
-    print("----------------------------------------------------------")
-    print("text", text)
     if text is None or id_type is None:
         return None
     lines = [y for y in (x.strip() for x in text.splitlines()) if y]
+    cve_elector = None
+    cic = ocr_h = None
     for line in lines:
-        if CVE_ELEC_RE.match(text):
-            print("cve_elec FOUND")
-            cve_elector = CVE_ELEC_RE.findall(text)[0]
-            
-        else:
-            return None
-    if cve_elector and id_type in ("d", "e"):
-        print(text)
-        flt = text.find('DMEX')
-        if flt:
-            cic, ocr_h = [flt][0].split('<<')
+        if CVE_ELEC_RE.match(line):
+            cve_elector = CVE_ELEC_RE.findall(line)[0]
+            continue
+        if line.find('DMEX') != -1:
+            cic, ocr_h = line.split('<<')
             cic = cic[-10:len(cic)]
-    print("----------------------------------------------------------")
-    return {"tipo_cred": id_type, "cve_elec": cve_elector,
-            "cic":cic, "ocr_horizontal":ocr_h}
+            break
+    ret_dict = {"tipo_cred": id_type, "cve_elec": cve_elector,
+                "cic":cic, "ocr_horizontal":ocr_h}
+    if ret_dict['cic'] is None and ret_dict['ocr_horizontal'] is None:
+        return None
+    return ret_dict
 
 def get_id_type(text):
     """
@@ -181,22 +178,22 @@ def get_id_type(text):
     """
     if text is None:
         return None
-    id_type = None
+    text = text.splitlines()
     if ((any('TO FEDERAL' in mystring for mystring in text)) and
             ((any('DMEX' in mystring for mystring in text)) or
              (any('IDMEX' in mystring for mystring in text)) or
              (any('0MEX' in mystring for mystring in text)))):
-        id_type = 'd'
+        return 'd'
     if(any('TO NACIONAL' in mystring for mystring in text) or
        any('TO NACION' in mystring for mystring in text)):
-        id_type = 'e'
+        return 'e'
     if(any('TO FEDERAL' in mystring for mystring in text) and
        ((any('DOCUMENTO' in mystring for mystring in text)) or
         (any('TACHA' in mystring for mystring in text)) or
         (any('ENMENDADURA' in mystring for mystring in text)) or
         (any('INTRANSFERIBLE' in mystring for mystring in text)))):
-        id_type = 'a'
-    return id_type
+        return 'a'
+    return None
 
 def proc_ocr_text(text):
     """

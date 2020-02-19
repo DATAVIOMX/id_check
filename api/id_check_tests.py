@@ -208,7 +208,7 @@ def t016():
     if result is not None:
         return "OK", result
     else:
-        return "ERROR Invalid output for None input"
+        return "ERROR None output for valid input"
 
 def t017():
     """
@@ -241,16 +241,34 @@ def t018():
 def t019():
     """
     get_id_type
-    Condition: Text is not None; returns 'd'
+    Condition: Text is Valid; returns 'd'
     """
     inp = """
+    MEXICO INSTITUTO NACIONAL ELECTORAL
+    CREDENCIAL PARA VOTAR
+    NOMBRE FECHA DE NACIMIENTO
+    HAHN        21/06/1984
+    HERRERA       SEXO H
+    OTTO
+    DOMICILIO
+    AV INSURGENTES SUR 3493 E 1 203
+    COL VILLA OLIMPICA 14020
+    TLALPAN D.F.
     
+    CLAVE DE ELECTOR HHHROT84062109H500
+    CURP HAHO840621HDFHRT04 ANO DE REGISTRO   2005 01
+    
+    ESTADO 09 MUNICIPIO 012  SECCION 3779
+    LOCALIDAD 0001    EMISION 2014  VIGENCIA 2024
+    IDMEX1212544810<<3779071056199
+    8406217H2412311MEX<01<<38062<4
+    HAHN<HERRERA<<OTTO<<<<<<<<<<<<
     """
     result = id_check.get_id_type(inp)
-    if result == "d":
-        return "OK"
+    if result == "e":
+        return "OK", result
     else:
-        return "ERROR Invalid output for invalid input"
+        return "ERROR Invalid output for invalid input", result
 
 def t020():
     """
@@ -285,7 +303,32 @@ def t022():
     proc_ocr_text
     Condition: Text is not None, useful; returns dict
     """
-    # pass
+    inp = """
+    MEXICO INSTITUTO NACIONAL ELECTORAL
+    CREDENCIAL PARA VOTAR
+    NOMBRE FECHA DE NACIMIENTO
+    HAHN        21/06/1984
+    HERRERA       SEXO H
+    OTTO
+    DOMICILIO
+    AV INSURGENTES SUR 3493 E 1 203
+    COL VILLA OLIMPICA 14020
+    TLALPAN D.F.
+    
+    CLAVE DE ELECTOR HHHROT84062109H500
+    CURP HAHO840621HDFHRT04 ANO DE REGISTRO   2005 01
+    
+    ESTADO 09 MUNICIPIO 012  SECCION 3779
+    LOCALIDAD 0001    EMISION 2014  VIGENCIA 2024
+    IDMEX1212544810<<3779071056199
+    8406217H2412311MEX<01<<38062<4
+    HAHN<HERRERA<<OTTO<<<<<<<<<<<<
+    """
+    result = id_check.proc_ocr_text(inp)
+    if result is not None:
+        return "OK", result
+    else:
+        return "ERROR Invalid output for valid input"
 
 def t023():
     """
@@ -405,10 +448,11 @@ def t031():
     check_id_text
     Condition: input is valid; returns dictionary with HTML and valid_yn
     """
-    inp = {}
+    # "tipo", "cve_elec", "num_emis", "ocr_v"
+    inp = {"tipo":"d", "cic": "1212544810", "ocr_h": "9071056199"}
     result = id_check.check_id_text(inp)
-    if result == {}:
-        return "OK"
+    if result:
+        return "OK", result
     else:
         return "Error, bad processing"
 
@@ -473,7 +517,7 @@ if __name__=='__main__':
     print("T019", t019())
     print("T020", t020())
     print("T021", t021())
-    # print("T022", t022())
+    print("T022", t022())
     print("T023", t023())
     print("T024", t024())
     # print("T025", t025())
