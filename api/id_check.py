@@ -95,8 +95,6 @@ def prep_img(img):
     """
     if img is None:
         return None
-    cv2.imshow("prep_img", img)
-    cv2.waitKey(0)
     # Rotations
     rot_angles = [90, 180, 270]
     rot_imgs = [imutils.rotate_bound(img, x) for x in rot_angles]
@@ -106,11 +104,12 @@ def prep_img(img):
     # Gaussian Blur
     blurred = [cv2.GaussianBlur(x, (3, 3), 0) for x in gray]
     threshold = [cv2.threshold(x, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU) for x in blurred]
-    contours = [cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)]
+    contours = [cv2.findContours(thr[1], cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) for thr in threshold]
     # Sort contours
     sorted_cnts = [sorted(imutils.grab_contours(x), key=cv2.contourArea,
                           reverse=True) for x in contours]
     # crop thresholded images to the largest contour
+    # AQUI hay que revisar
     contour_data = [[num_foto, cont_data, cont_data[2] / float(cont_data[3]),
                      cont_data[2] / float(threshold[num_foto].shape[1])]
                     for num_foto, cont_data in sorted_cnts]
