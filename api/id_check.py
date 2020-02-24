@@ -216,9 +216,11 @@ def query_web(id_dict):
     Simple web caller that receives a dictionary of data, fills a form
     and calls the INE website, returns the HTML response
     """
+    # print("id_dict", id_dict)
     if id_dict is None:
         return None
-    if not any(elem in ["tipo", "cve_elec", "num_emis", "ocr_v"] for elem in id_dict.keys()):
+    if not any(elem in ["tipo", "cve_elec", "num_emis", "ocr_v", "ocr_h"]
+               for elem in id_dict.keys()):
         return None
     #### GET INE PAGE ####
     ine_lista_page = requests.get("https://listanominal.ine.mx/scpln/")
@@ -261,17 +263,15 @@ def query_web(id_dict):
             'ocr': id_dict["ocr_v"], #13 digitos
             "g-recaptcha-response": hashed_key
         }
-
         ##### POST ####
         pg_out = requests.post(url='https://listanominal.ine.mx/scpln/resultado.html',
                                data=parametros)
         resp = BeautifulSoup(pg_out.text, 'html.parser')
-        return resp.content
-
+        return resp
     if id_dict["tipo"] == 'd':
         parametros = {
-            'modelo':	'd',
-            'cic': id_dict["cic"][:9], # 9 digitos después de IDMEX
+            'modelo': 'd',
+            'cic': id_dict["cic"], # 9 digitos después de IDMEX
             'ocr': id_dict["ocr_h"], # 13 ultimos digitos de 1er renglon
             'g-recaptcha-response': hashed_key}
 
@@ -279,12 +279,13 @@ def query_web(id_dict):
         pg_out = requests.post(url='https://listanominal.ine.mx/scpln/resultado.html',
                                data=parametros)
         resp = BeautifulSoup(pg_out.text, 'html.parser')
-        return resp.content
+        return resp
     if id_dict["tipo"] == 'e':
         # en id_ciud 9 o 10 últimos digitos 1er renglon,
         # ojo hay diferentes longitudes en las cadenas
+        print("id_dict", id_dict)
         parametros = {
-            'modelo':	'e',
+            'modelo':'e',
             'cic': id_dict["cic"],
             'idCiudadano':id_dict["ocr_h"],
             'g-recaptcha-response': hashed_key}
@@ -294,7 +295,7 @@ def query_web(id_dict):
                                data=parametros)
         #para modelos d y e el resultado se va a resultado.html
         resp = BeautifulSoup(pg_out.text, 'html.parser')
-        return resp.content
+        return resp
     return resp
 
 def proc_web_response(content):
@@ -307,6 +308,7 @@ def proc_web_response(content):
         return None
     if content is not None:
         valid = content.findAll('h4')
+        print(valid)
         for frag in valid:
             text = ''.join(frag.findAll(text=True))
             if text.find("vigente"):
