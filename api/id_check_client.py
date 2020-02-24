@@ -9,6 +9,9 @@ import requests
 import cv2
 
 
+URL_TXT = "/api/v1/id-check/text"  # Falta la base de la URL
+URL_IMG = "/api/v1/id-check/images"
+
 def prep_req_img(args):
     """
     Converts image to numpy array string
@@ -77,19 +80,19 @@ def main():
         # prepare request
         req = prep_req_txt(args)
         # send request
-        response = requests.post('http://', data=req)
+        response = requests.post(URL_TXT, data=req)
     if args.subcommand == 'image':
         # prepare request
         req = prep_req_img(args)
         # send request
-        response = requests.post('http://', data=req)
+        response = requests.post(URL_IMG, data=req)
     # Receive request
     full_resp = response.json()
     # Check for errors
     if full_resp["Error"]:
         print(full_resp["Error"])
         return -1
-    if all(["", "valid_yn"]) in full_resp.keys:
+    if all(["content", "valid_yn"]) in full_resp.keys:
         # write to file the raw HTML response
         outfile = open(args.salida, "w")
         outfile.write(full_resp["content"])
