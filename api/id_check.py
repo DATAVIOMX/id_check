@@ -49,7 +49,10 @@ def get_qr(img):
     """
     url = None
     if img is not None:
-        url = decode(img, symbols=[ZBarSymbol.QRCODE])[0].data.decode("utf-8")
+        try:
+            url = decode(img, symbols=[ZBarSymbol.QRCODE])[0].data.decode("utf-8")
+        except ValueError:
+            url = None
     return url
 
 def query_qr(url):
@@ -104,30 +107,17 @@ def prep_img(img):
     # Gaussian Blur
     blurred = [cv2.GaussianBlur(x, (3, 3), 0) for x in gray]
     threshold = [cv2.threshold(x, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU) for x in blurred]
-    contours = [cv2.findContours(thr[1], cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) for thr in threshold]
-    # Sort contours
-    sorted_cnts = [sorted(imutils.grab_contours(x), key=cv2.contourArea,
-                          reverse=True) for x in contours]
-    # crop thresholded images to the largest contour
-    # AQUI hay que revisar
-    contour_data = [[num_foto, cont_data, cont_data[2] / float(cont_data[3]),
-                     cont_data[2] / float(threshold[num_foto].shape[1])]
-                    for num_foto, cont_data in sorted_cnts]
-
-    valid_contours = [[num_foto, cont_data, ar, crWidth] for num_foto,
-                      cont_data, ar, crWidth in contour_data if ar >= 4]
-
-    #coordinate for cropping images
-    coord_rectangles = [[num_foto, int((cont_data[0] + cont_data[2]) * 0.03),
-                         int((cont_data[1] + cont_data[3]) * 0.03),
-                         cont_data[0] - int((cont_data[0] + cont_data[2]) * 0.03),
-                         cont_data[1] - int((cont_data[1] + cont_data[3]) * 0.03),
-                         cont_data[2] + (int((cont_data[0] + cont_data[2]) * 0.03) *2),
-                         cont_data[3] + (int((cont_data[1] + cont_data[3]) * 0.03) *2)]
-                        for num_foto, cont_data, ar, crWidth in valid_contours]
-    #cropped images
-    cropped = [threshold[num_foto][y:y + h, x:x + w] for num_foto,
-               pX, pY, x, y, w, h in coord_rectangles]
+    cropped = []
+    idx = 0
+    for th in threshold:
+        contours,hierarchy = cv2.findContours(th[1], cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        if len(contours) != 0:
+            # find the biggest contour (c) by the area
+            c = max(contours, key = cv2.contourArea)
+            x,y,w,h = cv2.boundingRect(c)
+            new_img = th[1][y:y+h, x:x+w]
+            cropped.append(new_img)
+        idx += 1
     return cropped
 
 def ocr_img(imgs):
@@ -218,7 +208,7 @@ def query_web(id_dict):
     # print("id_dict", id_dict)
     if id_dict is None:
         return None
-    if not any(elem in ["tipo", "cve_elec", "num_emis", "ocr_v", "ocr_h"]
+    if not any(elem in ["tipo", "cve_elec", "num_emis","cic", "ocr_v", "ocr_h"]
                for elem in id_dict.keys()):
         return None
     #### GET INE PAGE ####

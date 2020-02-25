@@ -105,9 +105,208 @@ def t009():
     Test clean_qr_response
     Condition: Response is valid; returns response and validyn
     """
-    inp = ""  # some HTML
+    inp = """
+
+<script language="JavaScript">
+if (top.location != self.location){top.location = self.location;}
+</script>
+
+<head><meta http-equiv=X-Frame-Options content=deny></head><head><meta http-equiv=X-Frame-Options content=deny></head><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="X-Frame-Options" content="deny">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Servicios de Informacion</title>
+    <!-- Bootstrap -->
+    <link href="media-queries.css" rel="stylesheet">
+
+<!-- GOOGLE ANALITICS-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-39814429-4', 'ife.org.mx');
+	  ga('send', 'pageview');
+	</script>
+<!--PARA FACEBOK-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script language="JavaScript">
+<!--// evito que se cargue en otro frame
+if (top.location != self.location){top.location = self.location;}
+//-->
+</script>
+	
+</head>
+
+<body alink="#ffffff" class="container" onLoad="setTimeout('enviar()', 00000)" > <!-- es en milesimas de segundo 5000 = 5 segundos -->
+<script>
+  if (self == top) {
+    var theBody = document.getElementsByTagName('body')[0]
+    theBody.style.display = "block"
+  } else {
+    top.location = self.location
+  }
+</script>
+
+<script>
+function soloNumeros(e){
+        var key = window.Event ? e.which : e.keyCode
+        return (key >= 48 && key <= 57)
+}
+
+</script>
+
+<div id="pagewrap">
+
+                <div id="header">
+                                <div  id="headerizq" >
+                                        <a href="http://www.ine.mx/es/web/portal/inicio" target="_blank"><img src="images/logoINE.png"  width="97%" ></a>
+                                </div>
+                                <div id="headerder">
+                                        <span class="text_cabecera"><input type="image" src="images/banner.png" width=100%></span>
+                                </div>
+                </div>
+                <div id="nensaje_rapido" >
+<table border=0 >
+<tr>
+<td width=30%>
+                                	<div id="ima_msj"><input type="image" src="images/SII.png" width=100%></div>
+</td>
+<td width=70%>
+					<div id="menje" ><p>Est&aacute; vigente como medio de identificaci&oacute;n, y puedes votar.</p></div>
+</td>
+</tr>
+</table>
+                                                        </div>
+                <div id="content" >
+
+       <div id="elemento1">
+
+        <form enctype="multipart/form-data" action="https://listanominal.ine.mx/scpln/src/" method="post" target="_self">
+        <input type="hidden" name="boton" value="8" pattern="[8]{1}"  maxlength="1"                             onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="e" value="9" pattern="[0-9]{1,2}"  maxlength="2"          onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="s" value="3779" pattern="[0-9]{1,4}"  maxlength="4"        onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="modulo" value="999999"     onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="CIC" value="121254481" pattern="[0-9]{1,9}"  maxlength="9"            onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="salto" value="1" pattern="[1]{1}"   maxlength="1" onKeyPress="return soloNumeros(event)">
+        <input type="hidden" value="SI" name="con_cic"  pattern="[SI]{1,2}" >
+        <input type="IMAGE"  name="buscar" value="" src="images/botonera2_01.png"   width="100%" />
+        </form>
+        </div>
+       <div id="elemento1">
+
+        <form enctype="multipart/form-data" action="https://ubicatucasilla.ine.mx" method="post" target="_self">
+        <input type="hidden" name="boton" value="8" pattern="[8]{1}"  maxlength="1"                             onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="e" value="9" pattern="[0-9]{1,2}"  maxlength="2"          onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="s" value="3779" pattern="[0-9]{1,4}"  maxlength="4"        onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="modulo" value="999999"     onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="CIC" value="121254481" pattern="[0-9]{1,9}"  maxlength="9"            onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="salto" value="1" pattern="[1]{1}"   maxlength="1" onKeyPress="return soloNumeros(event)">
+        <input type="hidden" value="SI" name="con_cic"  pattern="[SI]{1,2}" >
+        <input type="IMAGE"  name="buscar" value="" src="images/botonera2_02.png"   width="100%" />
+        </form>
+        </div>
+       <div id="elemento1">
+
+        <form enctype="multipart/form-data" action="http://ubicatumodulo.ife.org.mx/" method="post" target="_self">
+        <input type="hidden" name="boton" value="8" pattern="[8]{1}"  maxlength="1"                             onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="e" value="9" pattern="[0-9]{1,2}"  maxlength="2"          onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="s" value="3779" pattern="[0-9]{1,4}"  maxlength="4"        onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="modulo" value="999999"     onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="CIC" value="121254481" pattern="[0-9]{1,9}"  maxlength="9"            onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="salto" value="1" pattern="[1]{1}"   maxlength="1" onKeyPress="return soloNumeros(event)">
+        <input type="hidden" value="SI" name="con_cic"  pattern="[SI]{1,2}" >
+        <input type="IMAGE"  name="buscar" value="" src="images/botonera2_03.png"   width="100%" />
+        </form>
+        </div>
+       <div id="elemento1">
+
+        <form enctype="multipart/form-data" action="https://app-inter.ife.org.mx/siac2011/citas_initCapturaCitas.siac" method="post" target="_self">
+        <input type="hidden" name="boton" value="8" pattern="[8]{1}"  maxlength="1"                             onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="e" value="9" pattern="[0-9]{1,2}"  maxlength="2"          onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="s" value="3779" pattern="[0-9]{1,4}"  maxlength="4"        onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="modulo" value="999999"     onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="CIC" value="121254481" pattern="[0-9]{1,9}"  maxlength="9"            onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="salto" value="1" pattern="[1]{1}"   maxlength="1" onKeyPress="return soloNumeros(event)">
+        <input type="hidden" value="SI" name="con_cic"  pattern="[SI]{1,2}" >
+        <input type="IMAGE"  name="buscar" value="" src="images/botonera2_04.png"   width="100%" />
+        </form>
+        </div>
+       <div id="elemento1">
+
+        <form enctype="multipart/form-data" action="http://www.ine.mx/archivos2/portal/credencial/tramite/" method="post" target="_self">
+        <input type="hidden" name="boton" value="8" pattern="[8]{1}"  maxlength="1"                             onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="e" value="9" pattern="[0-9]{1,2}"  maxlength="2"          onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="s" value="3779" pattern="[0-9]{1,4}"  maxlength="4"        onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="modulo" value="999999"     onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="CIC" value="121254481" pattern="[0-9]{1,9}"  maxlength="9"            onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="salto" value="1" pattern="[1]{1}"   maxlength="1" onKeyPress="return soloNumeros(event)">
+        <input type="hidden" value="SI" name="con_cic"  pattern="[SI]{1,2}" >
+        <input type="IMAGE"  name="buscar" value="" src="images/botonera2_05.png"   width="100%" />
+        </form>
+        </div>
+       <div id="elemento1">
+
+        <form enctype="multipart/form-data" action="http://www.ine.mx/archivos2/previo/credencial/tramite" method="post" target="_self">
+        <input type="hidden" name="boton" value="8" pattern="[8]{1}"  maxlength="1"                             onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="e" value="9" pattern="[0-9]{1,2}"  maxlength="2"          onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="s" value="3779" pattern="[0-9]{1,4}"  maxlength="4"        onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="modulo" value="999999"     onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="CIC" value="121254481" pattern="[0-9]{1,9}"  maxlength="9"            onKeyPress="return soloNumeros(event)">
+        <input type="hidden" name="salto" value="1" pattern="[1]{1}"   maxlength="1" onKeyPress="return soloNumeros(event)">
+        <input type="hidden" value="SI" name="con_cic"  pattern="[SI]{1,2}" >
+        <input type="IMAGE"  name="buscar" value="" src="images/botonera2_06.png"   width="100%" />
+        </form>
+        </div>
+
+                </div>
+
+
+
+                <div id="footer">
+                        <span class="text_gris2">
+                                Si tienes dudas llama a
+                        </span>
+                        <span class="subtitulo">
+                                INETEL
+                        </span>
+                        <span class="text_gris2">
+                                al
+                        </span>
+                        <span class="subtitulo">
+                                01 800 433 2000.
+                        </span>
+                        <span class="text_gris2"><br>
+                                La llamada no tiene costo y puedes realizarla desde cualquier parte del pa&iacute;s.
+                        </span>
+
+                </div>
+
+</div>
+
+	
+
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+"""  # some HTML
     result = id_check.clean_qr_response(inp)
-    if result['valid_yn'] == "valido":
+    if result['valid_yn'] == "Y":
         return "OK"
     else:
         return "ERROR no valid_yn"
@@ -129,7 +328,7 @@ def t011():
     Test prep_img
     Condition: image is valid; returns array of processed images
     """
-    img = cv2.imread('lena.jpg')
+    img = cv2.imread('test22.jpg')
     result = id_check.prep_img(img)
     for r in result:
         cv2.imshow("image", r)
@@ -359,11 +558,10 @@ def t025():
     query_web
     Condition: data load is valid; returns HTML and valid_yn
     """
-    inp = {}
-    out_dict = {}
+    inp = {"tipo":"e", "cic":"121554481", "ocr_h":"071056199"}
     result = id_check.query_web(inp)
-    if result == out_dict:
-        return "OK"
+    if result:
+        return "OK", result
     else:
         return "ERROR in response"
 
@@ -476,7 +674,7 @@ def t033():
     """
     inp = "lena.png"
     inp2 = "lena.png"
-    result = id_check.check_id_images(inp, inp2)
+    result = id_check.check_id_img(inp, inp2)
     if result == {"Error": "invalid input"}:
         return "OK"
     else:
@@ -487,46 +685,46 @@ def t034():
     check_img_id
     Condition images are valid; returns dictionary with HTML and valid_yn
     """
-    inp1 = ""
-    inp2 = ""
-    result = id_check.check_id_images(inp, inp2)
-    if result == {}:
+    inp1 = "test34_front.jpg"
+    inp2 = "test22.jpg"
+    result = id_check.check_id_img(inp1, inp2)
+    if result["valid_yn"] == "Y":
         return "OK"
     else:
         return "Error, bad processing"
 
 if __name__=='__main__':
-    print("T001", t001())
-    print("T002", t002())
-    print("T003", t003())
-    print("T004", t004())
-    print("T005", t005())
-    print("T006", t006())
-    print("T007", t007())
-    print("T008", t008())
-    # print("T009", t009())
-    print("T010", t010())
-    # print("T011", t011())
-    print("T012", t012())
-    print("T013", t013())
-    print("T014", t014())
-    print("T015", t015())
-    print("T016", t016())
-    print("T017", t017())
-    print("T018", t018())
-    print("T019", t019())
-    print("T020", t020())
-    print("T021", t021())
-    print("T022", t022())
-    print("T023", t023())
-    print("T024", t024())
-    # print("T025", t025())
-    print("T026", t026())
-    print("T027", t027())
-    print("T028", t028())
-    print("T029", t029())
-    print("T030", t030())
-    print("T031", t031())
-    print("T032", t032())
-    # print("T033", t033())
-    #print("T034", t034())
+    #print("T001", t001())
+    #print("T002", t002())
+    #print("T003", t003())
+    #print("T004", t004())
+    #print("T005", t005())
+    #print("T006", t006())
+    #print("T007", t007())
+    #print("T008", t008())
+    #print("T009", t009())
+    #print("T010", t010())
+    #print("T011", t011())
+    #print("T012", t012())
+    #print("T013", t013())
+    #print("T014", t014())
+    #print("T015", t015())
+    #print("T016", t016())
+    #print("T017", t017())
+    #print("T018", t018())
+    #print("T019", t019())
+    #print("T020", t020())
+    #print("T021", t021())
+    #print("T022", t022())
+    #print("T023", t023())
+    #print("T024", t024())
+    #print("T025", t025())
+    #print("T026", t026())
+    #print("T027", t027())
+    #print("T028", t028())
+    #print("T029", t029())
+    #print("T030", t030())
+    #print("T031", t031())
+    #print("T032", t032())
+    # print("T033", t033())  # FALTA
+    print("T034", t034())
