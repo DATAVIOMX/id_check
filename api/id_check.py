@@ -29,9 +29,6 @@ import requests
 import cv2
 import pytesseract
 import imutils
-# import numpy as np
-# import string
-# import os
 from pyzbar.pyzbar import decode
 from pyzbar.pyzbar import ZBarSymbol
 from python_anticaptcha import AnticaptchaClient, NoCaptchaTaskProxylessTask
@@ -50,7 +47,9 @@ def get_qr(img):
     url = None
     if img is not None:
         try:
-            url = decode(img, symbols=[ZBarSymbol.QRCODE])[0].data.decode("utf-8")
+            barc = decode(img, symbols=[ZBarSymbol.QRCODE])
+            if len(barc) > 0:
+                url = barc[0].data.decode("utf-8")
         except ValueError:
             url = None
     return url
@@ -110,11 +109,11 @@ def prep_img(img):
     cropped = []
     idx = 0
     for th in threshold:
-        contours,hierarchy = cv2.findContours(th[1], cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        contours, _ = cv2.findContours(th[1], cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         if len(contours) != 0:
             # find the biggest contour (c) by the area
-            c = max(contours, key = cv2.contourArea)
-            x,y,w,h = cv2.boundingRect(c)
+            c = max(contours, key=cv2.contourArea)
+            x, y, w, h = cv2.boundingRect(c)
             new_img = th[1][y:y+h, x:x+w]
             cropped.append(new_img)
         idx += 1
@@ -208,7 +207,7 @@ def query_web(id_dict):
     # print("id_dict", id_dict)
     if id_dict is None:
         return None
-    if not any(elem in ["tipo", "cve_elec", "num_emis","cic", "ocr_v", "ocr_h"]
+    if not any(elem in ["tipo", "cve_elec", "num_emis", "cic", "ocr_v", "ocr_h"]
                for elem in id_dict.keys()):
         return None
     #### GET INE PAGE ####

@@ -18,7 +18,7 @@ from dateutil.relativedelta import relativedelta
 import psycopg2 as db
 from flask import Flask, request
 from flask_restful import Resource, Api, reqparse
-
+import id_check
 
 app = Flask(__name__)
 api = Api(app)
@@ -159,7 +159,12 @@ class IDCheck(Resource):
             return {"error": "payment required"}, 402
         # NOTE: results_page needs to be in a try except or in an if
         # block to return either a 200 status or a 500 status
-        # results_page = id_check(args["front"], args["back"])
+        # We need to convert args["front"] and "back" to ndarray of given shape
+        front = np.fromstring(args["front"], dtype=np.uint8)
+        back = np.fromstring(args["front"], dtype=np.uint8)
+        np.reshape(front, tuple(args["shape_f"]))
+        np.reshape(back, tuple(args["shape_b"]))
+        results = id_check(front, back)
         # log call
         cur.execute("""INSERT INTO api_calls (userid, call_date,
                     call_point,status_code, call_text, response)
@@ -251,7 +256,7 @@ class TextCheck(Resource):
         # block to return either a 200 status or a 500 status
         text_dict = args
         del text_dict["api_key"]
-        # results_page = w_s.consulta_id(args)
+        results =id_check.check_id_text(args)
         # log call
         cur.execute("""INSERT INTO api_calls (userid, call_date, call_point,
                 status_code, call_text, response) VALUES 

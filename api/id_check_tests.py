@@ -2,6 +2,7 @@
 """
 Simple test suite for the functions
 """
+import numpy as np
 import cv2
 from bs4 import BeautifulSoup
 import id_check
@@ -672,9 +673,9 @@ def t033():
     check_id_img
     Condition: input is invalid; returns error dictionary
     """
-    inp = "lena.png"
-    inp2 = "lena.png"
-    result = id_check.check_id_img(inp, inp2)
+    inp1 = cv2.imread("lena.jpg")
+    inp2 = cv2.imread("lena.jpg")
+    result = id_check.check_id_img(inp1, inp2)
     if result == {"Error": "invalid input"}:
         return "OK"
     else:
@@ -685,18 +686,18 @@ def t034():
     check_img_id
     Condition images are valid; returns dictionary with HTML and valid_yn
     """
-    inp1 = "test34_front.jpg"
-    inp2 = "test22.jpg"
+    inp1 = cv2.imread("test34_front.jpg")
+    inp2 = cv2.imread("test22.jpg")
     result = id_check.check_id_img(inp1, inp2)
     if result["valid_yn"] == "Y":
-        return "OK"
+        return "OK", result
     else:
         return "Error, bad processing"
 
 if __name__=='__main__':
     #print("T001", t001())
     #print("T002", t002())
-    #print("T003", t003())
+    print("T003", t003())
     #print("T004", t004())
     #print("T005", t005())
     #print("T006", t006())
@@ -726,5 +727,5 @@ if __name__=='__main__':
     #print("T030", t030())
     #print("T031", t031())
     #print("T032", t032())
-    # print("T033", t033())  # FALTA
-    print("T034", t034())
+    print("T033", t033())
+    #print("T034", t034())

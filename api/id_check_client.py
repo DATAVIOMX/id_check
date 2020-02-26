@@ -18,9 +18,17 @@ def prep_req_img(args):
     """
     end_f = args.front[-4:]
     end_b = args.back[-4:]
-    str_f = cv2.imencode(end_f, args.front)[1].tostring()
-    str_b = cv2.imencode(end_b, args.back)[1].tostring()
-    adict = {"front": str_f, "back": str_b, "api-key": args.key}
+    # Necesitamos la forma del array tambien
+    
+    arr_f = cv2.imread(args["front"])
+    arr_b = cv2.imread(args["front"])
+    shape_f = list(arr_f.shape)
+    shape_b = list(arr_b.shape)
+    str_f = arr_f.tostring()
+    str_b = arr_b.tostring()
+    
+    adict = {"front": str_f, "back": str_b, "api-key": args.key,
+             "shape_f":shape_f, "shape_b": shape_b}
     return adict
 
 def prep_req_txt(args):
