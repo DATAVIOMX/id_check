@@ -33,6 +33,30 @@ Motoko Research
 5. Instalar dependencias `pip install -r requirements.txt`
 
 ```pip install Flask Flask-restful SQLAlchemy psycopg2``` 
+
+como sudo 
+apt-get update
+apt-get install -y libsm6 libxext6 libxrender-dev
+
+como el user y en venv
+pip install opencv-python
+
+afuera
+sudo apt-get install zbar-tools
+apt-get update && \
+    apt-get install -y build-essential libzbar-dev && \
+    
+en venv
+pip install zbar
+(continuar aunque de un error en instalacion)
+
+afuera
+
+sudo apt-get update
+sudo apt-get install tesseract-ocr
+sudo apt-get install libtesseract-dev
+
+
  
 ## Endpoints
 
