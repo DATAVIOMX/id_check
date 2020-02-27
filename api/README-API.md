@@ -56,7 +56,11 @@ sudo apt-get update
 sudo apt-get install tesseract-ocr
 sudo apt-get install libtesseract-dev
 
-
+sudo apt-get -y install supervisor nginx git
+ 
+ (venv) $ pip install gunicorn pymysql
+ 
+ 
  
 ## Endpoints
 
