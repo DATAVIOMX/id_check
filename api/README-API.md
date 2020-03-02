@@ -122,5 +122,7 @@ politicas de privacidad.
 Las llaves de usuario son generadas aleatoriamente para cada usuario utilizando
 pgcrypto con el generador v4, esto nos da llaves aleatorias y unicas.
 
+### Esquema de las tablas utilizadas
 
+![](schema_id_check_api_db.png)
 
