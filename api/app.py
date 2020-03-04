@@ -172,10 +172,10 @@ class IDCheck(Resource):
                     'longsecretencryptionkey'),
                     pgp_sym_encrypt(%s,'longsecretencryptionkey'))""",
                     (userid, call_dt, 'id-check', 200, json.dumps(req_data),
-                     '{"success":"call successful"}',))
+                     results,))
         conn.commit()
         conn.close()
-        return {"success":"call successful"}, 200
+        return results, 200
 
 class TextCheck(Resource):
     """
@@ -263,10 +263,10 @@ class TextCheck(Resource):
                 (%s,%s,%s,%s,pgp_sym_encrypt(%s,'longsecretencryptionkey'),
                 pgp_sym_encrypt(%s,'longsecretencryptionkey'))""",
                     (userid, call_dt, 'id-check', 200, json.dumps(req_data),
-                     '{"resultados":'+results_page+'}',))
+                     results,))
         conn.commit()
         conn.close()
-        return {"resultados":results_page}, 200
+        return results, 200
 
 
 
