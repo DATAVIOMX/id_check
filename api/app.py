@@ -164,7 +164,7 @@ class IDCheck(Resource):
         back = np.fromstring(args["front"], dtype=np.uint8)
         np.reshape(front, tuple(args["shape_f"]))
         np.reshape(back, tuple(args["shape_b"]))
-        results = id_check(front, back)
+        results = id_check.check_id_img(front, back)
         # log call
         cur.execute("""INSERT INTO api_calls (userid, call_date,
                     call_point,status_code, call_text, response)
