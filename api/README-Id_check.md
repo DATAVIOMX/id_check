@@ -63,14 +63,20 @@ check_id_text.
 
 ### 3. `get_qr()`
 
+![](get_qr.png)
+
 QR detector and extractor, receives an image and if successful returns an
 URL, on failure returns None.
 
 ### 4. `query_qr()`
 
+![](query_qr.png)
+
 Simple web caller that receives an URL and calls it, returns the HTML response
 
 ### 5. `clean_qr_response()`
+
+![](clean_qr_response.png)
 
 This function receives the HTML response from calling the URL encoded in the QR
 and does the extraction of information to see if the ID is valid and codes it as
