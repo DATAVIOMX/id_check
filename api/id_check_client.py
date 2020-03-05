@@ -9,8 +9,8 @@ import requests
 import cv2
 
 
-URL_TXT = "/api/v1/id-check/text"  # Falta la base de la URL
-URL_IMG = "/api/v1/id-check/images"
+URL_TXT = "http://localhost:5000/api/v1/id-check/text"  # Falta la base de la URL
+URL_IMG = "http://localhost:5000/api/v1/id-check/images"
 
 def prep_req_img(args):
     """
@@ -59,12 +59,12 @@ def create_parser():
     """
     parser = argparse.ArgumentParser(description="""CLI client for id_check it
     uses either a text mode validation or image mode validation""")
-    parser.add_argument('-s', '--salida', help='archivo de salida')
+    parser.add_argument('-s', '--salida', help='output file')
     parser.add_argument('-k', '--key', help='API key')
-    subparsers = parser.add_subparsers(dest='subcommand')
+    subparsers = parser.add_subparsers(dest='subcommand', help='options are text or image')
     parser_text = subparsers.add_parser('text')
     parser_text.add_argument('-t', '--tipo', choices=['a', 'b', 'c', 'd', 'e'],
-                             required=True, help='id version')
+                             required=True, help='id version ')
     parser_text.add_argument('-v', '--cve', help='clave elector')
     parser_text.add_argument('-e', '--emision', help='emision')
     parser_text.add_argument('-o', '--ocr', help='texto ocr')
@@ -82,8 +82,6 @@ def main():
     """
     parser = create_parser()
     args = parser.parse_args()
-    print(args.subcommand)
-    print(args)
     if args.subcommand == 'text':
         # prepare request
         req = prep_req_txt(args)
@@ -97,10 +95,12 @@ def main():
     # Receive request
     full_resp = response.json()
     # Check for errors
-    if full_resp["Error"]:
+    if "Error" in full_resp.keys():
         print(full_resp["Error"])
         return -1
-    if all(["content", "valid_yn"]) in full_resp.keys:
+    if full_resp is None:
+        return full_resp 
+    if all(["content", "valid_yn"]) in full_resp.keys():
         # write to file the raw HTML response
         outfile = open(args.salida, "w")
         outfile.write(full_resp["content"])
@@ -108,6 +108,6 @@ def main():
         # print to STDOUT the valid_yn
         print(response["valid_yn"])
         return 0
-    return -1
+    return {"Error": "not found"}
 if __name__ == "__main__":
-    main()
+    print(main())
