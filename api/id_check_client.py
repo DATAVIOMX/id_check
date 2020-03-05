@@ -59,9 +59,10 @@ def create_parser():
     """
     parser = argparse.ArgumentParser(description="""CLI client for id_check it
     uses either a text mode validation or image mode validation""")
-    parser.add_argument('-s', '--salida', help='output file')
-    parser.add_argument('-k', '--key', help='API key')
+    parser.add_argument('-s', '--salida', help='output file', required=True)
+    parser.add_argument('-k', '--key', help='API key', required=True)
     subparsers = parser.add_subparsers(dest='subcommand', help='options are text or image')
+    subparsers.required = True
     parser_text = subparsers.add_parser('text')
     parser_text.add_argument('-t', '--tipo', choices=['a', 'b', 'c', 'd', 'e'],
                              required=True, help='id version ')
