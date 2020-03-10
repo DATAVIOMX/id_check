@@ -6,8 +6,8 @@
 ### Para el cliente
 
 - python 3.6
-- numpy
 - requests
+- openCV
 
 ### Para conectar con la API de manera independiente
 
