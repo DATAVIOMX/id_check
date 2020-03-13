@@ -1,0 +1,1002 @@
+sample,Real type,Comments,Blocked_by_INE
+2,e,VALID,blocked
+3,e,INVALID,blocked
+4,a,TYPE A,blocked
+5,e,invalid / outdated,blocked
+6,e,VALID,not_blocked
+7,a,,blocked
+8,e,VALID,not_blocked
+9,e,,blocked
+10,a,TYPE A,blocked
+11,a,TYPE A,blocked
+12,e,invalid / outdated,blocked
+13,a,TYPE A,blocked
+14,e,invalid / outdated,blocked
+15,e,VALID,not_blocked
+16,e,,not_blocked
+17,a,TYPE A,not_blocked
+18,e,VALID,not_blocked
+19,d,,not_blocked
+20,e,VALID,not_blocked
+21,e,VALID,not_blocked
+22,e,VALID,not_blocked
+23,e,invalid / outdated,not_blocked
+24,e,VALID,not_blocked
+25,e,invalid / outdated,not_blocked
+26,e,,not_blocked
+27,a,TYPE A,not_blocked
+28,a,TYPE A,not_blocked
+29,e,VALID,not_blocked
+30,e,VALID,not_blocked
+31,e,VALID,not_blocked
+32,d,VALID,not_blocked
+33,e,invalid / outdated,not_blocked
+34,a,TYPE A,not_blocked
+35,e,invalid / outdated,not_blocked
+36,e,VALID,not_blocked
+37,a,TYPE A,not_blocked
+38,e,,not_blocked
+39,d,,not_blocked
+40,e,VALID,not_blocked
+41,e,invalid / outdated,not_blocked
+42,d,VALID,not_blocked
+43,e,,not_blocked
+44,a,TYPE A,not_blocked
+45,e,VALID,not_blocked
+46,e,VALID,not_blocked
+47,a,TYPE A,not_blocked
+48,e,,not_blocked
+49,a,TYPE A,not_blocked
+50,a/e,TWO TYPE OF ID FRONT A BACK E,not_blocked
+51,d,,not_blocked
+52,e,VALID,not_blocked
+53,e,VALID,not_blocked
+54,a,TYPE A,not_blocked
+55,e,VALID,not_blocked
+56,e,VALID,not_blocked
+57,a,,not_blocked
+58,e,invalid / outdated,not_blocked
+59,e,VALID,not_blocked
+60,a,TYPE A,not_blocked
+61,a,TYPE A,not_blocked
+62,a,TYPE A,not_blocked
+63,e,VALID,not_blocked
+64,a,TYPE A,not_blocked
+65,e,VALID,not_blocked
+66,a,TYPE A,not_blocked
+67,a,TYPE A,not_blocked
+68,e,VALID,not_blocked
+69,d,VALID,not_blocked
+70,e,VALID,not_blocked
+71,e,LIsta nominal failure,not_blocked
+72,e,,not_blocked
+73,e,VALID,not_blocked
+74,e,VALID,not_blocked
+75,e,VALID,not_blocked
+76,a,,not_blocked
+77,e,VALID,not_blocked
+78,e,LIsta nominal failure,not_blocked
+79,e,LIsta nominal failure,not_blocked
+80,e,VALID,not_blocked
+81,e,,not_blocked
+82,e,VALID,not_blocked
+83,e,VALID,not_blocked
+84,e,VALID,not_blocked
+85,d,,not_blocked
+86,e,VALID,not_blocked
+87,e,VALID,not_blocked
+88,e,VALID,not_blocked
+89,e,VALID,not_blocked
+90,a,TYPE A,not_blocked
+91,e,VALID,not_blocked
+92,e,LIsta nominal failure,not_blocked
+93,e,VALID,not_blocked
+94,e,VALID,not_blocked
+95,e,,not_blocked
+96,e,,not_blocked
+97,a,,blocked
+98,a,,not_blocked
+99,e,VALID,not_blocked
+100,a,TYPE A,not_blocked
+101,e,VALID,not_blocked
+102,a,TYPE A,not_blocked
+103,e,,not_blocked
+104,e,VALID,not_blocked
+105,e,,not_blocked
+106,a,TYPE A,not_blocked
+107,e,,not_blocked
+108,e,VALID,not_blocked
+109,a,TYPE A,not_blocked
+110,e,VALID,not_blocked
+111,e,,not_blocked
+112,e,VALID,not_blocked
+113,e,VALID,not_blocked
+114,e,VALID,not_blocked
+115,e,,not_blocked
+116,e,VALID,not_blocked
+117,d,VALID,not_blocked
+118,e,VALID,not_blocked
+119,a,TYPE A,not_blocked
+120,e,VALID,not_blocked
+121,e,VALID,not_blocked
+122,a,,not_blocked
+123,e,VALID,not_blocked
+124,e,invalid / outdated,not_blocked
+125,e,VALID,not_blocked
+126,e,invalid / outdated,not_blocked
+127,a,,not_blocked
+128,e,invalid / outdated,not_blocked
+129,e,VALID,not_blocked
+130,e,VALID,not_blocked
+131,e,VALID,not_blocked
+132,e,VALID,not_blocked
+133,e,VALID,not_blocked
+134,a,,not_blocked
+135,e,VALID,not_blocked
+136,a,,not_blocked
+137,d,VALID,not_blocked
+138,e,VALID,not_blocked
+139,e,VALID,not_blocked
+140,e,invalid / outdated,not_blocked
+141,e,VALID,not_blocked
+142,a,,not_blocked
+143,e,VALID,not_blocked
+144,e,VALID,not_blocked
+145,e,VALID,not_blocked
+146,e,,not_blocked
+147,e,VALID,not_blocked
+148,a,,not_blocked
+149,a,invalid / outdated,not_blocked
+150,e,VALID,not_blocked
+151,a,TYPE A,not_blocked
+152,a,TYPE A,not_blocked
+153,e,,not_blocked
+154,e,VALID,not_blocked
+155,e,invalid / outdated,not_blocked
+156,,,not_blocked
+157,e,VALID,not_blocked
+158,a,,not_blocked
+159,e,VALID,not_blocked
+160,a,TYPE A,not_blocked
+161,e,VALID,not_blocked
+162,e,VALID,not_blocked
+163,a,TYPE A,not_blocked
+164,a,,not_blocked
+165,a,TYPE A,not_blocked
+166,e,VALID,not_blocked
+167,a,,not_blocked
+168,e,VALID,not_blocked
+169,e,,not_blocked
+170,a,TYPE A,not_blocked
+171,e,VALID,not_blocked
+172,a,,not_blocked
+173,e,VALID,not_blocked
+174,e,,not_blocked
+175,e,VALID,not_blocked
+176,e,VALID,not_blocked
+177,e,,not_blocked
+178,e,VALID,not_blocked
+179,e,invalid / outdated,not_blocked
+180,e,VALID,not_blocked
+181,e,VALID,not_blocked
+182,e,VALID,not_blocked
+183,e,invalid / outdated,not_blocked
+184,e,VALID,not_blocked
+185,a,TYPE A,not_blocked
+186,a,TYPE A,not_blocked
+187,e,,not_blocked
+188,e,VALID,not_blocked
+189,a,,not_blocked
+190,a,,not_blocked
+191,e,invalid / outdated,not_blocked
+192,e,VALID,not_blocked
+193,a,,not_blocked
+194,e,VALID,not_blocked
+195,a,TYPE A,not_blocked
+196,a,,not_blocked
+197,e,VALID,not_blocked
+198,e,VALID,not_blocked
+199,e,VALID,not_blocked
+200,e,,not_blocked
+201,e,,not_blocked
+202,e,,not_blocked
+203,a,,not_blocked
+204,e,VALID,not_blocked
+205,e,VALID,not_blocked
+,,,not_blocked
+207,e,VALID,not_blocked
+208,e,VALID,not_blocked
+209,e,VALID,not_blocked
+210,a,,not_blocked
+211,e,VALID,not_blocked
+212,e,,not_blocked
+213,e,VALID,not_blocked
+214,e,invalid / outdated,not_blocked
+215,e,invalid / outdated,not_blocked
+216,e,invalid / outdated,not_blocked
+217,a,TYPE A,not_blocked
+218,a,TYPE A,not_blocked
+219,e,VALID,not_blocked
+220,e,invalid / outdated,not_blocked
+221,e,VALID,not_blocked
+222,e,VALID,not_blocked
+223,e,VALID,not_blocked
+,,,not_blocked
+225,e,VALID,not_blocked
+226,e,invalid / outdated,not_blocked
+227,e,VALID,not_blocked
+228,e,VALID,not_blocked
+229,e,VALID,not_blocked
+230,d,,not_blocked
+231,e,invalid / outdated,not_blocked
+232,e,VALID,not_blocked
+233,e,invalid / outdated,not_blocked
+234,e,invalid / outdated,not_blocked
+235,e,VALID,not_blocked
+236,a,,not_blocked
+237,d,VALID,not_blocked
+238,e,,not_blocked
+239,e,VALID,not_blocked
+240,e,VALID,not_blocked
+241,e,invalid / outdated,not_blocked
+242,a,,not_blocked
+243,e,VALID,not_blocked
+244,d,,not_blocked
+245,e,VALID,not_blocked
+246,e,invalid / outdated,not_blocked
+247,e,invalid / outdated,not_blocked
+248,e,VALID,not_blocked
+249,e,invalid / outdated,not_blocked
+250,a,,not_blocked
+251,e,,not_blocked
+252,e,VALID,not_blocked
+253,a,TYPE A,not_blocked
+254,a,TYPE A,not_blocked
+255,e,,not_blocked
+256,e,,not_blocked
+257,e,VALID,not_blocked
+258,e,invalid / outdated,not_blocked
+259,e,invalid / outdated,not_blocked
+260,e,invalid / outdated,not_blocked
+261,a,TYPE A,not_blocked
+262,e,VALID,not_blocked
+263,e,,not_blocked
+264,e,VALID,not_blocked
+265,a,,not_blocked
+266,e,invalid / outdated,not_blocked
+267,a,TYPE A,not_blocked
+268,e,VALID,not_blocked
+269,e,,not_blocked
+270,e,invalid / outdated,not_blocked
+271,e,,not_blocked
+272,a,,not_blocked
+273,a,TYPE A,not_blocked
+274,a,,not_blocked
+275,e,VALID,not_blocked
+276,e,,not_blocked
+277,e,,not_blocked
+278,a,TYPE A,not_blocked
+279,e,VALID,not_blocked
+280,e,VALID,not_blocked
+281,e,VALID,not_blocked
+282,e,VALID,not_blocked
+283,e,VALID,not_blocked
+284,a,,not_blocked
+285,e,VALID,not_blocked
+286,e,VALID,not_blocked
+287,e,VALID,not_blocked
+288,a,,not_blocked
+289,e,VALID,not_blocked
+290,a,TYPE A,not_blocked
+291,a,,not_blocked
+292,e,VALID,not_blocked
+293,a,,not_blocked
+294,e,VALID,not_blocked
+295,a,TYPE A,not_blocked
+296,e,VALID,not_blocked
+297,e,,not_blocked
+298,a,TYPE A,not_blocked
+299,a,,not_blocked
+300,a,,not_blocked
+301,a,TYPE A,not_blocked
+302,e,VALID,not_blocked
+303,e,invalid / outdated,not_blocked
+304,e,VALID,not_blocked
+305,e,,not_blocked
+306,e,VALID,not_blocked
+307,e,invalid / outdated,not_blocked
+308,e,VALID,not_blocked
+309,e,,not_blocked
+310,a,TYPE A,not_blocked
+311,a,TYPE A,not_blocked
+312,d,VALID,not_blocked
+313,e,,not_blocked
+314,e,VALID,not_blocked
+315,e,VALID,not_blocked
+316,e,VALID,not_blocked
+317,e,VALID,not_blocked
+318,e,,not_blocked
+319,a,TYPE A,not_blocked
+320,e,invalid / outdated,not_blocked
+321,e,VALID,not_blocked
+322,e,VALID,not_blocked
+323,e,,not_blocked
+324,e,,not_blocked
+325,e,VALID,not_blocked
+326,a,,not_blocked
+327,e,invalid / outdated,not_blocked
+328,e,VALID,not_blocked
+329,a,TYPE A,not_blocked
+330,e,VALID,not_blocked
+331,e,,not_blocked
+332,a,,not_blocked
+333,e,VALID,not_blocked
+334,e,VALID,not_blocked
+335,e,VALID,not_blocked
+336,e,,not_blocked
+337,e,VALID,not_blocked
+338,e,,not_blocked
+339,a,,not_blocked
+340,e,,not_blocked
+341,a,,not_blocked
+342,e,VALID,not_blocked
+343,e,,not_blocked
+344,d,invalid / outdated,blocked
+345,a,,not_blocked
+346,a,VALID,not_blocked
+347,e,VALID,not_blocked
+348,e,,not_blocked
+349,d,,not_blocked
+350,e,VALID,not_blocked
+351,d,,not_blocked
+352,e,,not_blocked
+353,a,TYPE A,not_blocked
+354,a,,not_blocked
+355,e,VALID,not_blocked
+356,e,,not_blocked
+357,e,,not_blocked
+358,e,,not_blocked
+359,a,,blocked
+360,e,VALID,not_blocked
+361,d,VALID,not_blocked
+362,e,VALID,not_blocked
+363,e,VALID,not_blocked
+364,a,TYPE A,not_blocked
+365,e,VALID,not_blocked
+366,a,TYPE A,not_blocked
+367,e,VALID,not_blocked
+368,e,VALID,not_blocked
+369,a,,not_blocked
+370,e,VALID,not_blocked
+371,e,invalid / outdated,not_blocked
+372,e,VALID,not_blocked
+373,a,,not_blocked
+374,e,VALID,not_blocked
+375,e,VALID,not_blocked
+376,e,VALID,not_blocked
+377,a,,not_blocked
+378,a,TYPE A,not_blocked
+379,e,invalid / outdated,not_blocked
+380,e,VALID,not_blocked
+381,a,,not_blocked
+382,a,,not_blocked
+383,e,VALID,not_blocked
+384,e,invalid / outdated,blocked
+385,e,VALID,not_blocked
+386,e,VALID,not_blocked
+387,a,,not_blocked
+388,e,VALID,not_blocked
+389,d,,not_blocked
+390,e,,not_blocked
+391,e,VALID,not_blocked
+392,e,invalid / outdated,not_blocked
+393,e,invalid / outdated,not_blocked
+394,a,TYPE A,not_blocked
+395,a,TYPE A,not_blocked
+396,e,VALID,not_blocked
+397,d,VALID,not_blocked
+398,a,TYPE A,not_blocked
+399,e,VALID,not_blocked
+400,e,VALID,not_blocked
+401,d,,not_blocked
+402,e,VALID,not_blocked
+403,e,VALID,not_blocked
+404,a,,not_blocked
+405,e,VALID,not_blocked
+406,e,invalid / outdated,not_blocked
+407,d,VALID,not_blocked
+408,a,,not_blocked
+409,e,VALID,not_blocked
+410,a,,not_blocked
+411,e,,not_blocked
+412,a,,not_blocked
+413,e,VALID,not_blocked
+414,e,,not_blocked
+415,e,invalid / outdated,not_blocked
+416,e,VALID,not_blocked
+417,a,,not_blocked
+418,e,VALID,not_blocked
+419,a,TYPE A,not_blocked
+420,a,,not_blocked
+421,e,,not_blocked
+422,e,VALID,not_blocked
+423,d,VALID,not_blocked
+424,e,VALID,not_blocked
+425,e,VALID,not_blocked
+426,e,VALID,not_blocked
+427,e,VALID,not_blocked
+428,e,VALID,not_blocked
+429,e,VALID,not_blocked
+430,e,VALID,not_blocked
+431,e,VALID,not_blocked
+432,e,VALID,not_blocked
+433,a,TYPE A,not_blocked
+434,e,,not_blocked
+435,e,,not_blocked
+436,a,TYPE A,not_blocked
+437,e,VALID,not_blocked
+438,a,TYPE A,not_blocked
+439,d,,not_blocked
+440,e,,not_blocked
+441,e,VALID,not_blocked
+442,e,VALID,not_blocked
+443,e,invalid / outdated,not_blocked
+444,e,,not_blocked
+446,e,VALID,not_blocked
+447,d,,not_blocked
+445,e,invalid / outdated,not_blocked
+448,a,TYPE A,not_blocked
+449,e,invalid / outdated,not_blocked
+450,e,VALID,not_blocked
+451,e,invalid / outdated,not_blocked
+452,a,,not_blocked
+453,a,TYPE A,not_blocked
+454,e,VALID,not_blocked
+455,e,VALID,not_blocked
+456,d,VALID,not_blocked
+457,e,VALID,not_blocked
+458,e,VALID,not_blocked
+459,a,,not_blocked
+460,e,VALID,not_blocked
+461,e,,not_blocked
+462,e,VALID,not_blocked
+463,a,TYPE A,not_blocked
+464,d,VALID,not_blocked
+465,e,invalid / outdated,not_blocked
+466,a,,not_blocked
+467,e,VALID,not_blocked
+468,e,invalid / outdated,not_blocked
+469,a,TYPE A,not_blocked
+470,e,VALID,not_blocked
+471,a,,not_blocked
+472,e,,not_blocked
+473,d,VALID,not_blocked
+474,e,VALID,not_blocked
+475,e,VALID,not_blocked
+476,e,,not_blocked
+477,a,TYPE A,not_blocked
+478,e,VALID,not_blocked
+479,e,,not_blocked
+480,a,TYPE A,not_blocked
+481,e,,not_blocked
+482,e,VALID,not_blocked
+483,e,VALID,not_blocked
+484,a,,not_blocked
+485,e,VALID,not_blocked
+486,e,,not_blocked
+487,e,VALID,not_blocked
+488,a,TYPE A,not_blocked
+489,d,VALID,not_blocked
+490,e,,not_blocked
+491,e,,not_blocked
+492,e,invalid / outdated,not_blocked
+493,e,,not_blocked
+494,e,VALID,not_blocked
+495,a,TYPE A,not_blocked
+496,e,,not_blocked
+497,e,invalid / outdated,not_blocked
+498,d,,not_blocked
+499,e,,not_blocked
+500,e,,not_blocked
+501,d,VALID,not_blocked
+502,e,VALID,not_blocked
+503,a,,not_blocked
+504,e,VALID,not_blocked
+505,e,,not_blocked
+506,e,VALID,not_blocked
+507,"e
+",invalid / outdated,not_blocked
+508,a,,not_blocked
+509,e,VALID,not_blocked
+510,a,TYPE A,not_blocked
+511,e,VALID,not_blocked
+512,e,,not_blocked
+513,a,TYPE A,not_blocked
+514,e,,not_blocked
+515,e,invalid / outdated,not_blocked
+516,e,VALID,not_blocked
+517,e,invalid / outdated,not_blocked
+518,e,VALID,not_blocked
+519,e,VALID,not_blocked
+520,e,VALID,not_blocked
+521,e,invalid / outdated,not_blocked
+522,e,invalid / outdated,not_blocked
+523,e,VALID,not_blocked
+524,e,VALID,not_blocked
+525,a,TYPE A,not_blocked
+526,e,invalid / outdated,not_blocked
+527,e,,not_blocked
+528,e,,not_blocked
+529,e,invalid / outdated,not_blocked
+530,e,,not_blocked
+531,e,VALID,not_blocked
+532,e,VALID,not_blocked
+533,d,VALID,not_blocked
+534,a,TYPE A,blocked
+535,e,VALID,not_blocked
+536,e,VALID,not_blocked
+537,a,TYPE A,blocked
+538,a,VALID,not_blocked
+539,a,,not_blocked
+540,a,,not_blocked
+541,a,,blocked
+542,a,,not_blocked
+543,e,VALID,not_blocked
+544,a,,not_blocked
+545,e,VALID,not_blocked
+546,e,VALID,not_blocked
+547,a,TYPE A,not_blocked
+548,e,VALID,not_blocked
+549,e,,not_blocked
+550,e,VALID,not_blocked
+551,e,invalid / outdated,not_blocked
+552,e,VALID,not_blocked
+553,a,,not_blocked
+554,e,VALID,not_blocked
+555,e,VALID,not_blocked
+556,e,,not_blocked
+557,e,VALID,not_blocked
+558,e,VALID,not_blocked
+559,e,invalid / outdated,not_blocked
+560,e,VALID,not_blocked
+561,e,VALID,blocked
+562,e,VALID,not_blocked
+563,e,VALID,not_blocked
+564,e,,not_blocked
+565,e,,not_blocked
+566,e,VALID,not_blocked
+567,e,VALID,not_blocked
+568,a,TYPE A,not_blocked
+569,e,VALID,not_blocked
+570,e,VALID,not_blocked
+571,e,VALID,not_blocked
+572,e,,not_blocked
+573,e,VALID,not_blocked
+574,e,VALID,not_blocked
+575,a,,not_blocked
+576,e,VALID,not_blocked
+577,e,VALID,not_blocked
+578,e,VALID,not_blocked
+579,e,VALID,not_blocked
+580,e,VALID,not_blocked
+581,a,TYPE A,not_blocked
+582,e,VALID,not_blocked
+583,a,,not_blocked
+584,e,,not_blocked
+585,e,VALID,not_blocked
+586,e,VALID,not_blocked
+587,a,,not_blocked
+588,a,TYPE A,not_blocked
+589,a,,blocked
+590,a,,not_blocked
+591,e,VALID,not_blocked
+592,a,TYPE A,not_blocked
+593,e,VALID,blocked
+594,a,,blocked
+595,e,VALID,not_blocked
+596,e,,not_blocked
+597,a,TYPE A,not_blocked
+598,e,invalid / outdated,not_blocked
+599,e,,not_blocked
+600,e,,not_blocked
+601,e,invalid / outdated,not_blocked
+602,e,VALID,not_blocked
+603,a,TYPE A,not_blocked
+604,e,VALID,not_blocked
+605,a,TYPE A,not_blocked
+606,e,invalid / outdated,not_blocked
+607,e,VALID,not_blocked
+608,e,VALID,not_blocked
+609,a,,not_blocked
+610,e,,blocked
+611,e,VALID,not_blocked
+612,e,VALID,blocked
+613,e,invalid / outdated,blocked
+614,e,,blocked
+615,e,VALID,not_blocked
+616,a,TYPE A,not_blocked
+617,a,TYPE A,blocked
+618,a,TYPE A,not_blocked
+619,e,VALID,not_blocked
+620,e,VALID,not_blocked
+621,a,TYPE A,not_blocked
+622,e,VALID,not_blocked
+623,e,VALID,not_blocked
+624,e,VALID,not_blocked
+625,e,,not_blocked
+626,e,invalid / outdated,not_blocked
+627,e,,not_blocked
+628,e,,not_blocked
+629,e,invalid / outdated,not_blocked
+630,e,VALID,not_blocked
+631,e,VALID,not_blocked
+632,e,VALID,not_blocked
+633,a,TYPE A,blocked
+634,e,,blocked
+635,e,invalid / outdated,not_blocked
+636,e,,not_blocked
+637,a,,not_blocked
+638,a,TYPE A,not_blocked
+639,e,invalid / outdated,not_blocked
+640,a,,not_blocked
+641,e,invalid / outdated,not_blocked
+642,e,,not_blocked
+643,e,,not_blocked
+644,e,VALID,not_blocked
+645,e,VALID,not_blocked
+646,e,VALID,not_blocked
+647,a,TYPE A,not_blocked
+648,e,VALID,not_blocked
+649,a,,not_blocked
+650,e,VALID,not_blocked
+651,e,VALID,not_blocked
+652,a,,not_blocked
+653,e,invalid / outdated,not_blocked
+654,e,VALID,not_blocked
+655,e,,blocked
+656,a,,blocked
+657,e,invalid / outdated,not_blocked
+658,e,VALID,not_blocked
+659,e,VALID,not_blocked
+660,e,invalid / outdated,blocked
+661,e,invalid / outdated,blocked
+662,e,,not_blocked
+663,e,VALID,not_blocked
+664,e,VALID,not_blocked
+665,e,VALID,not_blocked
+666,e,VALID,not_blocked
+667,a,TYPE A,not_blocked
+668,a,,not_blocked
+669,e,,not_blocked
+670,e,invalid / outdated,not_blocked
+671,e,VALID,not_blocked
+672,e,VALID,not_blocked
+673,a,TYPE A,not_blocked
+674,e,VALID,not_blocked
+675,e,VALID,not_blocked
+676,e,,not_blocked
+677,e,invalid / outdated,not_blocked
+678,e,VALID,not_blocked
+679,e,invalid / outdated,not_blocked
+680,a,,not_blocked
+681,e,VALID,not_blocked
+682,a,TYPE A,blocked
+683,e,,not_blocked
+684,e,invalid / outdated,not_blocked
+685,e,VALID,not_blocked
+686,a,,not_blocked
+687,a,TYPE A,not_blocked
+688,e,,not_blocked
+689,e,,not_blocked
+690,e,VALID,not_blocked
+691,e,,not_blocked
+692,e,VALID,not_blocked
+693,e,VALID,not_blocked
+694,e,VALID,not_blocked
+695,a,,not_blocked
+696,e,,blocked
+697,a,,not_blocked
+698,a,,not_blocked
+699,a,,blocked
+700,e,invalid / outdated,not_blocked
+701,e,VALID,not_blocked
+702,e,VALID,not_blocked
+703,e,invalid / outdated,not_blocked
+704,e,VALID,not_blocked
+705,a,TYPE A,blocked
+706,a,,blocked
+707,a,,blocked
+708,a,,not_blocked
+709,e,VALID,not_blocked
+710,e,invalid / outdated,not_blocked
+711,e,VALID,not_blocked
+712,e,,not_blocked
+713,a,,not_blocked
+714,e,VALID,not_blocked
+715,e,VALID,not_blocked
+716,e,,not_blocked
+717,a,,not_blocked
+718,a,TYPE A,not_blocked
+719,e,VALID,not_blocked
+720,e,VALID,not_blocked
+721,a,,not_blocked
+722,e,invalid / outdated,blocked
+723,e,VALID,not_blocked
+724,a,,blocked
+,,,blocked
+726,a,,blocked
+727,e,VALID,not_blocked
+728,a,VALID,not_blocked
+729,a,TYPE A,blocked
+730,a,,blocked
+731,e,VALID,not_blocked
+732,e,,not_blocked
+733,e,,not_blocked
+734,e,VALID,not_blocked
+735,e,,not_blocked
+736,e,VALID,not_blocked
+737,e,VALID,not_blocked
+738,a,TYPE A,not_blocked
+739,e,VALID,not_blocked
+740,e,VALID,not_blocked
+741,e,,blocked
+742,a,,blocked
+743,e,,not_blocked
+744,e,,blocked
+745,e,VALID,not_blocked
+746,e,VALID,not_blocked
+747,a,,not_blocked
+748,e,VALID,not_blocked
+749,e,,not_blocked
+750,e,VALID,not_blocked
+751,a,TYPE A,blocked
+752,a,TYPE A,not_blocked
+753,a,,not_blocked
+754,e,VALID,not_blocked
+755,a,,not_blocked
+756,e,invalid / outdated,not_blocked
+757,a,,not_blocked
+758,a,,not_blocked
+759,e,VALID,not_blocked
+760,e,VALID,not_blocked
+761,e,,not_blocked
+762,e,invalid / outdated,not_blocked
+763,e,VALID,not_blocked
+764,e,VALID,not_blocked
+765,e,invalid / outdated,blocked
+766,e,VALID,not_blocked
+767,e,VALID,not_blocked
+768,e,VALID,not_blocked
+769,e,,not_blocked
+770,a,,blocked
+771,e,VALID,not_blocked
+772,a,,blocked
+773,e,VALID,not_blocked
+774,e,,not_blocked
+775,a,,blocked
+776,a,TYPE A,not_blocked
+777,e,,not_blocked
+778,e,,not_blocked
+779,e,,not_blocked
+780,d,,not_blocked
+781,a,TYPE A,not_blocked
+782,e,invalid / outdated,not_blocked
+783,a,TYPE A,not_blocked
+784,e,,blocked
+785,a,TYPE A,not_blocked
+786,e,VALID,not_blocked
+787,e,,not_blocked
+788,e,VALID,not_blocked
+789,e,VALID,not_blocked
+790,e,VALID,not_blocked
+791,e,VALID,not_blocked
+792,a,,not_blocked
+793,e,invalid / outdated,not_blocked
+794,a,TYPE A,not_blocked
+795,d,,not_blocked
+796,e,VALID,not_blocked
+797,a,TYPE A,blocked
+798,a,TYPE A,not_blocked
+799,a,,not_blocked
+800,a,TYPE A,not_blocked
+801,e,,not_blocked
+802,e,VALID,not_blocked
+803,a,TYPE A,blocked
+804,e,invalid / outdated,not_blocked
+805,e,invalid / outdated,not_blocked
+806,d,,blocked
+807,e,VALID,not_blocked
+808,e,,not_blocked
+809,d,,not_blocked
+810,e,,not_blocked
+811,e,,not_blocked
+812,e,invalid / outdated,not_blocked
+813,e,VALID,not_blocked
+814,e,VALID,not_blocked
+815,e,VALID,not_blocked
+816,e,VALID,not_blocked
+817,e,invalid / outdated,not_blocked
+818,e,,not_blocked
+819,e,VALID,not_blocked
+820,e,VALID,not_blocked
+821,e,LIsta nominal failure,not_blocked
+822,a,TYPE A,not_blocked
+823,e,VALID,not_blocked
+824,e,,not_blocked
+825,e,VALID,not_blocked
+826,e,,not_blocked
+827,a,TYPE A,not_blocked
+828,a,TYPE A,not_blocked
+829,a,,blocked
+830,a,,not_blocked
+831,e,VALID,not_blocked
+832,e,VALID,not_blocked
+833,e,,not_blocked
+834,e,VALID,blocked
+835,e,VALID,blocked
+836,e,VALID,not_blocked
+837,e,,not_blocked
+838,e,,blocked
+839,e,VALID,not_blocked
+840,a,TYPE A,blocked
+841,e,VALID,not_blocked
+842,e,,not_blocked
+843,e,,not_blocked
+844,e,,not_blocked
+845,e,VALID,not_blocked
+846,a,,not_blocked
+847,e,VALID,not_blocked
+848,e,VALID,not_blocked
+849,a,,not_blocked
+850,e,,not_blocked
+851,e,,not_blocked
+852,e,VALID,not_blocked
+853,a,,not_blocked
+854,a,,not_blocked
+855,d,VALID,not_blocked
+856,a,TYPE A,not_blocked
+857,d,,blocked
+858,e,VALID,not_blocked
+859,a,TYPE A,not_blocked
+860,e,,not_blocked
+861,a,,not_blocked
+862,a,,not_blocked
+863,a,,blocked
+864,e,invalid / outdated,blocked
+865,e,VALID,not_blocked
+866,e,,not_blocked
+867,e,,not_blocked
+868,a,,not_blocked
+869,e,,not_blocked
+870,a,TYPE A,not_blocked
+871,a,,blocked
+872,e,,not_blocked
+873,e,VALID,not_blocked
+874,a,TYPE A,not_blocked
+875,e,VALID,not_blocked
+876,e,,not_blocked
+877,e,VALID,not_blocked
+878,e,LIsta nominal failure,not_blocked
+879,e,VALID,not_blocked
+880,e,VALID,not_blocked
+881,e,invalid / outdated,not_blocked
+882,e,VALID,not_blocked
+883,a,TYPE A,not_blocked
+884,e,VALID,not_blocked
+885,e,VALID,not_blocked
+886,a,TYPE A,blocked
+887,a,,not_blocked
+888,e,VALID,not_blocked
+889,d,VALID,not_blocked
+890,e,invalid / outdated,blocked
+891,e,invalid / outdated,not_blocked
+892,e,,blocked
+893,e,VALID,not_blocked
+894,e,,not_blocked
+895,e,VALID,not_blocked
+896,a,,not_blocked
+897,e,,not_blocked
+898,e,invalid / outdated,not_blocked
+899,e,VALID,not_blocked
+900,a,,blocked
+901,a,,not_blocked
+902,a,,blocked
+903,e,VALID,not_blocked
+904,e,VALID,not_blocked
+905,e,invalid / outdated,not_blocked
+906,e,VALID,not_blocked
+907,a,TYPE A,not_blocked
+908,e,invalid / outdated,not_blocked
+909,d,VALID,not_blocked
+910,e,VALID,not_blocked
+911,a,,blocked
+912,e,invalid / outdated,blocked
+913,e,VALID,not_blocked
+914,e,invalid / outdated,not_blocked
+915,a,TYPE A,not_blocked
+916,e,VALID,not_blocked
+917,e,VALID,not_blocked
+918,e,invalid / outdated,not_blocked
+919,a,,not_blocked
+920,e,,blocked
+921,e,VALID,not_blocked
+922,e,invalid / outdated,not_blocked
+923,e,VALID,not_blocked
+924,e,,not_blocked
+925,e,VALID,not_blocked
+926,a,TYPE A,not_blocked
+927,e,VALID,not_blocked
+928,a,TYPE A,not_blocked
+929,e,invalid / outdated,blocked
+930,a,,not_blocked
+931,a,,not_blocked
+,,,not_blocked
+933,a,TYPE A,not_blocked
+934,e,,not_blocked
+935,e,VALID,not_blocked
+936,e,invalid / outdated,blocked
+937,e,invalid / outdated,blocked
+938,e,,not_blocked
+939,a,,not_blocked
+940,e,,not_blocked
+941,e,VALID,not_blocked
+942,e,VALID,not_blocked
+943,a,,blocked
+944,e,,not_blocked
+945,e,VALID,not_blocked
+946,a,,not_blocked
+947,e,VALID,not_blocked
+948,e,invalid / outdated,not_blocked
+949,e,,not_blocked
+950,a,TYPE A,blocked
+951,a,TYPE A,not_blocked
+952,e,VALID,not_blocked
+953,e,VALID,not_blocked
+954,a,,blocked
+955,d,VALID,not_blocked
+956,e,,blocked
+957,a,,not_blocked
+958,e,VALID,not_blocked
+959,a,TYPE A,blocked
+960,a,,not_blocked
+961,e,,blocked
+962,e,VALID,not_blocked
+963,d,VALID,not_blocked
+964,a,,not_blocked
+965,e,VALID,not_blocked
+966,e,invalid / outdated,blocked
+967,a,TYPE A,not_blocked
+968,e,VALID,not_blocked
+969,a,,blocked
+970,e,invalid / outdated,blocked
+971,e,invalid / outdated,blocked
+972,e,VALID,not_blocked
+973,a,TYPE A,blocked
+974,a,,blocked
+975,a,TYPE A,blocked
+976,e,invalid / outdated,blocked
+,,,blocked
+978,a,TYPE A,not_blocked
+979,e,invalid / outdated,blocked
+980,e,VALID,not_blocked
+981,e,VALID,not_blocked
+982,e,VALID,not_blocked
+983,e,,not_blocked
+984,e,invalid / outdated,blocked
+985,e,VALID,not_blocked
+986,e,invalid / outdated,not_blocked
+987,e,,blocked
+988,a,TYPE A,blocked
+989,e,invalid / outdated,blocked
+990,e,VALID,not_blocked
+991,e,invalid / outdated,not_blocked
+992,e,,not_blocked
+993,a,TYPE A,blocked
+994,e,invalid / outdated,blocked
+995,a,TYPE A,blocked
+996,e,,blocked
+997,a,,blocked
+998,a,TYPE A,blocked
+999,e,invalid / outdated,blocked
+1000,e,invalid / outdated,blocked
+1001,a,TYPE A,blocked
