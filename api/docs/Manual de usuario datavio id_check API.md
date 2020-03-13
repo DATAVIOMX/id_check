@@ -6,8 +6,8 @@
 ### Para el cliente
 
 - python 3.6
-- numpy
 - requests
+- openCV
 
 ### Para conectar con la API de manera independiente
 
@@ -38,17 +38,17 @@ El cliente recibirá argumentos en línea de comandos para cualquiera de las alt
 ### Validación vía texto:
 
 ```
-$ id_check-client -m t -t <tipo-credencial> -v <clave-elector>  -e <emision> -o <ocr> -v <clave-elector> -c <cic> -o <salida>
+$ id_check-client -s <salida> -k <API-key> text -t <tipo-credencial> -v <clave-elector>  -e <emision> -o <ocr>  -c <cic>
 ```
 
 Explicación:
 
-para la credencial tipo A,B o C se necesitan los valores de tipo credencial, clave-elector y emisión. Para las tipo D y E se necesitan los valores de cic y OCR. Tal como se muestran en el portal del INE. la opción de salida es el nombre base de los archivos, genera un archivo salida.html con la respuesta del ine y uno llamado salida_valid.txt que contiene una seola línea diciendo si la credencial es válida o no.
+para la credencial tipo A,B o C se necesitan los valores de tipo credencial, clave-elector y emisión. Para las tipo D y E se necesitan los valores de cic y OCR. la opción de salida es el nombre base de los archivos, genera un archivo salida.html con la respuesta del ine y uno llamado salida_valid.txt que contiene una sóla línea diciendo si la credencial es válida o no.
 
 ### Validación vía imágenes
 
 ```
-$ id_check-client -m i -f <frente> -b <reverso> -o <salida>
+$ id_check-client -s <salida> -k <API-key> image -f <frente> -b <reverso>
 ```
 
 Explicación
