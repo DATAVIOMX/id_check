@@ -19,6 +19,7 @@ import psycopg2 as db
 from flask import Flask, request
 from flask_restful import Resource, Api, reqparse
 import id_check
+import numpy as np
 
 app = Flask(__name__)
 api = Api(app)
@@ -95,14 +96,18 @@ class IDCheck(Resource):
         POST method to generate a POST request to the ID check API,
         requres the API key, and front and back images of the ID
         """
-        req_data = request.get_json()
-        #json.dumps(req_data) = json.dumps(req_data)
+        req_json = request.get_json()
+        req_data = json.dumps(req_json)
         parser = reqparse.RequestParser(bundle_errors=True)
-        parser.add_argument("front", type=list, required=True)
-        parser.add_argument("back", type=list, required=True)
+        parser.add_argument("front", action='append', required=True)
+        parser.add_argument("back",  action='append', required=True)
+        parser.add_argument("shape_b", action='append')
+        parser.add_argument("shape_f", action='append')
         parser.add_argument("api_key", type=str, required=True)
         args = parser.parse_args()
-
+        print(args["shape_f"], args["shape_b"])
+        print(type(args["front"][0]))
+        
         # connect to database
         conn = db.connect("dbname='id_check_db' user='otto' host='localhost' password=ottoman")
         cur = conn.cursor()
@@ -160,11 +165,16 @@ class IDCheck(Resource):
         # NOTE: results_page needs to be in a try except or in an if
         # block to return either a 200 status or a 500 status
         # We need to convert args["front"] and "back" to ndarray of given shape
-        front = np.fromstring(args["front"], dtype=np.uint8)
-        back = np.fromstring(args["front"], dtype=np.uint8)
-        np.reshape(front, tuple(args["shape_f"]))
-        np.reshape(back, tuple(args["shape_b"]))
+        front = np.array(json.loads(args["front"][0]))
+        back = np.array(json.loads(args["back"][0]))
+        #front = np.fromstring(args["front"], dtype=np.uint32)
+        #back = np.fromstring(args["front"], dtype=np.uint32)
+        dims_f = tuple([int(x) for x in args["shape_f"]])
+        dims_b = tuple([int(x) for x in args["shape_b"]])
+        np.reshape(front, dims_f)
+        np.reshape(back, dims_b)
         results = id_check.check_id_img(front, back)
+        print(results)
         # log call
         cur.execute("""INSERT INTO api_calls (userid, call_date,
                     call_point,status_code, call_text, response)
@@ -172,7 +182,7 @@ class IDCheck(Resource):
                     'longsecretencryptionkey'),
                     pgp_sym_encrypt(%s,'longsecretencryptionkey'))""",
                     (userid, call_dt, 'id-check', 200, json.dumps(req_data),
-                     results,))
+                     json.dumps(results),))
         conn.commit()
         conn.close()
         return results, 200

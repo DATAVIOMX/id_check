@@ -7,6 +7,7 @@ Client command line utility for id_check
 import argparse
 import requests
 import cv2
+import json
 
 
 URL_TXT = "http://localhost:5000/api/v1/id-check/text"  # Falta la base de la URL
@@ -19,16 +20,13 @@ def prep_req_img(args):
     end_f = args.frente[-4:]
     end_b = args.reverso[-4:]
     # Necesitamos la forma del array tambien
-    
     arr_f = cv2.imread(args.frente)
     arr_b = cv2.imread(args.reverso)
-    shape_f = list(arr_f.shape)
-    shape_b = list(arr_b.shape)
-    str_f = arr_f.tostring()
-    str_b = arr_b.tostring()
-    
+    str_f = json.dumps(arr_f.tolist())
+    str_b = json.dumps(arr_b.tolist())
     adict = {"front": str_f, "back": str_b, "api_key": args.key,
-             "shape_f":shape_f, "shape_b": shape_b}
+             "shape_f":list(arr_f.shape), "shape_b": list(arr_b.shape)}
+    print(adict["shape_f"], adict["shape_b"]) 
     return adict
 
 def prep_req_txt(args):
@@ -98,7 +96,7 @@ def main():
     # Receive request
     print(response)
     full_resp = response.json()
-    
+    print(full_resp)
     # Check for errors
     if "content" in full_resp.keys():
         # write to file the raw HTML response

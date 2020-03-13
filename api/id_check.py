@@ -76,13 +76,15 @@ def clean_qr_response(resp):
     if resp is None or resp == "":
         return None
     extracted_response = BeautifulSoup(resp, 'html.parser')
+    page = extracted_response.findAll(text=True)
+    page_text = "".join(t.strip() for t in page)
     valid_yn = extracted_response.find(name='div', id="menje")
     if not valid_yn:
         return None
     payload = "y puedes votar"
     if payload in valid_yn.find('p').text:
-        return {"response": extracted_response, "valid_yn": "Y"}
-    return {"response": extracted_response, "valid_yn": "N"}
+        return {"content": page_text, "valid_yn": "Y"}
+    return {"content": page_text, "valid_yn": "N"}
 
 def prep_img(img):
     """
@@ -296,7 +298,6 @@ def proc_web_response(content):
         return None
     if content is not None:
         valid = content.findAll('h4')
-        print(valid)
         page = content.findAll(text=True)
         page_text = "".join(t.strip() for t in page)
         for frag in valid:
