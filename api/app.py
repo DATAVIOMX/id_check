@@ -191,13 +191,12 @@ class TextCheck(Resource):
         """
         req_data = request.get_json()
         parser = reqparse.RequestParser(bundle_errors=True)
-        parser.add_argument("tipo_cred", type=str, required=True)
-        parser.add_argument("cve_elec", type=str, required=True)
-        parser.add_argument("emision", type=str, required=True)
-        parser.add_argument("ocr_vertical", type=str, required=True)
-        parser.add_argument("ocr_horizontal", type=str, required=True)
-        parser.add_argument("cic", type=str, required=True)
-        parser.add_argument("cve_ciudadano", type=str, required=True)
+        parser.add_argument("tipo", type=str, required=True)
+        parser.add_argument("cve_elec", type=str)
+        parser.add_argument("emision", type=str)
+        parser.add_argument("ocr", type=str)
+        parser.add_argument("cic", type=str)
+        parser.add_argument("cve_ciudadano")
         parser.add_argument("api_key", type=str, required=True)
         args = parser.parse_args()
         conn = db.connect("dbname='id_check_db' user='otto' host='localhost' password=ottoman")
@@ -256,14 +255,14 @@ class TextCheck(Resource):
         # block to return either a 200 status or a 500 status
         text_dict = args
         del text_dict["api_key"]
-        results =id_check.check_id_text(args)
+        results = id_check.check_id_text(args)
         # log call
         cur.execute("""INSERT INTO api_calls (userid, call_date, call_point,
                 status_code, call_text, response) VALUES 
                 (%s,%s,%s,%s,pgp_sym_encrypt(%s,'longsecretencryptionkey'),
                 pgp_sym_encrypt(%s,'longsecretencryptionkey'))""",
                     (userid, call_dt, 'id-check', 200, json.dumps(req_data),
-                     results,))
+                     json.dumps(results),))
         conn.commit()
         conn.close()
         return results, 200

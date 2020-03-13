@@ -146,17 +146,17 @@ def proc_text(text, id_type):
         return None
     lines = [y for y in (x.strip() for x in text.splitlines()) if y]
     cve_elector = None
-    cic = ocr_h = None
+    cic = ocr = None
     for line in lines:
         if CVE_ELEC_RE.match(line):
             cve_elector = CVE_ELEC_RE.findall(line)[0]
             continue
         if line.find('DMEX') != -1:
-            cic, ocr_h = line.split('<<')
+            cic, ocr = line.split('<<')
             cic = cic[-10:len(cic)]
             break
     ret_dict = {"tipo_cred": id_type, "cve_elec": cve_elector,
-                "cic":cic, "ocr_horizontal":ocr_h}
+                "cic":cic, "ocr_horizontal":ocr}
     if ret_dict['cic'] is None and ret_dict['ocr_horizontal'] is None:
         return None
     return ret_dict
@@ -207,7 +207,7 @@ def query_web(id_dict):
     # print("id_dict", id_dict)
     if id_dict is None:
         return None
-    if not any(elem in ["tipo", "cve_elec", "num_emis", "cic", "ocr_v", "ocr_h"]
+    if not any(elem in ["tipo", "cve_elec", "num_emis", "cic", "ocr"]
                for elem in id_dict.keys()):
         return None
     #### GET INE PAGE ####
@@ -260,7 +260,7 @@ def query_web(id_dict):
         parametros = {
             'modelo': 'd',
             'cic': id_dict["cic"], # 9 digitos después de IDMEX
-            'ocr': id_dict["ocr_h"], # 13 ultimos digitos de 1er renglon
+            'ocr': id_dict["ocr"], # 13 ultimos digitos de 1er renglon
             'g-recaptcha-response': hashed_key}
 
         ##### POST ####
@@ -275,7 +275,7 @@ def query_web(id_dict):
         parametros = {
             'modelo':'e',
             'cic': id_dict["cic"],
-            'idCiudadano':id_dict["ocr_h"],
+            'idCiudadano':id_dict["ocr"],
             'g-recaptcha-response': hashed_key}
 
         ##### POST ####
@@ -297,10 +297,12 @@ def proc_web_response(content):
     if content is not None:
         valid = content.findAll('h4')
         print(valid)
+        page = content.findAll(text=True)
+        page_text = "".join(t.strip() for t in page)
         for frag in valid:
             text = ''.join(frag.findAll(text=True))
             if text.find("vigente"):
-                return {"content":content, "valid_yn":"Y"}
+                return {"content":page_text, "valid_yn":"Y"}
     return None
 
 def check_id_text(text_dict):
@@ -313,7 +315,7 @@ def check_id_text(text_dict):
     return_dict = {"Error": "No response from server"}
     if text_dict is None:
         return {"Error": "Input is empty"}
-    if not any(elem in ["tipo", "cve_elec", "num_emis", "ocr_h"] for elem in text_dict.keys()):
+    if not any(elem in ["tipo", "cve_elec", "num_emis", "ocr"] for elem in text_dict.keys()):
         return {"Error": "Invalid input"}
     response = query_web(text_dict)
     print("response", response)
