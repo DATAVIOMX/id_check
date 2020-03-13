@@ -16,18 +16,18 @@ def prep_req_img(args):
     """
     Converts image to numpy array string
     """
-    end_f = args.front[-4:]
-    end_b = args.back[-4:]
+    end_f = args.frente[-4:]
+    end_b = args.reverso[-4:]
     # Necesitamos la forma del array tambien
     
-    arr_f = cv2.imread(args["front"])
-    arr_b = cv2.imread(args["front"])
+    arr_f = cv2.imread(args.frente)
+    arr_b = cv2.imread(args.reverso)
     shape_f = list(arr_f.shape)
     shape_b = list(arr_b.shape)
     str_f = arr_f.tostring()
     str_b = arr_b.tostring()
     
-    adict = {"front": str_f, "back": str_b, "api-key": args.key,
+    adict = {"front": str_f, "back": str_b, "api_key": args.key,
              "shape_f":shape_f, "shape_b": shape_b}
     return adict
 
@@ -39,12 +39,14 @@ def prep_req_txt(args):
     if args.tipo in ['a', 'b', 'c']:
         adict['cve-elector'] = args.cve
         adict['emision'] = args.emision
-        adict['ocr-v'] = args.ocr
-        adict['api-key'] = args.key
+        adict['ocr'] = args.ocr
+        adict['api_key'] = args.key
+        adict['tipo'] = args.tipo
     if args.tipo in ['d', 'e']:
-        adict['api-key'] = args.key
+        adict['api_key'] = args.key
         adict['cic'] = args.cic
-        adict['ocr-h'] = args.ocr
+        adict['ocr'] = args.ocr
+        adict['tipo'] = args.tipo
     return adict
 
 def create_parser():
@@ -94,21 +96,21 @@ def main():
         # send request
         response = requests.post(URL_IMG, data=req)
     # Receive request
+    print(response)
     full_resp = response.json()
+    
     # Check for errors
-    if "Error" in full_resp.keys():
-        print(full_resp["Error"])
-        return -1
-    if full_resp is None:
-        return full_resp 
-    if all(["content", "valid_yn"]) in full_resp.keys():
+    if "content" in full_resp.keys():
         # write to file the raw HTML response
-        outfile = open(args.salida, "w")
+        outfile = open(args.salida, "w+")
         outfile.write(full_resp["content"])
         outfile.close()
         # print to STDOUT the valid_yn
-        print(response["valid_yn"])
-        return 0
-    return {"Error": "not found"}
+        print(full_resp["valid_yn"])
+    elif "Error" in full_resp.keys():
+        print(full_resp["Error"])
+    else:
+        print({"Error": "response is None"})
+
 if __name__ == "__main__":
-    print(main())
+    main()
