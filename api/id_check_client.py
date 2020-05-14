@@ -9,9 +9,14 @@ import requests
 import cv2
 import json
 
+URL_TXT = "http://www.dataviomx.com/api/v1/id-check/text"  # Falta la base de la URL
+URL_IMG = "http://www.dataviomx.com/api/v1/id-check/images"
 
-URL_TXT = "http://localhost:5000/api/v1/id-check/text"  # Falta la base de la URL
-URL_IMG = "http://localhost:5000/api/v1/id-check/images"
+#URL_TXT = "http://localhost:5000/api/v1/id-check/text"  # Falta la base de la URL
+#URL_IMG = "http://localhost:5000/api/v1/id-check/images"
+
+#URL_TXT = "http://localhost:8000/api/v1/id-check/text"  # Falta la base de la URL
+#URL_IMG = "http://localhost:8000/api/v1/id-check/images"
 
 def prep_req_img(args):
     """

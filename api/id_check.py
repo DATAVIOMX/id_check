@@ -81,6 +81,7 @@ def clean_qr_response(resp):
     valid_yn = extracted_response.find(name='div', id="menje")
     if not valid_yn:
         return None
+    # Alert captcha necesario
     payload = "y puedes votar"
     if payload in valid_yn.find('p').text:
         return {"content": page_text, "valid_yn": "Y"}
@@ -301,6 +302,7 @@ def proc_web_response(content):
         page = content.findAll(text=True)
         page_text = "".join(t.strip() for t in page)
         for frag in valid:
+            # alerta CAptcha necesario
             text = ''.join(frag.findAll(text=True))
             if text.find("vigente"):
                 return {"content":page_text, "valid_yn":"Y"}
@@ -332,6 +334,7 @@ def check_id_img(front, back):
     INPUT: front, back : Image as numpy array
     OUTPUT: string representation of HTML response from server
     """
+    print('in check image')
     if front is None and back is None:
         return {"Error": "Input is empty"}
     response = None
@@ -340,14 +343,17 @@ def check_id_img(front, back):
     url_qr_front = get_qr(front)
     url_qr_back = get_qr(back)
     if url_qr_front:
+        print('qr found in front')
         response = query_qr(url_qr_front)
         return_dict = clean_qr_response(response)
         return return_dict
     if url_qr_back:
+        print('qr found in back')
         response = query_qr(url_qr_back)
         return_dict = clean_qr_response(response)
         return return_dict
     # OCR
+    # Tamaño de imagen??
     proc_front = prep_img(front)
     proc_back = prep_img(back)
     raw_text_front = ocr_img(proc_front)

@@ -265,7 +265,10 @@ class TextCheck(Resource):
         # block to return either a 200 status or a 500 status
         text_dict = args
         del text_dict["api_key"]
+        print('ready for call')
         results = id_check.check_id_text(args)
+        if results:
+            print('si respondio')
         # log call
         cur.execute("""INSERT INTO api_calls (userid, call_date, call_point,
                 status_code, call_text, response) VALUES 
