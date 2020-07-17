@@ -40,6 +40,11 @@ $ sudo chmod +x id_check-client
 Existen dos modos de ejecución de las peticiones vía texto o vía las imágenes de la credencial para votar INE.
 El cliente recibirá argumentos en línea de comandos para cualquiera de las alternativas.
 
+Las opciones que siempre deben estar presentes son:
+
+- `-s` o `--salida` que es el nombre del archivo de salida de la página del INE.
+- `-k` o `--key` que es la llave de la API que se debe adjuntar siempre.
+
 ### Validación vía texto:
 
 ```
