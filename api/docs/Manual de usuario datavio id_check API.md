@@ -3,7 +3,12 @@
 
 ## Requerimientos de Software
 
-### Para el cliente
+Toda esta instalación se entregará al cliente dentro de una máquina virtual de VMWare 
+Para descargar VMWare usar la siguiente liga:
+
+https://my.vmware.com/en/web/vmware/downloads/details?downloadGroup=PLAYER-1556&productId=800&rPId=47861
+
+### Requerimientos del cliente (Todo está preinstalado en la MV)
 
 - python 3.6
 - requests
