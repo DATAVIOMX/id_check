@@ -1,4 +1,4 @@
-from complete_validation import comp_proces
+from notebooks.complete_validation import comp_proces
 import re
 import os
 import numpy as np

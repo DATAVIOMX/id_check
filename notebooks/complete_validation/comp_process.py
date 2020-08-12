@@ -66,8 +66,8 @@ class id_all_flow():
                 #Ordinary check
                 print('QR invalid...')
                 print('Cheching INE page...')
-                self.ord_output = self.validation_output.ine_check(API_KEY)
-                self.validation_output = self.ine_revision.unpack_ord_ine_response(ord_output)
+                self.ord_output = self.ine_revision.ine_check(self.API_KEY)
+                self.validation_output = self.ine_revision.unpack_ord_ine_response(self.ord_output)
                 self.respuesta_tipo = 'ORD'    
         elif (self.ine_revision.tipo != 'NOT DETECTED') & (self.ine_revision.cic != 'NOT DETECTED'):
             #Ordinary check
