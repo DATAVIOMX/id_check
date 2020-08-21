@@ -1,6 +1,6 @@
-import text_recog.image_recog as i_r
-import preprocess_text.text_filter as t_f
-import check_id.web_search as w_s
+from ..text_recog import image_recog as i_r
+from ..preprocess_text import text_filter as t_f
+from ..check_id import web_search as w_s
 import string
 import re
 import os
@@ -42,7 +42,7 @@ class id_all_flow():
         self.data_dict = self.text_vector.preprocess()
         
         #Find QR info
-        print('Initializing QR detection...')
+        #print('Initializing QR detection...')
         self.qr_front = self.img_front.check_qr()
         self.qr_back = self.img_back.check_qr()
  
@@ -59,20 +59,20 @@ class id_all_flow():
             self.validation_output = 'NA'
         elif self.ine_revision.qr_url != '':
             #QR check
-            print('QR found...')
+            #print('QR found...')
             self.validation_output = self.ine_revision.unpack_qr_ine_response()
             self.respuesta_tipo = 'QR'
             if self.validation_output[1] == None:
                 #Ordinary check
-                print('QR invalid...')
-                print('Cheching INE page...')
+            #    print('QR invalid...')
+            #    print('Cheching INE page...')
                 self.ord_output = self.ine_revision.ine_check(self.API_KEY)
                 self.validation_output = self.ine_revision.unpack_ord_ine_response(self.ord_output)
                 self.respuesta_tipo = 'ORD'    
         elif (self.ine_revision.tipo != 'NOT DETECTED') & (self.ine_revision.cic != 'NOT DETECTED'):
             #Ordinary check
-            print('QR not found...')
-            print('Cheching INE page...')
+            #print('QR not found...')
+            #print('Cheching INE page...')
             self.ord_output = self.ine_revision.ine_check(self.API_KEY)
             self.validation_output = self.ine_revision.unpack_ord_ine_response(self.ord_output)
             self.respuesta_tipo = 'ORD'
