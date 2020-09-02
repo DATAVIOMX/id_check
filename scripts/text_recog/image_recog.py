@@ -1,11 +1,12 @@
 from PIL import Image
 import pytesseract
 import cv2
+from cv2 import waitKey, destroyAllWindows
 import os
 import imutils
 import numpy as np
-from pyzbar.pyzbar import decode
-from pyzbar.pyzbar import ZBarSymbol
+#from pyzbar.pyzbar import decode
+#from pyzbar.pyzbar import ZBarSymbol
 
 
 class image_recognition():
@@ -128,10 +129,10 @@ class image_recognition():
 
   def check_qr(self):
       try:
-          qrs = [decode(cred, symbols=[ZBarSymbol.QRCODE]) \
-              for cred in self.resized_imgs]
-          url_qr = [qr_info for qr_element in qrs \
-              for qr_info in qr_element if qr_element != []][0][0]
+          qrs = [''] #[decode(cred, symbols=[ZBarSymbol.QRCODE]) \
+              #for cred in self.resized_imgs]
+          url_qr = "NOT DETECTED" #[qr_info for qr_element in qrs \
+              #for qr_info in qr_element if qr_element != []][0][0]
       except IndexError:
           url_qr = "NOT DETECTED"
     

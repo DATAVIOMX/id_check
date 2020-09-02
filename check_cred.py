@@ -11,8 +11,8 @@ def main():
 
     comp_prcss = comp_flow(front_img_path=args.front,
                             back_img_path=args.back,
-                            f_heigths = [200, 400,700,900],
-                            b_heigths = [200, 400,700,900])
+                            f_heigths = [200, 700, 900],
+                            b_heigths = [200, 700, 900])
     _, validation = comp_prcss.id_wrapper()
     
     if len(validation[1]) > 0:

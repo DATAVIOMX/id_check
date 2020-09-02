@@ -49,6 +49,7 @@ class consulta_id():
   
         if all(x == data_sitekeys[0] for x in data_sitekeys):
             print("All the data-sitekeys are identical")
+            print('\nSolving ReCaptcha... Please wait...')
             str_time = dt.now()
             captcha_site_key = all_captchas[0].attrs['data-sitekey']
             ##### CAPTCHA SOLUTION ####
