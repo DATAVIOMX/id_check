@@ -19,14 +19,14 @@ def main():
                                 f_heigths = [200, 700, 900],
                                 b_heigths = [200, 700, 900])
     data_dict = comp_prcss.id_wrapper()
+    print(data_dict)
     validation = comp_prcss.call_api()
-
-    if len(validation[1]) > 0:
+    if validation.json():
+        val = validation.json()
+        print(val)
         with open('results/result.html', 'w') as filename:
-            filename.write(str(validation[0]))
-        print(validation[1])
-    
-  
+            filename.write(val['content'])
+        print(val['valid_yn'])
     else:
         print('NOT RESULT')
     
