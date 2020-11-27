@@ -8,7 +8,6 @@ numpy==1.19.1
 opencv-contrib-python==4.4.0.42
 pandas==1.1.1
 Pillow==7.2.0
-pkg-resources==0.0.0
 pytesseract==0.3.5
 python-anticaptcha==0.7.1
 python-dateutil==2.8.1
