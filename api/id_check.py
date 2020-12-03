@@ -100,6 +100,7 @@ def prep_img(img):
     """
     if img is None:
         return None
+    print('Rotando imagen')
     # Rotations
     rot_angles = [90, 180, 270]
     rot_imgs = [imutils.rotate_bound(img, x) for x in rot_angles]

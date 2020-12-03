@@ -97,6 +97,7 @@ class IDCheck(Resource):
         requres the API key, and front and back images of the ID
         """
         req_json = request.get_json()
+        print('Json para solicitud via imagen recibido')
         req_data = json.dumps(req_json)
         parser = reqparse.RequestParser(bundle_errors=True)
         parser.add_argument("front", action='append', required=True)
@@ -111,6 +112,7 @@ class IDCheck(Resource):
         # connect to database
         conn = db.connect("dbname='id_check_db' user='otto' host='localhost' password=ottoman")
         cur = conn.cursor()
+        print('Connected to db')
 
         # query api_key
         q_str = """SELECT userid,
@@ -200,6 +202,7 @@ class TextCheck(Resource):
         key
         """
         req_data = request.get_json()
+        print('Json para solicitud via texto recibido')
         parser = reqparse.RequestParser(bundle_errors=True)
         parser.add_argument("tipo", type=str, required=True)
         parser.add_argument("cve_elec", type=str)
